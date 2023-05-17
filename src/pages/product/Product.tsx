@@ -2,11 +2,13 @@ import { FC } from "react";
 import { useParams } from "react-router-dom";
 
 const Product:FC = () => {
-    const { product } = useParams()
+    const { category, product } = useParams()
 
     return (
         <main>
             {product}
+            <br />
+            {category}
         </main>
     )
 }
