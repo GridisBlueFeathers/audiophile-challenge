@@ -1,0 +1,71 @@
+@use "./../../scssVariables/scssVariables";
+
+.mainNav {
+    padding: 0 24px;
+    border-radius: 0px 0px 8px 8px;
+
+    li:not(:last-of-type) {
+        margin-bottom: 68px;
+    }
+
+    a {
+        text-decoration: none;
+        position: relative;
+    }
+}
+
+.mainNav__imgContainer {
+    max-width: 50%;
+    position: absolute;
+    bottom: 70px;
+    transform: translate(50%, 0);    
+
+    img {
+        max-width: 100%;
+    }
+}
+
+.mainNav__text {
+    text-align: center;
+    background-color: scssVariables.$darkestWhite;
+    padding: 88px 0 22px;
+    border-radius: 8px;
+}
+
+.mainNav__category {
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 20px;
+    letter-spacing: 1.07143px;
+    text-transform: uppercase;
+    color: black;
+    margin-bottom: 17px;
+
+    @media (min-width: 768px) {
+        @include scssVariables.headerSix;
+    }
+}
+
+.mainNav__button {
+    display: flex;
+    justify-content: center;
+
+    span {
+        font-weight: 700;
+        font-size: 13px;
+        line-height: 18px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: black;
+        opacity: 0.5;
+        margin-right: 13px;
+    }
+
+    div {
+        max-height: 10px;
+
+        img {
+            max-height: 100%;
+        }
+    }
+}

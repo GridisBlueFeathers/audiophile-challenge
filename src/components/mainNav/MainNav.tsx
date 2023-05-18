@@ -4,6 +4,7 @@ import headphones from "/assets/shared/desktop/image-category-thumbnail-headphon
 import speakers from "/assets/shared/desktop/image-category-thumbnail-speakers.png";
 import earphones from "/assets/shared/desktop/image-category-thumbnail-earphones.png";
 import arrow from "/assets/shared/desktop/icon-arrow-right.svg";
+import "./MainNav.css"
 
 
 const MainNav:FC = () => {
@@ -15,17 +16,19 @@ const MainNav:FC = () => {
                         <div className="mainNav__imgContainer">
                             <img src={headphones} alt="" />
                         </div>
-                        <p>
-                            Headphones
-                        </p>
-                        <p>
-                            <span>
-                                Shop
-                            </span>
-                            <div>
-                                <img src={arrow} alt="arrow" />
-                            </div>
-                        </p>
+                        <div className="mainNav__text">
+                            <p className="mainNav__category">
+                                Headphones
+                            </p>
+                            <p className="mainNav__button">
+                                <span>
+                                    Shop
+                                </span>
+                                <div>
+                                    <img src={arrow} alt="arrow" />
+                                </div>
+                            </p>
+                        </div>
                     </Link>
                 </li>
                 <li>
@@ -33,17 +36,19 @@ const MainNav:FC = () => {
                         <div className="mainNav__imgContainer">
                             <img src={speakers} alt="" />
                         </div>
-                        <p>
-                            Speakers
-                        </p>
-                        <p>
-                            <span>
-                                Shop
-                            </span>
-                            <div>
-                                <img src={arrow} alt="arrow" />
-                            </div>
-                        </p>
+                        <div className="mainNav__text">
+                            <p className="mainNav__category">
+                                Speakers
+                            </p>
+                            <p className="mainNav__button">
+                                <span>
+                                    Shop
+                                </span>
+                                <div>
+                                    <img src={arrow} alt="arrow" />
+                                </div>
+                            </p>
+                        </div>
                     </Link>
                 </li>
                 <li>
@@ -51,17 +56,19 @@ const MainNav:FC = () => {
                         <div className="mainNav__imgContainer">
                             <img src={earphones} alt="" />
                         </div>
-                        <p>
-                            Earphones
-                        </p>
-                        <p>
-                            <span>
-                                Shop
-                            </span>
-                            <div>
-                                <img src={arrow} alt="arrow" />
-                            </div>
-                        </p>
+                        <div className="mainNav__text">
+                            <p className="mainNav__category">
+                                Earphones
+                            </p>
+                            <p className="mainNav__button">
+                                <span>
+                                    Shop
+                                </span>
+                                <div>
+                                    <img src={arrow} alt="arrow" />
+                                </div>
+                            </p>
+                        </div>
                     </Link>
                 </li>
             </ul>

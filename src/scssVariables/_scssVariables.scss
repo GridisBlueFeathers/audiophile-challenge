@@ -1,0 +1,68 @@
+$lighterBlack: #101010;
+$brown: #D87D4A;
+$lighterBrown: #FBAF85;
+$darkerWhite: #FAFAFA;
+$darkestWhite: #F1F1F1;
+
+
+@mixin headerOne() {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 58px;
+    letter-spacing: 2px;
+}
+
+@mixin headerTwo() {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 1.42857px;
+}
+
+@mixin headerThree() {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 36px;
+    letter-spacing: 1.14286px;
+}
+
+@mixin headerFour() {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 38px;
+    letter-spacing: 2px;
+}
+
+@mixin headerFive() {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 33px;
+    letter-spacing: 1.71429px;
+}
+
+@mixin headerSix() {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    letter-spacing: 1.28571px;
+}
+
+@mixin overline() {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    letter-spacing: 10px;
+}
+
+@mixin subTitle() {
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 25px;
+    letter-spacing: 0.928571px;
+}
+
+@mixin bodyFont() {
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 26px;
+}
