@@ -2,4 +2,10 @@
 
 body {
     font-family: "Manrope";
+    box-sizing: border-box;
+    position: relative;
+}
+
+main {
+    padding-top: 90px;
 }

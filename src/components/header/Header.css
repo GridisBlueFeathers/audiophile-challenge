@@ -1,3 +1,51 @@
+header {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 31px 24px;
+  position: fixed;
+  right: 0;
+  left: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 9999;
+}
+header input {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  z-index: 9999;
+  opacity: 0;
+}
+@media (min-width: 1024px) {
+  header input {
+    display: none;
+  }
+}
+
+.header__checkboxCoverWrapper {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+}
+.header__checkboxCoverWrapper img {
+  width: 100%;
+  height: 100%;
+}
+
+.header__mainNavWrapper {
+  display: none;
+}
+
+.header__logo {
+  align-self: center;
+}
+
 .header__nav {
   display: none;
+}
+@media (min-width: 1024px) {
+  .header__nav {
+    display: block;
+  }
 }/*# sourceMappingURL=Header.css.map */

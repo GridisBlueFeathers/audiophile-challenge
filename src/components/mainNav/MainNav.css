@@ -8,12 +8,16 @@
 .mainNav a {
   text-decoration: none;
   position: relative;
+  padding-top: 52px;
+  display: block;
+  max-width: 327px;
+  margin: 0 auto;
 }
 
 .mainNav__imgContainer {
   max-width: 50%;
   position: absolute;
-  bottom: 70px;
+  top: 0;
   transform: translate(50%, 0);
 }
 .mainNav__imgContainer img {
@@ -59,9 +63,9 @@
   opacity: 0.5;
   margin-right: 13px;
 }
-.mainNav__button div {
+.mainNav__button .mainNav__arrowContainer {
   max-height: 10px;
 }
-.mainNav__button div img {
+.mainNav__button .mainNav__arrowContainer img {
   max-height: 100%;
 }/*# sourceMappingURL=MainNav.css.map */

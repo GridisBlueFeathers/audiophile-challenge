@@ -24,9 +24,9 @@ const MainNav:FC = () => {
                                 <span>
                                     Shop
                                 </span>
-                                <div>
+                                <span className="mainNav__arrowContainer">
                                     <img src={arrow} alt="arrow" />
-                                </div>
+                                </span>
                             </p>
                         </div>
                     </Link>
@@ -44,9 +44,9 @@ const MainNav:FC = () => {
                                 <span>
                                     Shop
                                 </span>
-                                <div>
+                                <span className="mainNav__arrowContainer">
                                     <img src={arrow} alt="arrow" />
-                                </div>
+                                </span>
                             </p>
                         </div>
                     </Link>
@@ -64,9 +64,9 @@ const MainNav:FC = () => {
                                 <span>
                                     Shop
                                 </span>
-                                <div>
+                                <span className="mainNav__arrowContainer">
                                     <img src={arrow} alt="arrow" />
-                                </div>
+                                </span>
                             </p>
                         </div>
                     </Link>

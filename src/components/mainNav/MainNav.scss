@@ -11,14 +11,18 @@
     a {
         text-decoration: none;
         position: relative;
+        padding-top: 52px;
+        display: block;
+        max-width: 327px;
+        margin: 0 auto;
     }
 }
 
 .mainNav__imgContainer {
     max-width: 50%;
     position: absolute;
-    bottom: 70px;
-    transform: translate(50%, 0);    
+    top: 0;
+    transform: translate(50%, 0);
 
     img {
         max-width: 100%;
@@ -61,7 +65,7 @@
         margin-right: 13px;
     }
 
-    div {
+    .mainNav__arrowContainer {
         max-height: 10px;
 
         img {
