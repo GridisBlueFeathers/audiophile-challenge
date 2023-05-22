@@ -1,4 +1,4 @@
-import { FC, ChangeEvent } from "react";
+import { FC } from "react";
 import logo from "/assets/shared/desktop/logo.svg";
 import cart from "/assets/shared/desktop/icon-cart.svg";
 import burger from "/assets/shared/tablet/icon-hamburger.svg";
@@ -7,18 +7,9 @@ import MainNav from "../mainNav/MainNav";
 import "./Header.css"
 
 const Header:FC = () => {
-    const scrollPreventHandler = (e: Event): void => {
-        e.preventDefault()
-    }
-
-    var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
-
-    const burgerHandler = (e: ChangeEvent<HTMLInputElement>): void => {
-        if(e.target.value) {
-            window.addEventListener(wheelEvent, scrollPreventHandler, { passive: false }); // modern desktop
-            window.addEventListener('touchmove', scrollPreventHandler, { passive: false }); // mobile
-        }
-        console.log("yo");
+    // const {category, product} = useParams();
+    
+    const burgerHandler = (): void => {
     }
 
     const cartHandler = ():void => {
@@ -34,9 +25,9 @@ const Header:FC = () => {
             <div className="header__mainNavWrapper">
                 <MainNav />
             </div>
-            <div className="header__logo">
+            <Link to={"/"}>
                 <img src={logo} alt="audiophile loge" />
-            </div>
+            </Link>
             <nav className="header__nav">
                 <ul>
                     <li>

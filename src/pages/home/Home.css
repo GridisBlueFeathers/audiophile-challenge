@@ -1,0 +1,63 @@
+.headliner {
+  position: relative;
+  background-color: rgba(25, 25, 25, 0.5);
+  padding: 108px 0 110px 0;
+}
+.headliner h1 {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 1.28571px;
+  color: #FFFFFF;
+  margin-bottom: 24px;
+}
+.headliner a {
+  display: block;
+  padding: 15px 30px;
+  background-color: #D87D4A;
+  max-width: 160px;
+  box-sizing: border-box;
+  text-align: center;
+  margin: 0 auto;
+  text-transform: uppercase;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 1px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.headliner__overline {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19px;
+  text-align: center;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  mix-blend-mode: normal;
+  margin-bottom: 16px;
+}
+
+.headliner__desc {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 26px;
+  padding: 0 24px;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.75);
+  mix-blend-mode: normal;
+  margin-bottom: 28px;
+}
+
+.headliner__backgroundImageWrapper {
+  position: absolute;
+  max-width: 100%;
+  top: -90px;
+  z-index: -1;
+}
+.headliner__backgroundImageWrapper img {
+  z-index: -10;
+  max-width: 100%;
+}/*# sourceMappingURL=Home.css.map */
