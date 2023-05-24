@@ -5,7 +5,7 @@
     border-radius: 0px 0px 8px 8px;
 
     li:not(:last-of-type) {
-        margin-bottom: 68px;
+        margin-bottom: 16px;
     }
 
     a {
@@ -54,7 +54,7 @@
     display: flex;
     justify-content: center;
 
-    span {
+    .mainNav__shop {
         font-weight: 700;
         font-size: 13px;
         line-height: 18px;
@@ -62,7 +62,7 @@
         text-transform: uppercase;
         color: black;
         opacity: 0.5;
-        margin-right: 13px;
+        margin-right: 12px;
     }
 
     .mainNav__arrowContainer {

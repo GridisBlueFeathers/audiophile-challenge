@@ -1,6 +1,7 @@
 import { FC } from "react";
 import "./Home.css"
 import { Link } from "react-router-dom";
+import MainNav from "../../components/mainNav/MainNav";
 
 const Home: FC = () => {  
   return (
@@ -18,13 +19,22 @@ const Home: FC = () => {
         <Link to={"/headphones/xx99-markii"}>
           See product
         </Link>
-        <div className="headliner__backgroundImageWrapper">
-
-          <picture className="headliner__backgroundimage">
-            <source media="(min-width: 1024px)" srcSet="/assets/home/desktop/image-hero.jpg"/>
-            <source media="(min-width: 768px)" srcSet="/assets/home/tablet/image-header.jpg"/>
-            <img src="/assets/home/mobile/image-header.jpg" alt="XX99 mark 2 headphones" />
-          </picture>
+      </section>
+      <section className="mainNavSection">
+        <MainNav />
+      </section>
+      <section className="primaryProduct">
+        <div className="container">
+          <div className="primaryProduct__imageWrapper">
+            <picture>
+              <source media="(min-width: 425px)" srcSet="/assets/home/tablet/image-speaker-zx9.png" />
+              <source media="(min-width: 768px)" srcSet="/assets/home/desktop/image-speaker-zx9.png" />
+              <img src="/assets/home/mobile/image-speaker-zx9.png" alt="speaker zx9 image" />
+            </picture>
+          </div>
+          <h1>
+            zx9 speaker
+          </h1>
         </div>
       </section>
     </main>

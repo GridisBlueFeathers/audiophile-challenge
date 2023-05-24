@@ -2,11 +2,16 @@
 
 .headliner {
     position: relative;
-    background-color: rgba($color: #191919, $alpha: 0.5);
+    background-color:#191919;
     padding: 108px 0 110px 0;
+    margin-bottom: 40px;
+    background-image: url("/assets/home/mobile/image-header.jpg");
+    background-size: cover;
+    background-position: 0 -90px;
 
     
     h1 {
+        position: relative;
         font-weight: 700;
         font-size: 36px;
         line-height: 40px;
@@ -14,9 +19,12 @@
         letter-spacing: 1.28571px;
         color: #FFFFFF;
         margin-bottom: 24px;
+        z-index: 1;
     }
 
     a {
+        position: relative;
+        z-index: 1;
         display: block;
         padding: 15px 30px;
         background-color: scssVariables.$brown;
@@ -53,16 +61,55 @@
     color: rgba($color: #fff, $alpha: 0.75);
     mix-blend-mode: normal;
     margin-bottom: 28px;
+    position: relative;
+    z-index: 1;
 }
 
 .headliner__backgroundImageWrapper {
     position: absolute;
     max-width: 100%;
+    max-height: 100%;
     top: -90px;
-    z-index: -1;
+    z-index: 0;
+    opacity: 0.5;
     
     img {
         z-index: -10;
+        max-width: 100%;
+    }
+}
+
+.mainNavSection {
+    margin-bottom: 120px;
+}
+
+.primaryProduct {
+    padding: 0 24px;
+
+    .container {
+        background-color: scssVariables.$brown;
+        padding: 55px 0;
+        border-radius: 8px;
+    }
+
+    h1 {
+        max-width: 240px;
+        color: #FFFFFF;
+        font-weight: 700;
+        font-size: 36px;
+        line-height: 40px;
+        text-align: center;
+        letter-spacing: 1.28571px;
+        text-transform: uppercase;
+        margin: 0 auto 24px;
+    }
+}
+
+.primaryProduct__imageWrapper {
+    max-width: 172px;
+    margin: 0 auto 32px;
+
+    img {
         max-width: 100%;
     }
 }

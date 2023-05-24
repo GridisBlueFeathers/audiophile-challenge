@@ -21,7 +21,7 @@ const MainNav:FC = () => {
                                 Headphones
                             </p>
                             <p className="mainNav__button">
-                                <span>
+                                <span className="mainNav__shop">
                                     Shop
                                 </span>
                                 <span className="mainNav__arrowContainer">
@@ -41,7 +41,7 @@ const MainNav:FC = () => {
                                 Speakers
                             </p>
                             <p className="mainNav__button">
-                                <span>
+                                <span className="mainNav__shop">
                                     Shop
                                 </span>
                                 <span className="mainNav__arrowContainer">
@@ -61,7 +61,7 @@ const MainNav:FC = () => {
                                 Earphones
                             </p>
                             <p className="mainNav__button">
-                                <span>
+                                <span className="mainNav__shop">
                                     Shop
                                 </span>
                                 <span className="mainNav__arrowContainer">
