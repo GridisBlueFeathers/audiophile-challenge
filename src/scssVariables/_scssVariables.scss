@@ -66,3 +66,21 @@ $darkestWhite: #F1F1F1;
     font-size: 15px;
     line-height: 26px;
 }
+
+@mixin button($backgroundColor, $textColor, $borderColor, $margin) {
+    display: block;
+    padding: 15px 29px;
+    background-color: $backgroundColor;
+    max-width: 160px;
+    box-sizing: border-box;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    color: $textColor;
+    text-decoration: none;
+    border: $borderColor 1px solid;
+    margin: $margin;
+}
