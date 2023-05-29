@@ -2,15 +2,31 @@
 
 header {
     background-color: #191919;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 31px 24px;
+    padding: 31px 24px 0;
     position: fixed;
     right: 0;
     left: 0;
-    border-bottom: 1px solid rgba($color: #FFF, $alpha: 0.1);
     z-index: 9999;
+    border-bottom: 1px solid rgba($color: #FFF, $alpha: 0.1);
+
+    @media (min-width: 426px) {
+        padding: 32px 40px 0;
+        border: none;
+    }
+    
+    .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-bottom: 31px;
+
+        @media (min-width: 426px) {
+            justify-content: flex-start;
+            padding-bottom: 32px;
+            border-bottom: 1px solid rgba($color: #FFF, $alpha: 0.1);
+
+        }
+    }
 
     input {
         width: 16px;
@@ -19,8 +35,19 @@ header {
         z-index: 9999;
         opacity: 0;
 
+        @media (min-width: 426px) {
+            margin-right: 42px;
+        }
+
         @media (min-width: 1024px) {
             display: none;
+        }
+    }
+
+    .header__cart {
+
+        @media (min-width: 426px) {
+            margin-left: auto;
         }
     }
 }

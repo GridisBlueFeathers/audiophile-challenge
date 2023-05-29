@@ -12,6 +12,20 @@
   display: block;
   margin: 0 auto;
 }
+@media (min-width: 426px) {
+  .mainNav {
+    padding: 0 40px 0 39px;
+  }
+  .mainNav ul {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+  }
+  .mainNav ul li {
+    flex-basis: 223px;
+  }
+}
 
 .mainNav__imgContainer {
   max-width: 163.5px;
@@ -39,7 +53,7 @@
   color: black;
   margin-bottom: 17px;
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .mainNav__category {
     font-weight: 700;
     font-size: 18px;

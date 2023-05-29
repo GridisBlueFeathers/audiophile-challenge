@@ -9,6 +9,12 @@
     background-size: cover;
     background-position: bottom;
     
+    @media (min-width: 426px) {
+        background-image: url("/assets/home/tablet/image-header.jpg");
+        padding: 126px 0 167px;
+        background-position: bottom;
+    }
+
     h1 {
         position: relative;
         font-weight: 700;
@@ -19,6 +25,10 @@
         color: #FFFFFF;
         margin-bottom: 24px;
         z-index: 1;
+
+        @media (min-width:426px) {
+            @include scssVariables.headerOne;
+        }
     }
 
     a {
@@ -26,6 +36,7 @@
         z-index: 1;
         @include scssVariables.button(scssVariables.$brown, #FFF, scssVariables.$brown, 0 auto);
     }
+
 }
 
 .headliner__overline {
@@ -36,8 +47,11 @@
     letter-spacing: 10px;
     text-transform: uppercase;
     color: rgba($color: #fff, $alpha: 0.5);
-    mix-blend-mode: normal;
     margin-bottom: 16px;
+
+    @media (min-width:426px) {
+        margin-bottom: 24px;        
+    }
 }
 
 .headliner__desc {
@@ -47,9 +61,15 @@
     text-align: center;
     color: rgba($color: #fff, $alpha: 0.75);
     mix-blend-mode: normal;
-    margin-bottom: 28px;
     position: relative;
     z-index: 1;
+    max-width: 349px;
+    margin: 0 auto 28px;
+
+    @media (min-width:426px) {
+        margin: 0 auto 40px;
+    }
+
 }
 
 .headliner__backgroundImageWrapper {
@@ -68,11 +88,19 @@
 
 .mainNavSection {
     margin-bottom: 120px;
+
+    @media (min-width: 426px) {
+        margin-bottom: 96px;
+    }
 }
 
 .primaryProduct {
     padding: 0 24px;
     margin-bottom: 24px ;
+
+    @media (min-width: 426px) {
+        padding: 0 40px;
+    }
 
     .container {
         background-color: scssVariables.$brown;
@@ -82,6 +110,13 @@
         background-size: 558px;
         background-position: 50% -121px;
         background-repeat: no-repeat;
+
+        @media (min-width: 426px) {
+            padding: 52px 0;
+            background-size: 944px;
+            background-position: 50% -288px;
+
+        }
 
         > h1, p {
             max-width: 349px;
@@ -97,6 +132,10 @@
         letter-spacing: 1.28571px;
         text-transform: uppercase;
         margin: 0 auto 24px;
+
+        @media (min-width: 426px) {
+            @include scssVariables.headerOne;
+        }
     }
 
     p {
@@ -108,6 +147,10 @@
         margin: 0 auto 24px;
         padding: 0 24px;
         text-align: center;
+
+        @media (min-width: 426px) {
+            margin: 0 auto 40px;
+        }
     }
 
     a {
@@ -119,9 +162,15 @@
     max-width: 172px;
     margin: 0 auto 32px;
 
+    @media (min-width: 426px) {
+        max-width: 197px;
+        margin: 0 auto 64px;
+    }
+    
     img {
         max-width: 100%;
     }
+
 }
 
 .secondaryProduct {

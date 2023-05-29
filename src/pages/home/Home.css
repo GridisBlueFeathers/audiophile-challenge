@@ -7,6 +7,13 @@
   background-size: cover;
   background-position: bottom;
 }
+@media (min-width: 426px) {
+  .headliner {
+    background-image: url("/assets/home/tablet/image-header.jpg");
+    padding: 126px 0 167px;
+    background-position: bottom;
+  }
+}
 .headliner h1 {
   position: relative;
   font-weight: 700;
@@ -17,6 +24,14 @@
   color: #FFFFFF;
   margin-bottom: 24px;
   z-index: 1;
+}
+@media (min-width: 426px) {
+  .headliner h1 {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 58px;
+    letter-spacing: 2px;
+  }
 }
 .headliner a {
   position: relative;
@@ -46,8 +61,12 @@
   letter-spacing: 10px;
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.5);
-  mix-blend-mode: normal;
   margin-bottom: 16px;
+}
+@media (min-width: 426px) {
+  .headliner__overline {
+    margin-bottom: 24px;
+  }
 }
 
 .headliner__desc {
@@ -58,9 +77,15 @@
   text-align: center;
   color: rgba(255, 255, 255, 0.75);
   mix-blend-mode: normal;
-  margin-bottom: 28px;
   position: relative;
   z-index: 1;
+  max-width: 349px;
+  margin: 0 auto 28px;
+}
+@media (min-width: 426px) {
+  .headliner__desc {
+    margin: 0 auto 40px;
+  }
 }
 
 .headliner__backgroundImageWrapper {
@@ -79,10 +104,20 @@
 .mainNavSection {
   margin-bottom: 120px;
 }
+@media (min-width: 426px) {
+  .mainNavSection {
+    margin-bottom: 96px;
+  }
+}
 
 .primaryProduct {
   padding: 0 24px;
   margin-bottom: 24px;
+}
+@media (min-width: 426px) {
+  .primaryProduct {
+    padding: 0 40px;
+  }
 }
 .primaryProduct .container {
   background-color: #D87D4A;
@@ -92,6 +127,13 @@
   background-size: 558px;
   background-position: 50% -121px;
   background-repeat: no-repeat;
+}
+@media (min-width: 426px) {
+  .primaryProduct .container {
+    padding: 52px 0;
+    background-size: 944px;
+    background-position: 50% -288px;
+  }
 }
 .primaryProduct .container > h1, .primaryProduct .container p {
   max-width: 349px;
@@ -106,6 +148,14 @@
   text-transform: uppercase;
   margin: 0 auto 24px;
 }
+@media (min-width: 426px) {
+  .primaryProduct h1 {
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 58px;
+    letter-spacing: 2px;
+  }
+}
 .primaryProduct p {
   font-weight: 500;
   font-size: 15px;
@@ -116,6 +166,11 @@
   margin: 0 auto 24px;
   padding: 0 24px;
   text-align: center;
+}
+@media (min-width: 426px) {
+  .primaryProduct p {
+    margin: 0 auto 40px;
+  }
 }
 .primaryProduct a {
   display: block;
@@ -138,6 +193,12 @@
 .primaryProduct__imageWrapper {
   max-width: 172px;
   margin: 0 auto 32px;
+}
+@media (min-width: 426px) {
+  .primaryProduct__imageWrapper {
+    max-width: 197px;
+    margin: 0 auto 64px;
+  }
 }
 .primaryProduct__imageWrapper img {
   max-width: 100%;

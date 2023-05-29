@@ -1,15 +1,22 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import MainNav from "../../components/mainNav/MainNav";
 import About from "../../components/about/About";
 
 const Home: FC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
+
   return (
     <main>
       <section className="headliner">
         <p className="headliner__overline">new product</p>
-        <h1>XX99 Mark II Headphones</h1>
+        <h1>
+          XX99 Mark II <br />
+          Headphones
+        </h1>
         <p className="headliner__desc">
           Experience natural, lifelike audio and exceptional build quality made
           for the passionate music enthusiast.
@@ -24,7 +31,7 @@ const Home: FC = () => {
           <div className="primaryProduct__imageWrapper">
             <picture>
               <source
-                media="(min-width: 768px)"
+                media="(min-width: 769px)"
                 srcSet="/assets/home/desktop/image-speaker-zx9.png"
               />
               <source
@@ -60,7 +67,7 @@ const Home: FC = () => {
           <div className="tretiaryProduct__imageWrapper">
             <picture>
               <source
-                media="(min-width: 768px)"
+                media="(min-width: 769px)"
                 srcSet="/assets/home/desktop/image-earphones-yx1.jpg"
               />
               <source

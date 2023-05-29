@@ -15,6 +15,27 @@
         display: block;
         margin: 0 auto;
     }
+    
+    @media (min-width: 426px) {
+        padding: 0 40px 0 39px;
+
+        ul {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            // gap: 10px;
+            justify-content: center;
+
+            li {
+                flex-basis: 223px;
+            }
+        }
+        
+        // a {
+        //     min-width: 223px;
+        //     width: 100%;
+        // }
+    }
 }
 
 .mainNav__imgContainer {
@@ -44,7 +65,7 @@
     color: black;
     margin-bottom: 17px;
 
-    @media (min-width: 768px) {
+    @media (min-width: 769px) {
         @include scssVariables.headerSix;
     }
 }
