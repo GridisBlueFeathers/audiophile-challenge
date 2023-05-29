@@ -1,0 +1,32 @@
+.about {
+  margin: 120px 0;
+  padding: 0 24px;
+}
+.about h2 {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 38px;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+.about h2 span {
+  color: #D87D4A;
+}
+.about p {
+  font-weight: 500;
+  font-size: 15px;
+  line-height: 26px;
+  text-align: center;
+  opacity: 0.5;
+}
+
+.about__imageWrapper {
+  max-width: 100%;
+  margin-bottom: 40px;
+}
+.about__imageWrapper img {
+  max-width: 100%;
+  border-radius: 8px;
+}/*# sourceMappingURL=About.css.map */

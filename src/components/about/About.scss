@@ -1,0 +1,36 @@
+@use "./../../scssVariables/scssVariables";
+
+.about {
+    margin: 120px 0;
+    padding: 0 24px;
+
+    h2 {
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 38px;
+        text-align: center;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-bottom: 32px;
+
+        span {
+            color: scssVariables.$brown;
+        }
+    }
+
+    p {
+        @include scssVariables.bodyFont;
+        text-align: center;
+        opacity: 0.5;
+    }
+}
+
+.about__imageWrapper {
+    max-width: 100%;
+    margin-bottom: 40px;
+
+    img {
+        max-width: 100%;
+        border-radius: 8px;
+    }
+}

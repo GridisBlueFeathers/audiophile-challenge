@@ -2,6 +2,7 @@ import { FC } from "react";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import MainNav from "../../components/mainNav/MainNav";
+import About from "../../components/about/About";
 
 const Home: FC = () => {
   return (
@@ -36,24 +37,22 @@ const Home: FC = () => {
               />
             </picture>
           </div>
-          <h1>zx9<br/>speaker</h1>
+          <h1>
+            zx9
+            <br />
+            speaker
+          </h1>
           <p>
             Upgrade to premium speakers that are phenomenally built to deliver
             truly remarkable sound.
           </p>
-          <Link to={"/speakers/zx9"} >
-            See product
-          </Link>
+          <Link to={"/speakers/zx9"}>See product</Link>
         </div>
       </section>
       <section className="secondaryProduct">
         <div className="container">
-          <h4>
-            zx7 speaker
-          </h4>
-          <Link to={"/speakers/zx7"}>
-            See product
-          </Link>
+          <h4>zx7 speaker</h4>
+          <Link to={"/speakers/zx7"}>See product</Link>
         </div>
       </section>
       <section className="tertiaryProduct">
@@ -75,15 +74,12 @@ const Home: FC = () => {
             </picture>
           </div>
           <div className="tretiaryProduct__linkWrapper">
-            <h4>
-              yx1 earphones
-            </h4>
-            <Link to={"/earphones/yx1"}>
-              See product
-            </Link>
+            <h4>yx1 earphones</h4>
+            <Link to={"/earphones/yx1"}>See product</Link>
           </div>
         </div>
       </section>
+      <About />
     </main>
   );
 };

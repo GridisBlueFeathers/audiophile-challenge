@@ -10,15 +10,14 @@
   position: relative;
   padding-top: 52px;
   display: block;
-  max-width: 327px;
   margin: 0 auto;
 }
 
 .mainNav__imgContainer {
-  max-width: 50%;
+  max-width: 163.5px;
   position: absolute;
   top: 0;
-  transform: translate(50%, 0);
+  left: calc(50% - 81.75px);
 }
 .mainNav__imgContainer img {
   max-width: 100%;
