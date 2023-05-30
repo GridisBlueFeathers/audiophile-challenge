@@ -23,18 +23,14 @@
             display: flex;
             flex-wrap: wrap;
             flex-direction: row;
-            // gap: 10px;
+            gap: 10px;
             justify-content: center;
 
             li {
                 flex-basis: 223px;
+                margin: 0 auto;
             }
-        }
-        
-        // a {
-        //     min-width: 223px;
-        //     width: 100%;
-        // }
+        }        
     }
 }
 

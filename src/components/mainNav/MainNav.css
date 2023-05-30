@@ -20,10 +20,12 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    gap: 10px;
     justify-content: center;
   }
   .mainNav ul li {
     flex-basis: 223px;
+    margin: 0 auto;
   }
 }
 
