@@ -1,6 +1,8 @@
 .mainNav {
   padding: 0 24px;
   border-radius: 0px 0px 8px 8px;
+  max-width: 1110px;
+  margin: 0 auto;
 }
 .mainNav li:not(:last-of-type) {
   margin-bottom: 16px;
@@ -22,18 +24,28 @@
     flex-direction: row;
     gap: 10px;
     justify-content: center;
+    max-width: 1110px;
   }
   .mainNav ul li {
-    flex-basis: 223px;
-    margin: 0 auto;
+    min-width: 223px;
+    max-width: 350px;
+    flex-grow: 1;
+    flex-basis: 0;
+  }
+}
+@media (min-width: 1024px) {
+  .mainNav ul {
+    gap: 30px;
   }
 }
 
 .mainNav__imgContainer {
-  max-width: 163.5px;
+  min-width: 163.5px;
+  max-width: 50%;
   position: absolute;
-  top: 0;
-  left: calc(50% - 81.75px);
+  bottom: 60px;
+  left: 50%;
+  transform: translate(-50%);
 }
 .mainNav__imgContainer img {
   max-width: 100%;

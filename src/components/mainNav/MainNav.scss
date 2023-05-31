@@ -3,6 +3,8 @@
 .mainNav {
     padding: 0 24px;
     border-radius: 0px 0px 8px 8px;
+    max-width: 1110px;
+    margin: 0 auto;
 
     li:not(:last-of-type) {
         margin-bottom: 16px;
@@ -15,7 +17,7 @@
         display: block;
         margin: 0 auto;
     }
-    
+
     @media (min-width: 426px) {
         padding: 0 40px 0 39px;
 
@@ -25,20 +27,32 @@
             flex-direction: row;
             gap: 10px;
             justify-content: center;
+            max-width: 1110px;
 
             li {
-                flex-basis: 223px;
-                margin: 0 auto;
+                min-width: 223px;
+                max-width: 350px;
+                flex-grow: 1;
+                flex-basis: 0;
             }
-        }        
+        }
+    }
+
+    @media (min-width: 1024px) {
+        ul {
+            gap: 30px;
+        }
     }
 }
 
 .mainNav__imgContainer {
-    max-width: 163.5px;
+    min-width: 163.5px;
+    max-width: 50%;
     position: absolute;
-    top: 0;
-    left: calc(50% - (163.5px / 2));
+    bottom: 60px;
+    left: 50%;
+    transform: translate(-50%);
+    //   left: calc(50% - (163.5px / 2));
 
     img {
         max-width: 100%;
