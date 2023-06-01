@@ -179,12 +179,23 @@
     height: 100%;
     margin-bottom: 24px;
     
+
+    @media (min-width:426px) {
+        padding: 0 40px;
+        margin-bottom: 32px;
+    }
+
     .container {
         border-radius: 8px;
         background-image: url("/assets/home/mobile/image-speaker-zx7.jpg");
         background-repeat: no-repeat;
         background-size: cover;
-        padding-bottom: 101px
+        padding-bottom: 101px;
+
+        @media (min-width:526px) {
+            background-image: url("/assets/home/tablet/image-speaker-zx7.jpg");
+            background-position: center;
+        }
     }
     
     h4 {
@@ -192,15 +203,46 @@
         padding-top: 101px;
         margin: 0 0 32px 24px;
         text-transform: uppercase;
+
+        @media (min-width:526px) {
+            margin: 0 0 32px 62px;
+        }
     }
 
     a {
         @include scssVariables.button(rgba(0, 0, 0, 0), black, black, 0 0 0 24px);
+
+        @media (min-width:526px) {
+            @include scssVariables.button(rgba(0, 0, 0, 0), black, black, 0 0 0 62px);
+        }
     }
+    
 }
 
 .tertiaryProduct {
     padding: 0 24px;
+
+    @media (min-width:426px) {
+        padding: 0 40px;
+    }
+
+    .container {
+        @media (min-width:426px) {
+            display: flex;
+            justify-content: center;
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: 10px;
+            
+            > div {
+                max-width: 450px;
+                min-width: 223px;
+                flex-grow: 1;
+                flex-basis: 0;
+                margin: 0;
+            }
+        }
+    }
 
     .tretiaryProduct__imageWrapper {
         max-width: 100%;
@@ -217,15 +259,49 @@
         background-color: scssVariables.$darkestWhite;
         padding-bottom: 41px;
 
+        @media (min-width:426px) {
+            padding-bottom: 15px;
+        }
+        
         h4 {
             @include scssVariables.headerFour;
             padding-top: 41px;
             margin: 0 0 32px 24px;
             text-transform: uppercase;
+
+            @media (min-width:426px) {
+                padding-top: 25px;
+                margin: 0 0 32px 41px;
+            }
+
+            @media (min-width:536px) {
+                padding-top: 41px;
+                margin: 0 0 32px 24px;
+            }
+            
+            @media (min-width:630px) {
+                margin: 0 0 32px 41px;
+            }
+            @media (min-width:670px) {
+                padding-top: 101px;
+                margin: 0 0 32px 41px;
+            }
         }
 
         a {
             @include scssVariables.button(rgba(0, 0, 0, 0), black, black, 0 0 0 24px);
+
+            @media (min-width:426px) {
+                @include scssVariables.button(rgba(0, 0, 0, 0), black, black, 0 0 0 41px);                
+            }
+
+            @media (min-width:536px) {
+                @include scssVariables.button(rgba(0, 0, 0, 0), black, black, 0 0 0 24px);                
+            }
+
+            @media (min-width:630px) {
+                @include scssVariables.button(rgba(0, 0, 0, 0), black, black, 0 0 0 41px);                
+            }
         }
     }
 

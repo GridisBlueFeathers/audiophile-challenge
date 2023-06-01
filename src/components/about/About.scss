@@ -4,6 +4,11 @@
     margin: 120px 0;
     padding: 0 24px;
 
+    @media (min-width:426px) {
+        padding: 0 40px;
+        margin: 96px 0;
+    }
+
     h2 {
         font-weight: 700;
         font-size: 28px;
@@ -16,12 +21,23 @@
         span {
             color: scssVariables.$brown;
         }
+
+        @media (min-width:426px) {
+            max-width: 573px;
+            margin: 0 auto 32px;
+            @include scssVariables.headerTwo;
+        }
     }
 
     p {
         @include scssVariables.bodyFont;
         text-align: center;
         opacity: 0.5;
+
+        @media (min-width:426px) {
+            max-width: 573px;
+            margin: 0 auto;
+        }
     }
 }
 

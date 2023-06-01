@@ -8,11 +8,11 @@ const About: FC = () => {
         <div className="about__imageWrapper">
           <picture>
             <source
-              media="(min-width: 768px)"
+              media="(min-width: 769px)"
               srcSet="/assets/shared/desktop/image-best-gear.jpg"
             />
             <source
-              media="(min-width: 425px)"
+              media="(min-width: 426px)"
               srcSet="/assets/shared/tablet/image-best-gear.jpg"
             />
             <img src="/assets/shared/mobile/image-best-gear.jpg" alt="" />

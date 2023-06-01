@@ -2,6 +2,12 @@
   margin: 120px 0;
   padding: 0 24px;
 }
+@media (min-width: 426px) {
+  .about {
+    padding: 0 40px;
+    margin: 96px 0;
+  }
+}
 .about h2 {
   font-weight: 700;
   font-size: 28px;
@@ -14,12 +20,28 @@
 .about h2 span {
   color: #D87D4A;
 }
+@media (min-width: 426px) {
+  .about h2 {
+    max-width: 573px;
+    margin: 0 auto 32px;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 44px;
+    letter-spacing: 1.42857px;
+  }
+}
 .about p {
   font-weight: 500;
   font-size: 15px;
   line-height: 26px;
   text-align: center;
   opacity: 0.5;
+}
+@media (min-width: 426px) {
+  .about p {
+    max-width: 573px;
+    margin: 0 auto;
+  }
 }
 
 .about__imageWrapper {

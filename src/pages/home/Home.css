@@ -210,12 +210,24 @@
   height: 100%;
   margin-bottom: 24px;
 }
+@media (min-width: 426px) {
+  .secondaryProduct {
+    padding: 0 40px;
+    margin-bottom: 32px;
+  }
+}
 .secondaryProduct .container {
   border-radius: 8px;
   background-image: url("/assets/home/mobile/image-speaker-zx7.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 101px;
+}
+@media (min-width: 526px) {
+  .secondaryProduct .container {
+    background-image: url("/assets/home/tablet/image-speaker-zx7.jpg");
+    background-position: center;
+  }
 }
 .secondaryProduct h4 {
   font-weight: 700;
@@ -225,6 +237,11 @@
   padding-top: 101px;
   margin: 0 0 32px 24px;
   text-transform: uppercase;
+}
+@media (min-width: 526px) {
+  .secondaryProduct h4 {
+    margin: 0 0 32px 62px;
+  }
 }
 .secondaryProduct a {
   display: block;
@@ -243,9 +260,49 @@
   border: black 1px solid;
   margin: 0 0 0 24px;
 }
+@media (min-width: 526px) {
+  .secondaryProduct a {
+    display: block;
+    padding: 15px 29px;
+    background-color: rgba(0, 0, 0, 0);
+    max-width: 160px;
+    box-sizing: border-box;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    color: black;
+    text-decoration: none;
+    border: black 1px solid;
+    margin: 0 0 0 62px;
+  }
+}
 
 .tertiaryProduct {
   padding: 0 24px;
+}
+@media (min-width: 426px) {
+  .tertiaryProduct {
+    padding: 0 40px;
+  }
+}
+@media (min-width: 426px) {
+  .tertiaryProduct .container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .tertiaryProduct .container > div {
+    max-width: 450px;
+    min-width: 223px;
+    flex-grow: 1;
+    flex-basis: 0;
+    margin: 0;
+  }
 }
 .tertiaryProduct .tretiaryProduct__imageWrapper {
   max-width: 100%;
@@ -260,6 +317,11 @@
   background-color: #F1F1F1;
   padding-bottom: 41px;
 }
+@media (min-width: 426px) {
+  .tertiaryProduct .tretiaryProduct__linkWrapper {
+    padding-bottom: 15px;
+  }
+}
 .tertiaryProduct .tretiaryProduct__linkWrapper h4 {
   font-weight: 700;
   font-size: 28px;
@@ -268,6 +330,29 @@
   padding-top: 41px;
   margin: 0 0 32px 24px;
   text-transform: uppercase;
+}
+@media (min-width: 426px) {
+  .tertiaryProduct .tretiaryProduct__linkWrapper h4 {
+    padding-top: 25px;
+    margin: 0 0 32px 41px;
+  }
+}
+@media (min-width: 536px) {
+  .tertiaryProduct .tretiaryProduct__linkWrapper h4 {
+    padding-top: 41px;
+    margin: 0 0 32px 24px;
+  }
+}
+@media (min-width: 630px) {
+  .tertiaryProduct .tretiaryProduct__linkWrapper h4 {
+    margin: 0 0 32px 41px;
+  }
+}
+@media (min-width: 670px) {
+  .tertiaryProduct .tretiaryProduct__linkWrapper h4 {
+    padding-top: 101px;
+    margin: 0 0 32px 41px;
+  }
 }
 .tertiaryProduct .tretiaryProduct__linkWrapper a {
   display: block;
@@ -285,4 +370,61 @@
   text-decoration: none;
   border: black 1px solid;
   margin: 0 0 0 24px;
+}
+@media (min-width: 426px) {
+  .tertiaryProduct .tretiaryProduct__linkWrapper a {
+    display: block;
+    padding: 15px 29px;
+    background-color: rgba(0, 0, 0, 0);
+    max-width: 160px;
+    box-sizing: border-box;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    color: black;
+    text-decoration: none;
+    border: black 1px solid;
+    margin: 0 0 0 41px;
+  }
+}
+@media (min-width: 536px) {
+  .tertiaryProduct .tretiaryProduct__linkWrapper a {
+    display: block;
+    padding: 15px 29px;
+    background-color: rgba(0, 0, 0, 0);
+    max-width: 160px;
+    box-sizing: border-box;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    color: black;
+    text-decoration: none;
+    border: black 1px solid;
+    margin: 0 0 0 24px;
+  }
+}
+@media (min-width: 630px) {
+  .tertiaryProduct .tretiaryProduct__linkWrapper a {
+    display: block;
+    padding: 15px 29px;
+    background-color: rgba(0, 0, 0, 0);
+    max-width: 160px;
+    box-sizing: border-box;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    color: black;
+    text-decoration: none;
+    border: black 1px solid;
+    margin: 0 0 0 41px;
+  }
 }/*# sourceMappingURL=Home.css.map */
