@@ -1,9 +1,23 @@
 footer {
   background-color: black;
+}
+@media (min-width: 426px) {
+  footer {
+    padding: 0 40px;
+  }
+}
+footer .container {
   padding: 52px 0 38px;
   position: relative;
+  max-width: 1110px;
+  margin: 0 auto;
 }
-footer::before {
+@media (min-width: 426px) {
+  footer .container {
+    padding: 60px 0 46px;
+  }
+}
+footer .container::before {
   content: "";
   display: block;
   width: 101px;
@@ -13,8 +27,35 @@ footer::before {
   top: 0;
   left: calc(50% - 50.5px);
 }
+@media (min-width: 426px) {
+  footer .container::before {
+    left: 0px;
+  }
+}
 footer nav {
   text-align: center;
+  margin-bottom: 48px;
+}
+@media (min-width: 426px) {
+  footer nav {
+    margin-bottom: 32px;
+  }
+}
+@media (min-width: 426px) {
+  footer nav ul {
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+footer nav ul li:not(:last-of-type) {
+  margin-bottom: 16px;
+}
+@media (min-width: 426px) {
+  footer nav ul li:not(:last-of-type) {
+    margin-right: 34px;
+  }
 }
 footer nav a {
   font-weight: 700;
@@ -25,14 +66,16 @@ footer nav a {
   text-decoration: none;
   color: #fff;
 }
-footer nav li:not(:last-of-type) {
-  margin-bottom: 16px;
-}
 
 .footer__logo {
   display: block;
   text-align: center;
   margin-bottom: 48px;
+}
+@media (min-width: 426px) {
+  .footer__logo {
+    text-align: left;
+  }
 }
 
 .footer__desc {
@@ -40,13 +83,32 @@ footer nav li:not(:last-of-type) {
   font-size: 15px;
   line-height: 26px;
   color: #fff;
-  padding: 24px;
+  padding: 0 24px;
   text-align: center;
   opacity: 0.5;
   margin-bottom: 48px;
 }
+@media (min-width: 426px) {
+  .footer__desc {
+    text-align: left;
+    padding: 0;
+    margin-bottom: 80px;
+  }
+}
 
 .footer__credits {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (min-width: 426px) {
+  .footer__credits {
+    flex-direction: row;
+  }
+}
+
+.footer__copyright {
   font-weight: 700;
   font-size: 15px;
   line-height: 25px;
@@ -54,6 +116,12 @@ footer nav li:not(:last-of-type) {
   opacity: 0.5;
   text-align: center;
   margin-bottom: 48px;
+}
+@media (min-width: 426px) {
+  .footer__copyright {
+    text-align: left;
+    margin-bottom: 0;
+  }
 }
 
 .footer__media ul {
