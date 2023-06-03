@@ -52,10 +52,13 @@
     bottom: 60px;
     left: 50%;
     transform: translate(-50%);
-    //   left: calc(50% - (163.5px / 2));
 
     img {
         max-width: 100%;
+    }
+
+    @media (min-width:769px) {
+        bottom: 100px;
     }
 }
 
@@ -64,6 +67,10 @@
     background-color: scssVariables.$darkestWhite;
     padding: 88px 0 22px;
     border-radius: 8px;
+
+    @media (min-width:769px) {
+        padding: 116px 0 30px;
+    }
 }
 
 .mainNav__category {

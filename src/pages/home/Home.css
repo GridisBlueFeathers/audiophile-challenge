@@ -11,8 +11,18 @@
   .headliner {
     background-image: url("/assets/home/tablet/image-header.jpg");
     padding: 126px 0 167px;
-    background-position: bottom;
   }
+}
+@media (min-width: 769px) {
+  .headliner {
+    background-image: url("/assets/home/desktop/image-hero.jpg");
+    padding: 128px 40px 158px;
+    margin-bottom: 120px;
+  }
+}
+.headliner .container {
+  max-width: 1110px;
+  margin: 0 auto;
 }
 .headliner h1 {
   position: relative;
@@ -31,6 +41,11 @@
     font-size: 56px;
     line-height: 58px;
     letter-spacing: 2px;
+  }
+}
+@media (min-width: 769px) {
+  .headliner h1 {
+    text-align: left;
   }
 }
 .headliner a {
@@ -52,6 +67,25 @@
   border: #D87D4A 1px solid;
   margin: 0 auto;
 }
+@media (min-width: 769px) {
+  .headliner a {
+    display: block;
+    padding: 15px 29px;
+    background-color: #D87D4A;
+    max-width: 160px;
+    box-sizing: border-box;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    color: #FFF;
+    text-decoration: none;
+    border: #D87D4A 1px solid;
+    margin: 0;
+  }
+}
 
 .headliner__overline {
   font-weight: 400;
@@ -68,11 +102,16 @@
     margin-bottom: 24px;
   }
 }
+@media (min-width: 769px) {
+  .headliner__overline {
+    text-align: left;
+  }
+}
 
 .headliner__desc {
   font-weight: 500;
   font-size: 15px;
-  line-height: 26px;
+  line-height: 25px;
   padding: 0 24px;
   text-align: center;
   color: rgba(255, 255, 255, 0.75);
@@ -85,6 +124,13 @@
 @media (min-width: 426px) {
   .headliner__desc {
     margin: 0 auto 40px;
+  }
+}
+@media (min-width: 769px) {
+  .headliner__desc {
+    text-align: left;
+    margin: 0 0 40px;
+    padding: 0;
   }
 }
 
@@ -109,14 +155,26 @@
     margin-bottom: 96px;
   }
 }
+@media (min-width: 769px) {
+  .mainNavSection {
+    margin-bottom: 168px;
+  }
+}
 
 .primaryProduct {
   padding: 0 24px;
   margin-bottom: 24px;
+  overflow: hidden;
 }
 @media (min-width: 426px) {
   .primaryProduct {
     padding: 0 40px;
+    margin-bottom: 32px;
+  }
+}
+@media (min-width: 769px) {
+  .primaryProduct {
+    margin-bottom: 40px;
   }
 }
 .primaryProduct .container {
@@ -127,6 +185,9 @@
   background-size: 558px;
   background-position: 50% -121px;
   background-repeat: no-repeat;
+  max-width: 1110px;
+  margin: 0 auto;
+  position: relative;
 }
 @media (min-width: 426px) {
   .primaryProduct .container {
@@ -135,8 +196,23 @@
     background-position: 50% -288px;
   }
 }
+@media (min-width: 769px) {
+  .primaryProduct .container {
+    padding: 133px 0 124px;
+  }
+}
+@media (min-width: 1024px) {
+  .primaryProduct .container {
+    background-position: -155px 5%;
+  }
+}
 .primaryProduct .container > h1, .primaryProduct .container p {
   max-width: 349px;
+}
+@media (min-width: 1024px) {
+  .primaryProduct .container > h1, .primaryProduct .container p {
+    text-align: left;
+  }
 }
 .primaryProduct h1 {
   color: #FFFFFF;
@@ -156,10 +232,15 @@
     letter-spacing: 2px;
   }
 }
+@media (min-width: 1024px) {
+  .primaryProduct h1 {
+    margin: 0 95px 24px auto;
+  }
+}
 .primaryProduct p {
   font-weight: 500;
   font-size: 15px;
-  line-height: 26px;
+  line-height: 25px;
   color: #FFFFFF;
   mix-blend-mode: normal;
   opacity: 0.75;
@@ -170,6 +251,12 @@
 @media (min-width: 426px) {
   .primaryProduct p {
     margin: 0 auto 40px;
+  }
+}
+@media (min-width: 1024px) {
+  .primaryProduct p {
+    margin: 0 95px 40px auto;
+    padding: 0;
   }
 }
 .primaryProduct a {
@@ -189,6 +276,25 @@
   border: black 1px solid;
   margin: 0 auto;
 }
+@media (min-width: 1024px) {
+  .primaryProduct a {
+    display: block;
+    padding: 15px 29px;
+    background-color: black;
+    max-width: 160px;
+    box-sizing: border-box;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 18px;
+    letter-spacing: 1px;
+    color: #FFF;
+    text-decoration: none;
+    border: black 1px solid;
+    margin: 0 285px 0 auto;
+  }
+}
 
 .primaryProduct__imageWrapper {
   max-width: 172px;
@@ -198,6 +304,15 @@
   .primaryProduct__imageWrapper {
     max-width: 197px;
     margin: 0 auto 64px;
+  }
+}
+@media (min-width: 1024px) {
+  .primaryProduct__imageWrapper {
+    position: absolute;
+    bottom: -7px;
+    margin: 0;
+    left: 140px;
+    max-width: 350px;
   }
 }
 .primaryProduct__imageWrapper img {
@@ -222,11 +337,18 @@
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 101px;
+  max-width: 1110px;
+  margin: 0 auto;
 }
 @media (min-width: 526px) {
   .secondaryProduct .container {
     background-image: url("/assets/home/tablet/image-speaker-zx7.jpg");
     background-position: center;
+  }
+}
+@media (min-width: 769px) {
+  .secondaryProduct .container {
+    background-image: url("/assets/home/desktop/image-speaker-zx7.jpg");
   }
 }
 .secondaryProduct h4 {

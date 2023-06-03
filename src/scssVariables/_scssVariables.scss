@@ -64,7 +64,7 @@ $darkestWhite: #F1F1F1;
 @mixin bodyFont() {
     font-weight: 500;
     font-size: 15px;
-    line-height: 26px;
+    line-height: 25px;
 }
 
 @mixin button($backgroundColor, $textColor, $borderColor, $margin) {

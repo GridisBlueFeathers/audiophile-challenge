@@ -12,8 +12,19 @@
     @media (min-width: 426px) {
         background-image: url("/assets/home/tablet/image-header.jpg");
         padding: 126px 0 167px;
-        background-position: bottom;
     }
+
+    @media (min-width: 769px) {
+        background-image: url("/assets/home/desktop/image-hero.jpg");
+        padding: 128px 40px 158px;
+        margin-bottom: 120px;
+    }
+    
+    .container {
+        max-width: 1110px;
+        margin: 0 auto;
+    }
+
 
     h1 {
         position: relative;
@@ -29,12 +40,20 @@
         @media (min-width:426px) {
             @include scssVariables.headerOne;
         }
+
+        @media (min-width:769px) {
+            text-align: left;
+        }
     }
 
     a {
         position: relative;
         z-index: 1;
         @include scssVariables.button(scssVariables.$brown, #FFF, scssVariables.$brown, 0 auto);
+
+        @media (min-width:769px) {
+            @include scssVariables.button(scssVariables.$brown, #FFF, scssVariables.$brown, 0);
+        }
     }
 
 }
@@ -52,6 +71,10 @@
     @media (min-width:426px) {
         margin-bottom: 24px;        
     }
+
+    @media (min-width:769px) {
+        text-align: left;
+    }
 }
 
 .headliner__desc {
@@ -68,6 +91,12 @@
 
     @media (min-width:426px) {
         margin: 0 auto 40px;
+    }
+
+    @media (min-width:769px) {
+        text-align: left;
+        margin: 0 0 40px;
+        padding: 0;
     }
 
 }
@@ -92,14 +121,24 @@
     @media (min-width: 426px) {
         margin-bottom: 96px;
     }
+
+    @media (min-width: 769px) {
+        margin-bottom: 168px;
+    }
 }
 
 .primaryProduct {
     padding: 0 24px;
-    margin-bottom: 24px ;
+    margin-bottom: 24px;
+    overflow: hidden;
 
     @media (min-width: 426px) {
         padding: 0 40px;
+        margin-bottom: 32px;
+    }
+
+    @media (min-width: 769px) {
+        margin-bottom: 40px;
     }
 
     .container {
@@ -110,6 +149,9 @@
         background-size: 558px;
         background-position: 50% -121px;
         background-repeat: no-repeat;
+        max-width: 1110px;
+        margin: 0 auto;
+        position: relative;
 
         @media (min-width: 426px) {
             padding: 52px 0;
@@ -118,8 +160,20 @@
 
         }
 
+        @media (min-width:769px) {
+            padding: 133px 0 124px;
+        }
+
+        @media (min-width:1024px) {
+            background-position: -155px 5%;
+        }
+
         > h1, p {
             max-width: 349px;
+
+            @media (min-width:1024px) {
+                text-align: left;
+            }
         }
     }
 
@@ -136,6 +190,10 @@
         @media (min-width: 426px) {
             @include scssVariables.headerOne;
         }
+
+        @media (min-width: 1024px) {
+            margin: 0 95px 24px auto;
+        }
     }
 
     p {
@@ -151,10 +209,19 @@
         @media (min-width: 426px) {
             margin: 0 auto 40px;
         }
+
+        @media (min-width: 1024px) {
+            margin: 0 95px 40px auto;
+            padding: 0;
+        }
     }
 
     a {
         @include scssVariables.button(black, #FFF, black, 0 auto);
+
+        @media (min-width:1024px) {
+            @include scssVariables.button(black, #FFF, black, 0 285px 0 auto);            
+        }
     }
 }
 
@@ -167,10 +234,17 @@
         margin: 0 auto 64px;
     }
     
+    @media (min-width:1024px) {
+        position: absolute;
+        bottom: -7px;
+        margin: 0;
+        left: 140px;
+        max-width: 350px;
+    }
+
     img {
         max-width: 100%;
     }
-
 }
 
 .secondaryProduct {
@@ -191,10 +265,16 @@
         background-repeat: no-repeat;
         background-size: cover;
         padding-bottom: 101px;
+        max-width: 1110px;
+        margin: 0 auto;
 
         @media (min-width:526px) {
             background-image: url("/assets/home/tablet/image-speaker-zx7.jpg");
             background-position: center;
+        }
+
+        @media (min-width:769px) {
+            background-image: url("/assets/home/desktop/image-speaker-zx7.jpg");
         }
     }
     

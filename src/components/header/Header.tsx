@@ -26,7 +26,7 @@ const Header:FC = () => {
                 <div className="header__mainNavWrapper">
                     <MainNav />
                 </div>
-                <Link to={"/"}>
+                <Link to={"/"} className="header__logo">
                     <img src={logo} alt="audiophile loge" />
                 </Link>
                 <nav className="header__nav">

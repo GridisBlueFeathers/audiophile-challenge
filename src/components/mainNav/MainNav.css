@@ -50,12 +50,22 @@
 .mainNav__imgContainer img {
   max-width: 100%;
 }
+@media (min-width: 769px) {
+  .mainNav__imgContainer {
+    bottom: 100px;
+  }
+}
 
 .mainNav__text {
   text-align: center;
   background-color: #F1F1F1;
   padding: 88px 0 22px;
   border-radius: 8px;
+}
+@media (min-width: 769px) {
+  .mainNav__text {
+    padding: 116px 0 30px;
+  }
 }
 
 .mainNav__category {
