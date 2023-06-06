@@ -9,36 +9,64 @@
         margin: 96px 0;
     }
 
-    h2 {
-        font-weight: 700;
-        font-size: 28px;
-        line-height: 38px;
-        text-align: center;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        margin-bottom: 32px;
+    @media (min-width: 769px) {
+        padding: 0 40px;
+        margin: 200px 0;
+    }
 
-        span {
-            color: scssVariables.$brown;
-        }
+    .container {
+        max-width: 1110px;
+        margin: 0 auto;
 
-        @media (min-width:426px) {
-            max-width: 573px;
-            margin: 0 auto 32px;
-            @include scssVariables.headerTwo;
+        @media (min-width: 880px) {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            gap: 30px;
         }
     }
 
-    p {
-        @include scssVariables.bodyFont;
-        text-align: center;
-        opacity: 0.5;
-
-        @media (min-width:426px) {
-            max-width: 573px;
-            margin: 0 auto;
+    article {
+        h2 {
+            font-weight: 700;
+            font-size: 28px;
+            line-height: 38px;
+            text-align: center;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 32px;
+    
+            span {
+                color: scssVariables.$brown;
+            }
+    
+            @media (min-width:426px) {
+                max-width: 573px;
+                margin: 0 auto 32px;
+                @include scssVariables.headerTwo;
+            }
+    
+            @media (min-width: 880px) {
+                text-align: left;
+            }
+        }
+    
+        p {
+            @include scssVariables.bodyFont;
+            text-align: center;
+            opacity: 0.5;
+    
+            @media (min-width:426px) {
+                max-width: 573px;
+                margin: 0 auto;
+            }
+    
+            @media (min-width: 880px) {
+                text-align: left;
+            }
         }
     }
+
 }
 
 .about__imageWrapper {

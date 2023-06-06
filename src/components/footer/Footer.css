@@ -17,6 +17,11 @@ footer .container {
     padding: 60px 0 46px;
   }
 }
+@media (min-width: 769px) {
+  footer .container {
+    padding: 75px 0 48px;
+  }
+}
 footer .container::before {
   content: "";
   display: block;
@@ -41,12 +46,22 @@ footer nav {
     margin-bottom: 32px;
   }
 }
+@media (min-width: 769px) {
+  footer nav {
+    margin-bottom: 36px;
+  }
+}
 @media (min-width: 426px) {
   footer nav ul {
     text-align: left;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+  }
+}
+@media (min-width: 769px) {
+  footer nav ul {
+    justify-content: flex-end;
   }
 }
 footer nav ul li:not(:last-of-type) {
@@ -77,6 +92,11 @@ footer nav a {
     text-align: left;
   }
 }
+@media (min-width: 769px) {
+  .footer__logo {
+    position: absolute;
+  }
+}
 
 .footer__desc {
   font-weight: 500;
@@ -93,6 +113,12 @@ footer nav a {
     text-align: left;
     padding: 0;
     margin-bottom: 80px;
+  }
+}
+@media (min-width: 769px) {
+  .footer__desc {
+    max-width: 540px;
+    margin-bottom: 56px;
   }
 }
 
@@ -127,7 +153,15 @@ footer nav a {
 .footer__media ul {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 .footer__media ul li:not(:last-of-type) {
   margin-right: 16px;
+}
+@media (min-width: 769px) {
+  .footer__media {
+    position: absolute;
+    right: 0;
+    bottom: 136px;
+  }
 }/*# sourceMappingURL=Footer.css.map */
