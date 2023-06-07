@@ -118,4 +118,7 @@ header input {
   text-decoration: none;
   color: #FFF;
   text-transform: uppercase;
+}
+.header__nav ul li a:hover {
+  color: #D87D4A;
 }/*# sourceMappingURL=Header.css.map */

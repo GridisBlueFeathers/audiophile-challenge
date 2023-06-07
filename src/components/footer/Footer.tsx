@@ -40,28 +40,34 @@ const Footer: FC = () => {
                     <div className="footer__media">
                         <ul>
                             <li>
-                                <a href="#">
-                                    <img
-                                        src="/assets/shared/desktop/icon-facebook.svg"
-                                        alt="Facebook logo"
-                                    />
-                                </a>
+                                <a
+                                    href="#"
+                                    style={{
+                                        mask: "url(/assets/shared/desktop/icon-facebook.svg) no-repeat center / contain",
+                                        WebkitMask:
+                                            "url(/assets/shared/desktop/icon-facebook.svg) no-repeat center / contain",
+                                    }}
+                                ></a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <img
-                                        src="/assets/shared/desktop/icon-twitter.svg"
-                                        alt="Twitter logo"
-                                    />
-                                </a>
+                                <a
+                                    href="#"
+                                    style={{
+                                        mask: "url(/assets/shared/desktop/icon-twitter.svg) no-repeat center / contain",
+                                        WebkitMask:
+                                            "url(/assets/shared/desktop/icon-twitter.svg) no-repeat center / contain",
+                                    }}
+                                ></a>
                             </li>
                             <li>
-                                <a href="#">
-                                    <img
-                                        src="/assets/shared/desktop/icon-instagram.svg"
-                                        alt="Instagram logo"
-                                    />
-                                </a>
+                                <a
+                                    href="#"
+                                    style={{
+                                        mask: "url(/assets/shared/desktop/icon-instagram.svg) no-repeat center / contain",
+                                        WebkitMask:
+                                            "url(/assets/shared/desktop/icon-instagram.svg) no-repeat center / contain",
+                                    }}
+                                ></a>
                             </li>
                         </ul>
                     </div>

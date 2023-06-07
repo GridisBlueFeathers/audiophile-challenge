@@ -4,6 +4,10 @@
   max-width: 1110px;
   margin: 0 auto;
 }
+.mainNav li:hover .mainNav__shop {
+  color: #D87D4A;
+  opacity: 1;
+}
 .mainNav li:not(:last-of-type) {
   margin-bottom: 16px;
 }

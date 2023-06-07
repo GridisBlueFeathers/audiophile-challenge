@@ -61,16 +61,18 @@ footer {
                 justify-content: flex-end;
             }
 
+            a:hover {
+                color: scssVariables.$brown;
+            }
+
             li:not(:last-of-type) {
                 margin-bottom: 16px;
 
                 @media (min-width:426px) {
                     margin-right: 34px;
-
                 }
             }
         }
-
 
         a {
             font-weight: 700;
@@ -149,6 +151,21 @@ footer {
         display: flex;
         justify-content: center;
         align-items: center;
+
+        a {
+            background-color: #fff;
+            height: 24px;
+            width: 24px;
+            display: block;
+
+            &:hover {
+                background-color: scssVariables.$brown;
+            }
+        }
+
+        li img:hover {
+            background-color: scssVariables.$brown;
+        }
 
         li:not(:last-of-type) {
             margin-right: 16px;

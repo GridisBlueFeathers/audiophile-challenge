@@ -58,10 +58,10 @@
     a {
         position: relative;
         z-index: 1;
-        @include scssVariables.button(scssVariables.$brown, #FFF, scssVariables.$brown, 0 auto);
+        @include scssVariables.button(scssVariables.$brown, scssVariables.$lighterBrown, #FFF, scssVariables.$brown, 0 auto);
 
         @media (min-width: 880px) {
-            @include scssVariables.button(scssVariables.$brown, #FFF, scssVariables.$brown, 0);
+            @include scssVariables.button(scssVariables.$brown, scssVariables.$lighterBrown, #FFF, scssVariables.$brown, 0);
         }
     }
 
@@ -226,10 +226,10 @@
     }
 
     a {
-        @include scssVariables.button(black, #FFF, black, 0 auto);
+        @include scssVariables.button(black, #4C4C4C, #FFF, black, 0 auto);
 
         @media (min-width:1024px) {
-            @include scssVariables.button(black, #FFF, black, 0 285px 0 auto);            
+            @include scssVariables.button(black, #4C4C4C, #FFF, black, 0 285px 0 auto);            
         }
     }
 }
@@ -304,10 +304,10 @@
     }
 
     a {
-        @include scssVariables.button(rgba(0, 0, 0, 0), black, black, 0 0 0 24px);
+        @include scssVariables.button(rgba(0, 0, 0, 0), black, black, black, 0 0 0 24px);
 
         @media (min-width:526px) {
-            @include scssVariables.button(rgba(0, 0, 0, 0), black, black, 0 0 0 62px);
+            @include scssVariables.button(rgba(0, 0, 0, 0), black, black, black, 0 0 0 62px);
         }
     }
 }
@@ -400,22 +400,22 @@
         }
 
         a {
-            @include scssVariables.button(rgba(0, 0, 0, 0), black, black, 0 0 0 24px);
+            @include scssVariables.button(rgba(0, 0, 0, 0), black, black, black, 0 0 0 24px);
 
             @media (min-width:426px) {
-                @include scssVariables.button(rgba(0, 0, 0, 0), black, black, 0 0 0 41px);                
+                @include scssVariables.button(rgba(0, 0, 0, 0), black, black, black, 0 0 0 41px);                
             }
 
             @media (min-width:536px) {
-                @include scssVariables.button(rgba(0, 0, 0, 0), black, black, 0 0 0 24px);                
+                @include scssVariables.button(rgba(0, 0, 0, 0), black, black, black, 0 0 0 24px);                
             }
 
             @media (min-width:630px) {
-                @include scssVariables.button(rgba(0, 0, 0, 0), black, black, 0 0 0 41px);                
+                @include scssVariables.button(rgba(0, 0, 0, 0), black, black, black, 0 0 0 41px);                
             }
 
             @media (min-width: 1024px) {
-                @include scssVariables.button(rgba(0, 0, 0, 0), black, black, 0 0 0 95px);                
+                @include scssVariables.button(rgba(0, 0, 0, 0), black, black, black, 0 0 0 95px);                
             }
         }
     }

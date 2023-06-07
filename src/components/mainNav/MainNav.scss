@@ -6,6 +6,13 @@
     max-width: 1110px;
     margin: 0 auto;
 
+    li {
+        &:hover .mainNav__shop {
+            color: scssVariables.$brown;
+            opacity: 1;
+        }
+    }
+
     li:not(:last-of-type) {
         margin-bottom: 16px;
     }

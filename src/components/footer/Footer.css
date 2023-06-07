@@ -64,6 +64,9 @@ footer nav {
     justify-content: flex-end;
   }
 }
+footer nav ul a:hover {
+  color: #D87D4A;
+}
 footer nav ul li:not(:last-of-type) {
   margin-bottom: 16px;
 }
@@ -154,6 +157,18 @@ footer nav a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.footer__media ul a {
+  background-color: #fff;
+  height: 24px;
+  width: 24px;
+  display: block;
+}
+.footer__media ul a:hover {
+  background-color: #D87D4A;
+}
+.footer__media ul li img:hover {
+  background-color: #D87D4A;
 }
 .footer__media ul li:not(:last-of-type) {
   margin-right: 16px;

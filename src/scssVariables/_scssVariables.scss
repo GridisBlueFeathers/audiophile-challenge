@@ -67,7 +67,7 @@ $darkestWhite: #F1F1F1;
     line-height: 25px;
 }
 
-@mixin button($backgroundColor, $textColor, $borderColor, $margin) {
+@mixin button($backgroundColor, $hoverColor, $textColor, $borderColor, $margin) {
     display: block;
     padding: 15px 29px;
     background-color: $backgroundColor;
@@ -83,4 +83,10 @@ $darkestWhite: #F1F1F1;
     text-decoration: none;
     border: $borderColor 1px solid;
     margin: $margin;
+
+    &:hover {
+        background-color: $hoverColor;
+        border: $hoverColor 1px solid;
+        color: white;
+    }
 }

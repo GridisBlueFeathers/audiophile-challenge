@@ -111,6 +111,10 @@ header {
                 text-decoration: none;
                 color: #FFF;
                 text-transform: uppercase;
+
+                &:hover {
+                    color: scssVariables.$brown;
+                }
             }
         }
     }
