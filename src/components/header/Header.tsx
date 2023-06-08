@@ -1,55 +1,66 @@
-import { FC } from "react";
+import { ChangeEvent, FC } from "react";
 import logo from "/assets/shared/desktop/logo.svg";
 import cart from "/assets/shared/desktop/icon-cart.svg";
 import burger from "/assets/shared/tablet/icon-hamburger.svg";
 import { Link } from "react-router-dom";
 import MainNav from "../mainNav/MainNav";
-import "./Header.css"
+import "./Header.css";
 
-const Header:FC = () => {
+const Header: FC = () => {
     // const {category, product} = useParams();
-    
-    const burgerHandler = (): void => {
-    }
 
-    const cartHandler = ():void => {
+    const burgerHandler = (e: ChangeEvent<HTMLInputElement>): void => {
+        const modal = document.getElementById(
+            "header__mainNavWrapper"
+        ) as HTMLDialogElement;
+
+        if (e.target.value === "on") {
+            modal.showModal();
+            modal.addEventListener(
+                "click",
+                () => {
+                    modal.close();
+                },
+                { once: true }
+            );
+        }
+    };
+
+    const cartHandler = (): void => {
         console.log(" cart yo");
-    }
+    };
 
     return (
         <header>
             <div className="container">
-                <input type="checkbox" name="menuToggle" id="menuToggle" onChange={burgerHandler} />
+                <input
+                    type="checkbox"
+                    name="menuToggle"
+                    id="menuToggle"
+                    onChange={burgerHandler}
+                />
                 <div className="header__checkboxCoverWrapper">
                     <img src={burger} alt="" />
                 </div>
-                <div className="header__mainNavWrapper">
+                <dialog id="header__mainNavWrapper">
                     <MainNav />
-                </div>
+                </dialog>
                 <Link to={"/"} className="header__logo">
                     <img src={logo} alt="audiophile loge" />
                 </Link>
                 <nav className="header__nav">
                     <ul>
                         <li>
-                            <Link to={"/"}>
-                                Home
-                            </Link>
+                            <Link to={"/"}>Home</Link>
                         </li>
                         <li>
-                            <Link to={"/headphones"}>
-                                Headphones
-                            </Link>
+                            <Link to={"/headphones"}>Headphones</Link>
                         </li>
                         <li>
-                            <Link to={"/speakers"}>
-                                Speakers
-                            </Link>
+                            <Link to={"/speakers"}>Speakers</Link>
                         </li>
                         <li>
-                            <Link to={"/earphones"}>
-                                Earphones
-                            </Link>
+                            <Link to={"/earphones"}>Earphones</Link>
                         </li>
                     </ul>
                 </nav>
@@ -58,7 +69,7 @@ const Header:FC = () => {
                 </div>
             </div>
         </header>
-    )
-}
+    );
+};
 
 export default Header;
