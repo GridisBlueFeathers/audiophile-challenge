@@ -15,10 +15,14 @@ const Header: FC = () => {
         ) as HTMLDialogElement;
 
         if (e.target.value === "on") {
+            const body = document.body as HTMLElement;
+            body.style.overflow = "hidden";
+
             modal.showModal();
             modal.addEventListener(
                 "click",
                 () => {
+                    body.style.overflow = "scroll";        
                     modal.close();
                 },
                 { once: true }
