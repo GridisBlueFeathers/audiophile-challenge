@@ -51,19 +51,6 @@ header input {
     display: none;
   }
 }
-header dialog {
-  max-width: 100%;
-  padding: 32px 0 35px 0;
-  width: auto;
-  border: none;
-  margin: 0;
-  border-radius: 0 0 8px 8px;
-  top: 90px;
-  max-height: calc(100dvh - 157px);
-}
-header dialog::backdrop {
-  top: 90px;
-}
 header dialog .header-dialog {
   position: fixed;
   top: 0;
@@ -91,6 +78,19 @@ header dialog .header-dialog .container-dialog .header__checkboxCoverWrapper-dia
   header dialog .header-dialog .container-dialog .header__checkboxCoverWrapper-dialog {
     margin-right: 42px;
   }
+}
+header #header__mainNavWrapper {
+  max-width: 100%;
+  padding: 32px 0 35px 0;
+  width: auto;
+  border: none;
+  margin: 0;
+  border-radius: 0 0 8px 8px;
+  top: 90px;
+  max-height: calc(100dvh - 157px);
+}
+header #header__mainNavWrapper::backdrop {
+  top: 90px;
 }
 @media (min-width: 426px) {
   header .header__cart {
