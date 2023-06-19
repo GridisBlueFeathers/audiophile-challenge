@@ -8,7 +8,7 @@ import "./Header.css";
 
 const Header: FC = () => {
     // const {category, product} = useParams();
-    const [cart, setCart] = useState([
+    const [cart] = useState([
         {
             name: "XX99 mark II",
             cost: 2999,
