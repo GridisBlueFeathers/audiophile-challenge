@@ -1,0 +1,14 @@
+@use "./../../scssVariables/scssVariables";
+
+#cart {
+    border: none;
+    // border-radius: 8px;
+    // max-width: 377px;
+    padding: 0;
+    // margin-top: 114px;
+
+    section {
+        max-width: 377px;
+        width: 100%;
+    }
+}

@@ -65,8 +65,6 @@ header {
                     justify-content: flex-start;
                 }
 
-
-
                 .header__checkboxCoverWrapper-dialog {
                     width: 16px;
                     height: 16px;
@@ -99,10 +97,6 @@ header {
         }
 
     }
-
-    // #header__cart {
-
-    // }
 
     .header__cart {
         @media (min-width: 426px) {
@@ -173,4 +167,3 @@ header {
         }
     }
 }
-
