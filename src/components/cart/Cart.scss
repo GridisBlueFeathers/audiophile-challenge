@@ -2,13 +2,61 @@
 
 #cart {
     border: none;
-    // border-radius: 8px;
-    // max-width: 377px;
+    border-radius: 8px;
+    max-width: 327px;
+    width: 100%;
     padding: 0;
-    // margin-top: 114px;
-
+    margin-top: 114px;
+    
     section {
-        max-width: 377px;
-        width: 100%;
+        max-width: 100%;
+        padding: 32px 29px;
+
+        .cart__heading {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 32px;
+
+            h6 {
+                @include scssVariables.headerSix();
+                text-transform: uppercase;
+            }
+
+            button {
+                border: none;
+                padding: 0;
+                background-color: #fff;
+                @include scssVariables.bodyFont();
+                opacity: 0.5;
+                text-decoration: underline;
+
+            }
+        }
+
+        ul {
+            max-height: calc(100dvh - 387px);
+            overflow-y: scroll;
+        }
+
+        .cart__total {
+            display: flex;
+            justify-content: space-between;
+            margin: 32px 0 24px;
+
+            .cart__totalText {
+                @include scssVariables.bodyFont();
+                text-transform: uppercase;
+                opacity: 0.5;
+            }
+
+            .cart__sum {
+                @include scssVariables.headerSix();
+            }
+        }
+
+        a {
+            @include scssVariables.button(scssVariables.$brown, scssVariables.$lighterBrown, #fff, scssVariables.$brown, 0 auto);
+            max-width: 100%;
+        }
     }
 }

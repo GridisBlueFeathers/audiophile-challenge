@@ -1,4 +1,5 @@
-interface ItemProps {
+import "./CartItem.css";
+export interface ItemProps {
     name: string;
     picture: string;
     amount: number;
@@ -16,14 +17,14 @@ const CartItem = ({cartItem, decreaseHandler, increaseHandler}: CartItemProps) =
     const {name, amount, picture, cost, id} = cartItem;
 
     return (
-        <li id={`${id}`}>
+        <li id={`${id}`} className="cart__item">
             <div className="cart__picture">
                 <img src={picture} alt={`${name} photo`} />
             </div>
             <div className="cart__itemDesc">
                 <span className="cart__itemName">{name}</span>
                 <span className="cart__itemCost">
-                    {cost * amount}
+                    $ {cost * amount}
                 </span>
             </div>
             <div className="cart__controls">

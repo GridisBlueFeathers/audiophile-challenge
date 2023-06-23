@@ -4,13 +4,13 @@ import logo from "/assets/shared/desktop/logo.svg";
 import cartIcon from "/assets/shared/desktop/icon-cart.svg";
 import burger from "/assets/shared/tablet/icon-hamburger.svg";
 import "./Cart.css";
-import CartItem from "../cartItem/CartItem";
+import CartItem, { ItemProps } from "../cartItem/CartItem";
 
 const Cart: FC = () => {
-    const [cart] = useState([
-        {   
+    const [cart, setCart] = useState([
+        {
             id: 4,
-            name: "XX99 mark II",
+            name: "XX99 mk II",
             cost: 2999,
             picture: "/assets/cart/image-xx99-mark-two-headphones.jpg",
             amount: 1,
@@ -22,7 +22,21 @@ const Cart: FC = () => {
             picture: "/assets/cart/image-xx59-headphones.jpg",
             amount: 2,
         },
-        {   
+        {
+            id: 2,
+            name: "YX1",
+            cost: 599,
+            picture: "/assets/cart/image-yx1-earphones.jpg",
+            amount: 1,
+        },
+        {
+            id: 3,
+            name: "YX1",
+            cost: 599,
+            picture: "/assets/cart/image-yx1-earphones.jpg",
+            amount: 1,
+        },
+        {
             id: 1,
             name: "YX1",
             cost: 599,
@@ -32,11 +46,44 @@ const Cart: FC = () => {
     ]);
 
     const decreaseHandler = (id: number) => {
-        console.log(id);
+        const cartItemObj = cart.find((item) => item.id === id) as ItemProps;
+
+        if (cartItemObj.amount - 1 == 0) {
+            setCart(cart.filter((item) => item.id !== id));
+            return;
+        }
+
+        setCart(
+            cart.map((item) => {
+                if (item.id === id) {
+                    return {
+                        ...item,
+                        amount: item.amount - 1,
+                    };
+                }
+
+                return item;
+            })
+        );
     };
-    
+
     const increaseHandler = (id: number) => {
-        console.log(id);
+        setCart(
+            cart.map((item) => {
+                if (item.id === id) {
+                    return {
+                        ...item,
+                        amount: item.amount + 1,
+                    };
+                }
+
+                return item;
+            })
+        );
+    };
+
+    const clearHandler = () => {
+        setCart([]);
     };
 
     const cartItems = cart.map((item) => {
@@ -67,13 +114,13 @@ const Cart: FC = () => {
             </header>
             <section>
                 <div className="cart__heading">
-                    <span>cart ({cart.length})</span>
-                    <button>Remove all</button>
+                    <h6>cart ({cart.length})</h6>
+                    <button onClick={clearHandler}>Remove all</button>
                 </div>
                 <ul>{cartItems}</ul>
                 <div className="cart__total">
-                    <span>Total</span>
-                    <span className="cart__sum">
+                    <span className="cart__totalText">Total</span>
+                    <h6 className="cart__sum">
                         $
                         {cart.reduce((accumulator, currentItem) => {
                             return (
@@ -81,7 +128,7 @@ const Cart: FC = () => {
                                 currentItem.cost * currentItem.amount
                             );
                         }, 0)}
-                    </span>
+                    </h6>
                 </div>
                 <Link to={"/checkout"}>Checkout</Link>
             </section>
