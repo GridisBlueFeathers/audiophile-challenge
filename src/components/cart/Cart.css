@@ -6,6 +6,17 @@
   padding: 0;
   margin-top: 114px;
 }
+@media (min-width: 426px) {
+  #cart {
+    max-width: 377px;
+    width: calc(100vw - 80px);
+  }
+}
+@media (min-width: 526px) {
+  #cart {
+    inset: 0 0 0 calc(100vw - 457px);
+  }
+}
 #cart section {
   max-width: 100%;
   padding: 32px 29px;
@@ -34,12 +45,14 @@
 }
 #cart section ul {
   max-height: calc(100dvh - 387px);
-  overflow-y: scroll;
+  overflow: auto;
+  box-sizing: border-box;
+  padding-bottom: 32px;
 }
 #cart section .cart__total {
   display: flex;
   justify-content: space-between;
-  margin: 32px 0 24px;
+  margin-bottom: 24px;
 }
 #cart section .cart__total .cart__totalText {
   font-weight: 500;

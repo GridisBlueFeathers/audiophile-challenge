@@ -7,6 +7,15 @@
     width: 100%;
     padding: 0;
     margin-top: 114px;
+
+    @media (min-width: 426px) {
+        max-width: 377px;
+        width: calc(100vw - 80px);
+    }
+
+    @media (min-width: 526px) {
+        inset: 0 0 0 calc(100vw - 457px);
+    }
     
     section {
         max-width: 100%;
@@ -35,13 +44,15 @@
 
         ul {
             max-height: calc(100dvh - 387px);
-            overflow-y: scroll;
+            overflow: auto;
+            box-sizing: border-box;
+            padding-bottom: 32px;
         }
 
         .cart__total {
             display: flex;
             justify-content: space-between;
-            margin: 32px 0 24px;
+            margin-bottom: 24px;
 
             .cart__totalText {
                 @include scssVariables.bodyFont();
