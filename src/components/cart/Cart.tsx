@@ -29,20 +29,6 @@ const Cart: FC = () => {
             picture: "/assets/cart/image-yx1-earphones.jpg",
             amount: 1,
         },
-        {
-            id: 3,
-            name: "YX1",
-            cost: 599,
-            picture: "/assets/cart/image-yx1-earphones.jpg",
-            amount: 1,
-        },
-        {
-            id: 1,
-            name: "YX1",
-            cost: 599,
-            picture: "/assets/cart/image-yx1-earphones.jpg",
-            amount: 1,
-        },
     ]);
 
     const decreaseHandler = (id: number) => {
@@ -97,16 +83,57 @@ const Cart: FC = () => {
         );
     });
 
+    const burgerHandler = (): void => {
+        const modal = document.getElementById(
+            "header__mainNavWrapper"
+        ) as HTMLDialogElement;
+        const cart = document.getElementById("cart") as HTMLDialogElement;
+
+        cart.close();
+
+        const body = document.body as HTMLElement;
+        body.style.overflow = "hidden";
+
+        modal.showModal();
+        modal.addEventListener(
+            "click",
+            () => {
+                body.style.overflow = "scroll";
+                modal.close();
+            },
+            { once: true }
+        );
+    };
+
     return (
         <dialog id="cart">
             <header className="header-dialog">
                 <div className="container-dialog">
-                    <div className="header__checkboxCoverWrapper-dialog">
+                    <div
+                        className="header__checkboxCoverWrapper-dialog"
+                        onClick={burgerHandler}
+                    >
                         <img src={burger} alt="" />
                     </div>
                     <Link to={"/"} className="header__logo">
                         <img src={logo} alt="audiophile loge" />
                     </Link>
+                    <nav className="header__nav">
+                        <ul>
+                            <li>
+                                <Link to={"/"}>Home</Link>
+                            </li>
+                            <li>
+                                <Link to={"/headphones"}>Headphones</Link>
+                            </li>
+                            <li>
+                                <Link to={"/speakers"}>Speakers</Link>
+                            </li>
+                            <li>
+                                <Link to={"/earphones"}>Earphones</Link>
+                            </li>
+                        </ul>
+                    </nav>
                     <div className="header__cart">
                         <img src={cartIcon} alt="" />
                     </div>
