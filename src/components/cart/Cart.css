@@ -14,13 +14,12 @@
 }
 @media (min-width: 526px) {
   #cart {
-    inset: 0 0 0 calc(100vw - 457px);
+    inset: 0 calc(-100vw + 457px) 0 0;
   }
 }
-@media (min-width: 1024px) {
+@media (min-width: 1190px) {
   #cart {
-    inset: 0;
-    left: calc(100vw - 457px + 1110px);
+    inset: 0 -733px 0 0;
   }
 }
 #cart section {
