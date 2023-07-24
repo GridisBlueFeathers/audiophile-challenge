@@ -108,15 +108,12 @@ const Cart: FC = () => {
     return (
         <dialog id="cart">
             <header className="header-dialog">
-                <div className="container-dialog">
-                    <div
-                        className="header__checkboxCoverWrapper-dialog"
-                        onClick={burgerHandler}
-                    >
-                        <img src={burger} alt="" />
-                    </div>
+                <div className="container-dialog header__modalClose">
+                    <button className="header__burger" onClick={burgerHandler}>
+                        <img src={burger} alt="burger menu icon" />
+                    </button>
                     <Link to={"/"} className="header__logo">
-                        <img src={logo} alt="audiophile loge" />
+                        <img src={logo} alt="audiophile logo" className="header__modalClose" />
                     </Link>
                     <nav className="header__nav">
                         <ul>
@@ -134,9 +131,9 @@ const Cart: FC = () => {
                             </li>
                         </ul>
                     </nav>
-                    <div className="header__cart">
-                        <img src={cartIcon} alt="" />
-                    </div>
+                    <button className="header__cart" >
+                        <img src={cartIcon} alt="cart icon" className="header__modalClose" />
+                    </button>
                 </div>
             </header>
             <section>

@@ -34,22 +34,10 @@ header .container {
     justify-content: space-between;
   }
 }
-header input {
-  width: 16px;
-  height: 16px;
-  margin: 0;
-  z-index: 9999;
-  opacity: 0;
-}
-@media (min-width: 426px) {
-  header input {
-    margin-right: 42px;
-  }
-}
-@media (min-width: 769px) {
-  header input {
-    display: none;
-  }
+header button {
+  padding: 0;
+  border: 0;
+  background-color: unset;
 }
 header dialog .header-dialog {
   position: fixed;
@@ -64,19 +52,6 @@ header dialog .header-dialog .container-dialog {
 @media (min-width: 426px) {
   header dialog .header-dialog .container-dialog {
     justify-content: flex-start;
-  }
-}
-header dialog .header-dialog .container-dialog .header__checkboxCoverWrapper-dialog {
-  width: 16px;
-  height: 16px;
-}
-header dialog .header-dialog .container-dialog .header__checkboxCoverWrapper-dialog img {
-  width: 100%;
-  height: 100%;
-}
-@media (min-width: 426px) {
-  header dialog .header-dialog .container-dialog .header__checkboxCoverWrapper-dialog {
-    margin-right: 42px;
   }
 }
 header #header__mainNavWrapper {
@@ -106,21 +81,6 @@ header #header__mainNavWrapper::backdrop {
   header .header__cart {
     position: absolute;
     right: 0;
-  }
-}
-
-.header__checkboxCoverWrapper {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-}
-.header__checkboxCoverWrapper img {
-  width: 100%;
-  height: 100%;
-}
-@media (min-width: 769px) {
-  .header__checkboxCoverWrapper {
-    display: none;
   }
 }
 

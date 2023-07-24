@@ -30,9 +30,7 @@ const Header: FC = () => {
     };
 
     const cartHandler = (): void => {
-        const modal = document.getElementById(
-            "cart"
-        ) as HTMLDialogElement;
+        const modal = document.getElementById("cart") as HTMLDialogElement;
 
         const body = document.body as HTMLElement;
         body.style.overflow = "hidden";
@@ -41,8 +39,9 @@ const Header: FC = () => {
         modal.addEventListener(
             "click",
             (e) => {
-                if(e.target === modal) {
-                    console.log(e.target);
+                const target = e.target as HTMLElement
+                console.log(e.target);
+                if(target === modal || target.classList.contains("header__modalClose")) {
                     body.style.overflow = "scroll";
                     modal.close();
                 }
@@ -53,27 +52,21 @@ const Header: FC = () => {
     return (
         <header>
             <div className="container">
-                <input
-                    type="checkbox"
-                    name="menuToggle"
-                    id="menuToggle"
-                    onChange={burgerHandler}
-                />
-                <div className="header__checkboxCoverWrapper">
+                <button onClick={burgerHandler} >
                     <img src={burger} alt="" />
-                </div>
+                </button>
                 <dialog id="header__mainNavWrapper">
                     <header className="header-dialog">
                         <div className="container-dialog">
-                            <div className="header__checkboxCoverWrapper-dialog">
-                                <img src={burger} alt="" />
-                            </div>
+                            <button>
+                                <img src={burger} alt="burger menu icon" />
+                            </button>
                             <Link to={"/"} className="header__logo">
-                                <img src={logo} alt="audiophile loge" />
+                                <img src={logo} alt="audiophile logo" />
                             </Link>
-                            <div className="header__cart" onClick={cartHandler}>
-                                <img src={cartIcon} alt="" />
-                            </div>
+                            <button className="header__cart" onClick={cartHandler}>
+                                <img src={cartIcon} alt="cart icon" />
+                            </button>
                         </div>
                     </header>
                     <MainNav />
@@ -97,9 +90,9 @@ const Header: FC = () => {
                         </li>
                     </ul>
                 </nav>
-                <div className="header__cart" onClick={cartHandler}>
+                <button className="header__cart" onClick={cartHandler}>
                     <img src={cartIcon} alt="" />
-                </div>
+                </button>
                 <Cart />
             </div>
         </header>
