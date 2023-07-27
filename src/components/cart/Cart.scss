@@ -42,7 +42,12 @@
                 @include scssVariables.bodyFont();
                 opacity: 0.5;
                 text-decoration: underline;
+                cursor: pointer;
 
+                &:hover {
+                    color: scssVariables.$brown;
+                    opacity: 1;
+                }
             }
         }
 
@@ -51,6 +56,14 @@
             overflow: auto;
             box-sizing: border-box;
             padding-bottom: 32px;
+
+            .cart__amountControl {
+                cursor: pointer;
+            }
+
+            .cart__amountControl:hover {
+                color: scssVariables.$brown;
+            }
         }
 
         .cart__total {

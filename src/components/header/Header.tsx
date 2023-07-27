@@ -52,13 +52,13 @@ const Header: FC = () => {
     return (
         <header>
             <div className="container">
-                <button onClick={burgerHandler} >
+                <button onClick={burgerHandler} className="header__burger" >
                     <img src={burger} alt="" />
                 </button>
                 <dialog id="header__mainNavWrapper">
                     <header className="header-dialog">
                         <div className="container-dialog">
-                            <button>
+                            <button className="header__burger" >
                                 <img src={burger} alt="burger menu icon" />
                             </button>
                             <Link to={"/"} className="header__logo">

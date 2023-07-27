@@ -39,6 +39,19 @@ header button {
   border: 0;
   background-color: unset;
 }
+@media (min-width: 426px) {
+  header button.header__burger {
+    margin-right: 42px;
+  }
+}
+@media (min-width: 769px) {
+  header button.header__burger {
+    display: none;
+  }
+}
+header button.header__cart {
+  cursor: pointer;
+}
 header dialog .header-dialog {
   position: fixed;
   top: 0;

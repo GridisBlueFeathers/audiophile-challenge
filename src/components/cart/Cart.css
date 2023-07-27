@@ -47,12 +47,23 @@
   line-height: 25px;
   opacity: 0.5;
   text-decoration: underline;
+  cursor: pointer;
+}
+#cart section .cart__heading button:hover {
+  color: #D87D4A;
+  opacity: 1;
 }
 #cart section ul {
   max-height: calc(100dvh - 387px);
   overflow: auto;
   box-sizing: border-box;
   padding-bottom: 32px;
+}
+#cart section ul .cart__amountControl {
+  cursor: pointer;
+}
+#cart section ul .cart__amountControl:hover {
+  color: #D87D4A;
 }
 #cart section .cart__total {
   display: flex;

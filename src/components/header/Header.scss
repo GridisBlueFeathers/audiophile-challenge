@@ -38,7 +38,21 @@ header {
         padding: 0;
         border: 0;
         background-color: unset;
-    }
+
+        &.header__burger {
+            @media (min-width:426px) {
+                margin-right: 42px;
+            }
+
+            @media (min-width:769px) {
+                display: none;
+            }
+        }
+
+        &.header__cart {
+            cursor: pointer;
+        }
+   }
 
     dialog {
         .header-dialog {
