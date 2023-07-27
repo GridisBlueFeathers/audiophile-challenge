@@ -43,6 +43,7 @@
                 opacity: 0.5;
                 text-decoration: underline;
                 cursor: pointer;
+                -webkit-text-fill-color: #000;
 
                 &:hover {
                     color: scssVariables.$brown;

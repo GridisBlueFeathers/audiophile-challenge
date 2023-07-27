@@ -48,6 +48,7 @@
   opacity: 0.5;
   text-decoration: underline;
   cursor: pointer;
+  -webkit-text-fill-color: #000;
 }
 #cart section .cart__heading button:hover {
   color: #D87D4A;
