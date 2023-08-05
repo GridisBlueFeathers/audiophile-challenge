@@ -22,7 +22,7 @@ const Home: FC = () => {
                         Experience natural, lifelike audio and exceptional build
                         quality made for the passionate music enthusiast.
                     </p>
-                    <Link to={"/headphones/xx99-markii"}>See product</Link>
+                    <Link to={"/headphones/xx99-mark-two-headphones"}>See product</Link>
                 </div>
             </section>
             <section className="mainNavSection">
@@ -55,13 +55,13 @@ const Home: FC = () => {
                         Upgrade to premium speakers that are phenomenally built
                         to deliver truly remarkable sound.
                     </p>
-                    <Link to={"/speakers/zx9"}>See product</Link>
+                    <Link to={"/speakers/zx9-speaker"}>See product</Link>
                 </div>
             </section>
             <section className="secondaryProduct">
                 <div className="container">
                     <h4>zx7 speaker</h4>
-                    <Link to={"/speakers/zx7"}>See product</Link>
+                    <Link to={"/speakers/zx7-speaker"}>See product</Link>
                 </div>
             </section>
             <section className="tertiaryProduct">
@@ -84,7 +84,7 @@ const Home: FC = () => {
                     </div>
                     <div className="tretiaryProduct__linkWrapper">
                         <h4>yx1 earphones</h4>
-                        <Link to={"/earphones/yx1"}>See product</Link>
+                        <Link to={"/earphones/yx1-earphones"}>See product</Link>
                     </div>
                 </div>
             </section>
