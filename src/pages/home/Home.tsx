@@ -88,7 +88,7 @@ const Home: FC = () => {
                     </div>
                 </div>
             </section>
-            <About />
+            <About sectionClass="home" />
         </main>
     );
 };

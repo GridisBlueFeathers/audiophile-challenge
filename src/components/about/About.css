@@ -1,16 +1,26 @@
 .about {
-  margin: 120px 0;
   padding: 0 24px;
 }
 @media (min-width: 426px) {
   .about {
     padding: 0 40px;
-    margin: 96px 0;
   }
 }
 @media (min-width: 769px) {
   .about {
     padding: 0 40px;
+  }
+}
+.about.home {
+  margin: 120px 0;
+}
+@media (min-width: 426px) {
+  .about.home {
+    margin: 96px 0;
+  }
+}
+@media (min-width: 769px) {
+  .about.home {
     margin: 200px 0;
   }
 }

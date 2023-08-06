@@ -8,8 +8,6 @@ import "./Header.css";
 import Cart from "../cart/Cart";
 
 const Header: FC = () => {
-    // const {category, product} = useParams();
-
     const burgerHandler = (): void => {
         const modal = document.getElementById(
             "header__mainNavWrapper"
@@ -40,9 +38,8 @@ const Header: FC = () => {
             "click",
             (e) => {
                 const target = e.target as HTMLElement
-                console.log(e.target);
                 if(target === modal || target.classList.contains("header__modalClose")) {
-                    body.style.overflow = "scroll";
+                    body.style.overflow = "unset";
                     modal.close();
                 }
             },
