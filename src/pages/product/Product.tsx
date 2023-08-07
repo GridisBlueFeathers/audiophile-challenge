@@ -12,7 +12,7 @@ const Product: FC = () => {
     }>();
     const navigate = useNavigate();
     const [productData, setProductData] = useState<DocumentData | null>(null);
-    const [cartAmount, /*setCartAmount*/] = useState(1)
+    const [cartAmount /*setCartAmount*/] = useState(1);
 
     useEffect(() => {
         const getProductData = async (product: string) => {
@@ -36,7 +36,7 @@ const Product: FC = () => {
         if (product) {
             getProductData(product);
         }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
 
     const handleGoBack = () => {
@@ -63,24 +63,28 @@ const Product: FC = () => {
                             media="(min-width: 425px)"
                             srcSet={`/assets/product-${product}/tablet/image-product.jpg`}
                         />
-                        <img src={`/assets/product-${product}/mobile/image-product.jpg`} alt={`${productData.name} picture`} />
+                        <img
+                            src={`/assets/product-${product}/mobile/image-product.jpg`}
+                            alt={`${productData.name} picture`}
+                        />
                     </picture>
                 </div>
                 <div className="product__info">
-                    {productData.new && <span className="product__new">new product</span>}
-                    <h2>
-                        {productData.name}
-                    </h2>
-                    <p className="product__desc">
-                        {productData.description}
-                    </p>
+                    {productData.new && (
+                        <span className="product__new">new product</span>
+                    )}
+                    <h2>{productData.name}</h2>
+                    <p className="product__desc">{productData.description}</p>
                     <span className="product__price">
                         $ {productData.price}
                     </span>
                     <div className="product__cartControls">
                         <button className="product__cartAmountChange">-</button>
-                        <span className="product__cartAmount">{cartAmount}</span>
+                        <span className="product__cartAmount">
+                            {cartAmount}
+                        </span>
                         <button className="product__cartAmountChange">+</button>
+                        <button className="product__cartAdd">Add to cart</button>
                     </div>
                 </div>
             </section>
