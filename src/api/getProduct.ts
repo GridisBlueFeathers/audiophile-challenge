@@ -4,8 +4,8 @@ import { firestore } from "./firebase";
 export const getProduct = async (productId: string) => {
     const productRef = doc(firestore, `/products/${productId}`); 
     const productDoc = await getDoc(productRef);
-    if (productDoc.data()) {
-        return productDoc;
+    if (productDoc.exists()) {
+        return productDoc.data();
     } else {
         throw new Error("Document not found");
     }
