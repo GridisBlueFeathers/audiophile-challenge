@@ -1,5 +1,5 @@
 import { FC, useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams, Link } from "react-router-dom";
 import { getProduct } from "../../api/getProduct";
 import About from "../../components/about/About";
 import MainNav from "../../components/mainNav/MainNav";
@@ -52,6 +52,37 @@ const Product: FC = () => {
                         {item.quantity}x
                     </span>
                     <span className="product__boxItem">{item.item}</span>
+                </li>
+            );
+        }
+    );
+
+    const othersItems = productData?.others.map(
+        (other: { id: string; link: string; name: string }) => {
+            return (
+                <li key={other.id}>
+                    <Link to={other.link}>
+                        <div className="product__otherImgWrapper">
+                            <picture>
+                                <source
+                                    media="(min-width: 769px)"
+                                    srcSet={`/assets/shared/desktop/image-${other.id}.jpg`}
+                                />
+                                <source
+                                    media="(min-width: 425px)"
+                                    srcSet={`/assets/shared/tablet/image-${other.id}.jpg`}
+                                />
+                                <img
+                                    src={`/assets/shared/mobile/image-${other.id}.jpg`}
+                                    alt=""
+                                />
+                            </picture>
+                        </div>
+                        <h5>{other.name}</h5>
+                        <span className="product__otherLinkButton">
+                            See product
+                        </span>
+                    </Link>
                 </li>
             );
         }
@@ -131,7 +162,10 @@ const Product: FC = () => {
                                 media="(min-width: 425px)"
                                 srcSet={`/assets/product-${product}/tablet/image-gallery-1.jpg`}
                             />
-                            <img src={`/assets/product-${product}/mobile/image-gallery-1.jpg`} alt="" />
+                            <img
+                                src={`/assets/product-${product}/mobile/image-gallery-1.jpg`}
+                                alt=""
+                            />
                         </picture>
                     </div>
                     <div className="product__sideImgWrapper">
@@ -144,10 +178,33 @@ const Product: FC = () => {
                                 media="(min-width: 425px)"
                                 srcSet={`/assets/product-${product}/tablet/image-gallery-2.jpg`}
                             />
-                            <img src={`/assets/product-${product}/mobile/image-gallery-2.jpg`} alt="" />
+                            <img
+                                src={`/assets/product-${product}/mobile/image-gallery-2.jpg`}
+                                alt=""
+                            />
                         </picture>
                     </div>
                 </div>
+                <div className="product__mainImgWrapper">
+                    <picture>
+                        <source
+                            media="(min-width: 769px)"
+                            srcSet={`/assets/product-${product}/desktop/image-gallery-3.jpg`}
+                        />
+                        <source
+                            media="(min-width: 425px)"
+                            srcSet={`/assets/product-${product}/tablet/image-gallery-3.jpg`}
+                        />
+                        <img
+                            src={`/assets/product-${product}/mobile/image-gallery-3.jpg`}
+                            alt=""
+                        />
+                    </picture>
+                </div>
+            </section>
+            <section className="product__others">
+                <h3>You may also like</h3>
+                <ul>{othersItems}</ul>
             </section>
             <MainNav />
             <About sectionClass="product__about" />
