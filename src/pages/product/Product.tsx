@@ -1,50 +1,36 @@
-import { FC, useEffect, useState } from "react";
+import { useState } from "react";
 import { useNavigate, useParams, Link } from "react-router-dom";
-import { getProduct } from "../../api/getProduct";
+import { useDocumentOnce } from "react-firebase-hooks/firestore";
 import About from "../../components/about/About";
 import MainNav from "../../components/mainNav/MainNav";
-import { DocumentData } from "firebase/firestore";
 import "./Product.css";
+import { firestore } from "../../api/firebase";
+import { doc } from "firebase/firestore";
 
-const Product: FC = () => {
+const Product = () => {
     const { category, product } = useParams<{
         category: string;
         product: string;
     }>();
     const navigate = useNavigate();
-    const [productData, setProductData] = useState<DocumentData | null>(null);
-    const [cartAmount /*setCartAmount*/] = useState(1);
-
-    useEffect(() => {
-        const getProductData = async (product: string) => {
-            try {
-                const productDocumentData = await getProduct(product);
-
-                if (
-                    productDocumentData &&
-                    productDocumentData.category === category
-                ) {
-                    setProductData(productDocumentData);
-                    return;
-                }
-
-                navigate("/not-found");
-            } catch {
-                navigate("/not-found");
-            }
-        };
-
-        if (product) {
-            getProductData(product);
-        }
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    const [productAmount, setProductAmount] = useState(1)
+    const [snapshot, loading] = useDocumentOnce(doc(firestore, `/products/${product}`));
 
     const handleGoBack = () => {
         navigate(-1);
     };
 
-    const includesItems = productData?.includes.map(
+    const handleIncreaseProductAmount = () => {
+        setProductAmount(productAmount + 1);
+    };
+
+    const handleDecreaseProductAmount = () => {
+        if (productAmount) {
+            setProductAmount(productAmount - 1);
+        }
+    };
+
+    const includesItems = snapshot?.data()?.includes.map(
         (item: { item: string; quantity: number }) => {
             return (
                 <li key={item.item}>
@@ -57,7 +43,7 @@ const Product: FC = () => {
         }
     );
 
-    const othersItems = productData?.others.map(
+    const othersItems = snapshot?.data()?.others.map(
         (other: { id: string; link: string; name: string }) => {
             return (
                 <li key={other.id}>
@@ -88,8 +74,12 @@ const Product: FC = () => {
         }
     );
 
-    if (!productData) {
+    if (loading) {
         return <main>Loading...</main>;
+    }
+
+    if (snapshot?.data()?.category !== category) {
+        navigate("/not-found")
     }
 
     return (
@@ -110,25 +100,25 @@ const Product: FC = () => {
                         />
                         <img
                             src={`/assets/product-${product}/mobile/image-product.jpg`}
-                            alt={`${productData.name} picture`}
+                            alt={`${snapshot?.data()?.name} picture`}
                         />
                     </picture>
                 </div>
                 <div className="product__infoText">
-                    {productData.new && (
+                    {snapshot?.data()?.new && (
                         <span className="product__new">new product</span>
                     )}
-                    <h2>{productData.name}</h2>
-                    <p className="product__desc">{productData.description}</p>
+                    <h2>{snapshot?.data()?.name}</h2>
+                    <p className="product__desc">{snapshot?.data()?.description}</p>
                     <span className="product__price">
-                        $ {productData.price}
+                        $ {snapshot?.data()?.price}
                     </span>
                     <div className="product__cartControls">
-                        <button className="product__cartAmountChange">-</button>
+                        <button className="product__cartAmountChange" onClick={handleDecreaseProductAmount}>-</button>
                         <span className="product__cartAmount">
-                            {cartAmount}
+                            {productAmount}
                         </span>
-                        <button className="product__cartAmountChange">+</button>
+                        <button className="product__cartAmountChange" onClick={handleIncreaseProductAmount}>+</button>
                         <button className="product__cartAdd">
                             Add to cart
                         </button>
@@ -139,10 +129,10 @@ const Product: FC = () => {
                 <div className="product__featuresItems">
                     <h3>features</h3>
                     <p className="product__featuresText">
-                        {productData.featuresPOne}
+                        {snapshot?.data()?.featuresPOne}
                         <br />
                         <br />
-                        {productData.featuresPTwo}
+                        {snapshot?.data()?.featuresPTwo}
                     </p>
                 </div>
                 <div className="product__box">
