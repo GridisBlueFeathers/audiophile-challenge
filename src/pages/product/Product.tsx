@@ -1,11 +1,9 @@
 import { useState } from "react";
-import { useNavigate, useParams, Link } from "react-router-dom";
-import { useDocumentOnce } from "react-firebase-hooks/firestore";
+import { useNavigate, useParams, Link, Navigate } from "react-router-dom";
 import About from "../../components/about/About";
 import MainNav from "../../components/mainNav/MainNav";
 import "./Product.css";
-import { firestore } from "../../api/firebase";
-import { doc } from "firebase/firestore";
+import useProductData from "../../hooks/useProductData";
 
 const Product = () => {
     const { category, product } = useParams<{
@@ -14,7 +12,19 @@ const Product = () => {
     }>();
     const navigate = useNavigate();
     const [productAmount, setProductAmount] = useState(1)
-    const [snapshot, loading] = useDocumentOnce(doc(firestore, `/products/${product}`));
+    const [values, loading, error] = useProductData(category as string, product as string);
+
+    if (error) {
+        return <Navigate to={"/error"} />
+    }
+    
+    if (loading) {
+        return <main>Loading...</main>;
+    }
+
+    if (!values) {
+        return <Navigate to={"/not-found"} />
+    }
 
     const handleGoBack = () => {
         navigate(-1);
@@ -30,7 +40,7 @@ const Product = () => {
         }
     };
 
-    const includesItems = snapshot?.data()?.includes.map(
+    const includesItems = values.includes.map(
         (item: { item: string; quantity: number }) => {
             return (
                 <li key={item.item}>
@@ -43,7 +53,7 @@ const Product = () => {
         }
     );
 
-    const othersItems = snapshot?.data()?.others.map(
+    const othersItems = values.others.map(
         (other: { id: string; link: string; name: string }) => {
             return (
                 <li key={other.id}>
@@ -74,14 +84,6 @@ const Product = () => {
         }
     );
 
-    if (loading) {
-        return <main>Loading...</main>;
-    }
-
-    if (snapshot?.data()?.category !== category) {
-        navigate("/not-found")
-    }
-
     return (
         <main className="product">
             <section>
@@ -100,18 +102,18 @@ const Product = () => {
                         />
                         <img
                             src={`/assets/product-${product}/mobile/image-product.jpg`}
-                            alt={`${snapshot?.data()?.name} picture`}
+                            alt={`${values.name} picture`}
                         />
                     </picture>
                 </div>
                 <div className="product__infoText">
-                    {snapshot?.data()?.new && (
+                    {values.new && (
                         <span className="product__new">new product</span>
                     )}
-                    <h2>{snapshot?.data()?.name}</h2>
-                    <p className="product__desc">{snapshot?.data()?.description}</p>
+                    <h2>{values.name}</h2>
+                    <p className="product__desc">{values.description}</p>
                     <span className="product__price">
-                        $ {snapshot?.data()?.price}
+                        $ {values.price}
                     </span>
                     <div className="product__cartControls">
                         <button className="product__cartAmountChange" onClick={handleDecreaseProductAmount}>-</button>
@@ -129,10 +131,10 @@ const Product = () => {
                 <div className="product__featuresItems">
                     <h3>features</h3>
                     <p className="product__featuresText">
-                        {snapshot?.data()?.featuresPOne}
+                        {values.featuresPOne}
                         <br />
                         <br />
-                        {snapshot?.data()?.featuresPTwo}
+                        {values.featuresPTwo}
                     </p>
                 </div>
                 <div className="product__box">
