@@ -86,7 +86,7 @@ const Product = () => {
 
     return (
         <main className="product">
-            <section>
+            <section className="product__back">
                 <button onClick={handleGoBack}>Go Back</button>
             </section>
             <section className="product__info">
