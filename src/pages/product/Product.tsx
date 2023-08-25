@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate, useParams, Link, Navigate } from "react-router-dom";
 import About from "../../components/about/About";
 import MainNav from "../../components/mainNav/MainNav";
-import "./Product.css";
+import "./Product.scss";
 import useProductData from "../../hooks/useProductData";
 
 const Product = () => {

@@ -1,5 +1,5 @@
 import { FC, useEffect } from "react";
-import "./Home.css";
+import "./Home.scss";
 import { Link } from "react-router-dom";
 import MainNav from "../../components/mainNav/MainNav";
 import About from "../../components/about/About";

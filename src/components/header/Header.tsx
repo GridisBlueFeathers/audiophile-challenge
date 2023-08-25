@@ -4,7 +4,7 @@ import cartIcon from "/assets/shared/desktop/icon-cart.svg";
 import burger from "/assets/shared/tablet/icon-hamburger.svg";
 import { Link } from "react-router-dom";
 import MainNav from "../mainNav/MainNav";
-import "./Header.css";
+import "./Header.scss";
 import Cart from "../cart/Cart";
 
 const Header: FC = () => {

@@ -1,4 +1,4 @@
-import "./CartItem.css";
+import "./CartItem.scss";
 export interface ItemProps {
     name: string;
     picture: string;

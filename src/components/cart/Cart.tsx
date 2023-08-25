@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import logo from "/assets/shared/desktop/logo.svg";
 import cartIcon from "/assets/shared/desktop/icon-cart.svg";
 import burger from "/assets/shared/tablet/icon-hamburger.svg";
-import "./Cart.css";
+import "./Cart.scss";
 import CartItem, { ItemProps } from "../cartItem/CartItem";
 
 const Cart: FC = () => {

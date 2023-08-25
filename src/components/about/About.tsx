@@ -1,4 +1,4 @@
-import "./About.css";
+import "./About.scss";
 
 const About = ({ sectionClass }: { sectionClass: string }) => {
     return (
