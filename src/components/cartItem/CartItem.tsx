@@ -24,7 +24,7 @@ const CartItem = ({cartItem, decreaseHandler, increaseHandler}: CartItemProps) =
             <div className="cart__itemDesc">
                 <span className="cart__itemName">{name}</span>
                 <span className="cart__itemCost">
-                    $ {cost * amount}
+                    $ {(cost * amount).toLocaleString()}
                 </span>
             </div>
             <div className="cart__controls">

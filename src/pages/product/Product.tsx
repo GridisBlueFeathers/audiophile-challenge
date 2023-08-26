@@ -113,7 +113,7 @@ const Product = () => {
                     <h2>{values.name}</h2>
                     <p className="product__desc">{values.description}</p>
                     <span className="product__price">
-                        $ {values.price}
+                        $ {values.price.toLocaleString()}
                     </span>
                     <div className="product__cartControls">
                         <button className="product__cartAmountChange" onClick={handleDecreaseProductAmount}>-</button>
