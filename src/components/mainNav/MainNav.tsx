@@ -1,4 +1,3 @@
-import { FC } from "react";
 import { Link } from "react-router-dom";
 import headphones from "/assets/shared/desktop/image-category-thumbnail-headphones.png";
 import speakers from "/assets/shared/desktop/image-category-thumbnail-speakers.png";
@@ -6,9 +5,9 @@ import earphones from "/assets/shared/desktop/image-category-thumbnail-earphones
 import arrow from "/assets/shared/desktop/icon-arrow-right.svg";
 import "./MainNav.scss";
 
-const MainNav: FC = () => {
+const MainNav = ({ navClass }: { navClass: string}) => {
     return (
-        <nav className="mainNav">
+        <nav className={`mainNav ${navClass}`}>
             <ul>
                 <li>
                     <Link to={"/headphones"}>

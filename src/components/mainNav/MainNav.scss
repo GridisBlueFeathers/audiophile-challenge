@@ -1,10 +1,17 @@
 @use "./../../scssVariables/scssVariables";
 
 .mainNav {
-    padding: 0 24px;
     border-radius: 0px 0px 8px 8px;
     max-width: 1110px;
     margin: 0 auto;
+
+    &.home__nav {
+        padding: 0 24px;
+
+        @media (min-width: 426px) {
+            padding: 0 40px;
+        }
+    }
 
     li {
         &:hover .mainNav__shop {
@@ -26,8 +33,6 @@
     }
 
     @media (min-width: 426px) {
-        padding: 0 40px 0 39px;
-
         ul {
             display: flex;
             flex-wrap: wrap;

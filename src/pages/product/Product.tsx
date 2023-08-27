@@ -198,7 +198,7 @@ const Product = () => {
                 <h3>You may also like</h3>
                 <ul>{othersItems}</ul>
             </section>
-            <MainNav />
+            <MainNav navClass="product__nav"/>
             <About sectionClass="product__about" />
         </main>
     );

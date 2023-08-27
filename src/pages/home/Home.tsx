@@ -26,7 +26,7 @@ const Home: FC = () => {
                 </div>
             </section>
             <section className="mainNavSection">
-                <MainNav />
+                <MainNav navClass="home__nav"/>
             </section>
             <section className="primaryProduct">
                 <div className="container">
@@ -88,7 +88,7 @@ const Home: FC = () => {
                     </div>
                 </div>
             </section>
-            <About sectionClass="home" />
+            <About sectionClass="home__about" />
         </main>
     );
 };
