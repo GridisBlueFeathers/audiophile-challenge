@@ -13,6 +13,10 @@
         }
     }
 
+    &.product__nav {
+        margin-bottom: 120px;
+    }
+
     li {
         &:hover .mainNav__shop {
             color: scssVariables.$brown;
