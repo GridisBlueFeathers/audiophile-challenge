@@ -65,7 +65,7 @@ const Product = () => {
                                     srcSet={`/assets/shared/desktop/image-${other.id}.jpg`}
                                 />
                                 <source
-                                    media="(min-width: 425px)"
+                                    media="(min-width: 426px)"
                                     srcSet={`/assets/shared/tablet/image-${other.id}.jpg`}
                                 />
                                 <img
@@ -97,7 +97,7 @@ const Product = () => {
                             srcSet={`/assets/product-${product}/desktop/image-product.jpg`}
                         />
                         <source
-                            media="(min-width: 425px)"
+                            media="(min-width: 426px)"
                             srcSet={`/assets/product-${product}/tablet/image-product.jpg`}
                         />
                         <img
@@ -110,7 +110,7 @@ const Product = () => {
                     {values.new && (
                         <span className="product__new">new product</span>
                     )}
-                    <h2>{values.name}</h2>
+                    <h2 className={`${values.new ? "product__nameNew" : "product__name"}`}>{values.name}</h2>
                     <p className="product__desc">{values.description}</p>
                     <span className="product__price">
                         $ {values.price.toLocaleString()}
@@ -151,7 +151,7 @@ const Product = () => {
                                 srcSet={`/assets/product-${product}/desktop/image-gallery-1.jpg`}
                             />
                             <source
-                                media="(min-width: 425px)"
+                                media="(min-width: 426px)"
                                 srcSet={`/assets/product-${product}/tablet/image-gallery-1.jpg`}
                             />
                             <img
@@ -167,7 +167,7 @@ const Product = () => {
                                 srcSet={`/assets/product-${product}/desktop/image-gallery-2.jpg`}
                             />
                             <source
-                                media="(min-width: 425px)"
+                                media="(min-width: 426px)"
                                 srcSet={`/assets/product-${product}/tablet/image-gallery-2.jpg`}
                             />
                             <img
@@ -184,7 +184,7 @@ const Product = () => {
                             srcSet={`/assets/product-${product}/desktop/image-gallery-3.jpg`}
                         />
                         <source
-                            media="(min-width: 425px)"
+                            media="(min-width: 426px)"
                             srcSet={`/assets/product-${product}/tablet/image-gallery-3.jpg`}
                         />
                         <img
