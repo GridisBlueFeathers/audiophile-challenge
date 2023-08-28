@@ -254,43 +254,56 @@
             margin-bottom: 40px;
         }
 
-        li {
-            a {
-                text-decoration: none;
+        ul {
+            @media (min-width: 426px) {
+                display: flex; 
+            }
 
-                .product__otherImgWrapper {
-                    max-width: 100%;
-                    margin-bottom: 32px;
+            li {
+                a {
+                    text-decoration: none;
 
-                    img {
-                        width: 100%;
-                        border-radius: 8px;
+                    .product__otherImgWrapper {
+                        max-width: 100%;
+                        margin-bottom: 32px;
+
+                        @media (min-width: 426px) {
+                            margin-bottom: 40px;
+                        }
+
+                        img {
+                            width: 100%;
+                            border-radius: 8px;
+                        }
+                    }
+
+                    h5 {
+                        @include scssVariables.headerFive();
+                        color: #000000;
+                        margin-bottom: 32px;
+                    }
+
+                    .product__otherLinkButton {
+                        background-color: scssVariables.$brown;
+                        color: #FFF;
+                        font-size: 13px;
+                        font-weight: 700;
+                        line-height: normal;
+                        letter-spacing: 1px;
+                        padding: 15px 29.5px 15px 31.5px;
                     }
                 }
+                
+                &:not(:last-of-type) {
+                    margin-bottom: 71px;
 
-                h5 {
-                    @include scssVariables.headerFive();
-                    color: #000000;
-                    margin-bottom: 32px;
+                    @media (min-width: 426px) {
+                        margin: 0 11px 0 0;
+                    }
                 }
-
-                .product__otherLinkButton {
-                    color: #fff;
-                    background-color: scssVariables.$brown;
-                    color: #FFF;
-                    font-size: 13px;
-                    font-weight: 700;
-                    line-height: normal;
-                    letter-spacing: 1px;
-                    text-transform: uppercase;
-                    padding: 15px 29.5px 15px 31.5px;
-                }
-            }
-            
-            &:not(:last-of-type) {
-                margin-bottom: 71px;
             }
         }
+
     }
 }
 
