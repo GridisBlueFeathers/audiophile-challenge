@@ -3,14 +3,18 @@
 .product {
     padding: 90px 24px 0;
     margin: 0 auto;
+    max-width: 1110px;
 
     @media (min-width: 426px) {
         padding: 92px 40px 0;
     }
 
     .product__back {
-        margin-top: 16px;
-        margin-bottom: 24px;
+        margin: 16px 0 24px;
+
+        @media (min-width: 769px) {
+            margin: 79px 0 56px;
+        }
 
         button {
             @include scssVariables.bodyFont;
@@ -30,12 +34,20 @@
             margin-bottom: 120px;;
         }
 
+        @media (min-width: 769px) {
+            margin-bottom: 160px;
+        }
+
         .product__imageWrapper {
             max-width: 100%;
             margin-bottom: 32px;
 
             @media (min-width: 426px) {
                 margin: 0 69px 0 0;
+            }
+
+            @media (min-width: 769px) {
+                max-width: 540px;
             }
 
             img {
@@ -48,6 +60,11 @@
             @media (min-width: 426px) {
                 padding-top: 45px;
                 max-width: 340px;
+            }
+
+            @media (min-width: 769px) {
+                padding-top: 79px;
+                max-width: 445px;
             }
 
             .product__new {
@@ -75,6 +92,7 @@
                 @media (min-width: 426px) {
                     line-height: 32px;
                     margin-bottom: 32px;
+                    padding: 0;
 
                     &.product__nameNew {
                         margin-top: 17px;
@@ -82,6 +100,18 @@
 
                     &.product__name {
                         margin-top: 36px;
+                    }
+                }
+
+                @media (min-width: 769px) {
+                    max-width: 177px;
+
+                    &.product__nameNew {
+                        margin-top: 16px;
+                    }
+
+                    &.product__name {
+                        margin-top: 35px;
                     }
                 }
             }
@@ -100,6 +130,10 @@
                 @include scssVariables.headerSix;
                 display: block;
                 margin-bottom: 31px;
+
+                @media (min-width: 769px) {
+                    margin-bottom: 47px;
+                }
             }
 
             .product__cartControls {
@@ -116,6 +150,19 @@
                     display: block;
                     color: rgba($color: #000000, $alpha: 0.25);
                     -webkit-text-fill-color: rgba($color: #000000, $alpha: 0.25);
+                    cursor: pointer;
+
+                    @media (min-width: 769px) {
+                        &:hover {
+                            color: scssVariables.$brown;
+                            -webkit-text-fill-color: scssVariables.$brown;
+                        }
+
+                        &:active {
+                            color: scssVariables.$lighterBrown;
+                            -webkit-text-fill-color: scssVariables.$lighterBrown;
+                        }
+                    }
 
                     &:nth-of-type(2) {
                         margin-right: 16px;
@@ -143,13 +190,35 @@
                     color: #fff;
                     -webkit-text-fill-color: rgba($color: #fff, $alpha: 1.0);
                     text-transform: uppercase;
+                    cursor: pointer;
+
+                    @media (min-width: 769px) {
+                        &:hover {
+                            background-color: scssVariables.$lighterBrown;
+                            
+                        }
+
+                        &:active {
+                            background-color: #EA9668;
+                        }
+                    }
                 }
             }
         }
     }
 
     .product__features {
+        @media (min-width: 769px) {
+            display: flex;
+            margin-bottom: 160px;
+        }
+
         .product__featuresItems {
+            @media (min-width: 769px) {
+                max-width: 635px;
+                margin-right: 120px;
+            }
+
             p {
                 @include scssVariables.bodyFont();
                 opacity: 0.5;
@@ -161,12 +230,20 @@
                 display: flex;
             }
 
+            @media (min-width: 769px) {
+                display: block;
+            }
+
             h3 {
                 margin-right: 170px;
             }
 
             li {
                 @include scssVariables.bodyFont();
+
+                &:not(:last-of-type) {
+                    margin-bottom: 8px;
+                }
 
                 .product__boxQuantity {
                     margin-right: 24px;
@@ -192,6 +269,10 @@
             @media (min-width: 426px) {
                 @include scssVariables.headerThree();
             }
+
+            @media (min-width: 769px) {
+                margin-bottom: 32px;
+            }
         }
 
         div {
@@ -199,6 +280,10 @@
 
             @media (min-width: 426px) {
                 margin-bottom: 120px;
+            }
+
+            @media (min-width: 769px) {
+                margin-bottom: 0;
             }
         }
     }
