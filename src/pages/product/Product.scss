@@ -379,6 +379,16 @@
                 a {
                     text-decoration: none;
 
+                    @media (min-width: 769px) {
+                        &:hover .product__otherLinkButton {
+                            background-color: scssVariables.$lighterBrown;
+                        }
+
+                        &:active .product__otherLinkButton {
+                            background-color: #EA9668;
+                        }
+                    }
+
                     .product__otherImgWrapper {
                         max-width: 100%;
                         margin-bottom: 32px;
