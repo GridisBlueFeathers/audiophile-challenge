@@ -15,7 +15,11 @@ type ProductData = {
 }
 
 const useProductData = (categoryId: string, productId: string): [ProductData | undefined, boolean, FirestoreError | undefined] => {
-    const [value, loading, error] = useDocumentDataOnce(doc(firestore, `/products/${productId}`))
+    const [value, loading, error] = useDocumentDataOnce(doc(firestore, `/products/${productId}`), { initialValue: null})
+
+    console.log(categoryId, productId);
+
+    console.log(loading);
 
     if (value && value.category === categoryId) {
         return [value as ProductData, loading, error];

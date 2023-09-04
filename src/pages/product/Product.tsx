@@ -3,7 +3,7 @@ import { useNavigate, useParams, Link, Navigate } from "react-router-dom";
 import About from "../../components/about/About";
 import MainNav from "../../components/mainNav/MainNav";
 import "./Product.scss";
-import useProductData from "../../hooks/useProductData";
+import useProductData from "../../utils/hooks/useProductData";
 
 const Product = () => {
     const { category, product } = useParams<{
