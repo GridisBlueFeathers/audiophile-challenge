@@ -11,6 +11,7 @@ import Product from "./pages/product/Product";
 import Checkout from "./pages/checkout/Checkout";
 import Root from "./components/root/Root";
 import Home from "./pages/home/Home";
+import { productLoader } from "./utils/loaders/productLoader";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -18,7 +19,7 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path="/:category">
         <Route index element={<Category />} />
-        <Route path=":product" element={<Product />} />
+        <Route path=":product" element={<Product />} loader={productLoader} />
       </Route>
       <Route path="checkout" element={<Checkout />} />
     </Route>

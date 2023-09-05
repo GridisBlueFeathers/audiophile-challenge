@@ -1,30 +1,19 @@
 import { useState } from "react";
-import { useNavigate, useParams, Link, Navigate } from "react-router-dom";
+import { useNavigate, useParams, Link, useLoaderData } from "react-router-dom";
 import About from "../../components/about/About";
 import MainNav from "../../components/mainNav/MainNav";
 import "./Product.scss";
-import useProductData from "../../utils/hooks/useProductData";
+import { type ProductData } from "../../utils/loaders/productLoader";
 
 const Product = () => {
-    const { category, product } = useParams<{
+    const { product } = useParams<{
         category: string;
         product: string;
     }>();
+
     const navigate = useNavigate();
     const [productAmount, setProductAmount] = useState(1)
-    const [values, loading, error] = useProductData(category as string, product as string);
-
-    if (error) {
-        return <Navigate to={"/error"} />
-    }
-    
-    if (loading) {
-        return <main>Loading...</main>;
-    }
-
-    if (!values) {
-        return <Navigate to={"/not-found"} />
-    }
+    const productData = useLoaderData() as ProductData;
 
     const handleGoBack = () => {
         navigate(-1);
@@ -40,7 +29,7 @@ const Product = () => {
         }
     };
 
-    const includesItems = values.includes.map(
+    const includesItems = productData.includes.map(
         (item: { item: string; quantity: number }) => {
             return (
                 <li key={item.item}>
@@ -53,7 +42,7 @@ const Product = () => {
         }
     );
 
-    const othersItems = values.others.map(
+    const othersItems = productData.others.map(
         (other: { id: string; link: string; name: string }) => {
             return (
                 <li key={other.id}>
@@ -102,18 +91,18 @@ const Product = () => {
                         />
                         <img
                             src={`/assets/product-${product}/mobile/image-product.jpg`}
-                            alt={`${values.name} picture`}
+                            alt={`${productData.name} picture`}
                         />
                     </picture>
                 </div>
                 <div className="product__infoText">
-                    {values.new && (
+                    {productData.new && (
                         <span className="product__new">new product</span>
                     )}
-                    <h2 className={`${values.new ? "product__nameNew" : "product__name"}`}>{values.name}</h2>
-                    <p className="product__desc">{values.description}</p>
+                    <h2 className={`${productData.new ? "product__nameNew" : "product__name"}`}>{productData.name}</h2>
+                    <p className="product__desc">{productData.description}</p>
                     <span className="product__price">
-                        $ {values.price.toLocaleString()}
+                        $ {productData.price.toLocaleString()}
                     </span>
                     <div className="product__cartControls">
                         <button className="product__cartAmountChange" onClick={handleDecreaseProductAmount}>-</button>
@@ -131,10 +120,10 @@ const Product = () => {
                 <div className="product__featuresItems">
                     <h3>features</h3>
                     <p className="product__featuresText">
-                        {values.featuresPOne}
+                        {productData.featuresPOne}
                         <br />
                         <br />
-                        {values.featuresPTwo}
+                        {productData.featuresPTwo}
                     </p>
                 </div>
                 <div className="product__box">
