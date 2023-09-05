@@ -1,5 +1,5 @@
 import { doc, getDoc } from "firebase/firestore";
-import { firestore } from "./firebase";
+import { firestore } from "../firebase/firebase";
 import { LoaderFunction } from "react-router-dom";
 
 export type ProductData = {
