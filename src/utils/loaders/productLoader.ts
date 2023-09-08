@@ -1,6 +1,6 @@
 import { doc, getDoc } from "firebase/firestore";
 import { firestore } from "../firebase/firebase";
-import { LoaderFunction } from "react-router-dom";
+import { LoaderFunction, defer } from "react-router-dom";
 
 export type ProductData = {
     includes: { item: string; quantity: number }[];
@@ -15,13 +15,7 @@ export type ProductData = {
 }
 
 export const productLoader: LoaderFunction = async ({ params }) => {
-    const productRef = doc(firestore, `/products/${params.product}`);
-    const productDoc = await getDoc(productRef);
+    const productDoc = getDoc(doc(firestore, `/products/${params.product}`));
     
-    if (productDoc.exists() && productDoc.data().category === params.category) {
-        const productData = productDoc.data();
-        return productData as ProductData;
-    }
-    
-    throw new Error("Document not found");
+    return defer({ productDoc: productDoc }) 
 };

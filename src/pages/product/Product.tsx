@@ -1,5 +1,6 @@
 import { useState } from "react";
-import { useNavigate, useParams, Link, useLoaderData } from "react-router-dom";
+import { useNavigate, useParams, Link, useAsyncValue } from "react-router-dom";
+import { DocumentSnapshot } from "firebase/firestore";
 import About from "../../components/about/About";
 import MainNav from "../../components/mainNav/MainNav";
 import "./Product.scss";
@@ -13,7 +14,9 @@ const Product = () => {
 
     const navigate = useNavigate();
     const [productAmount, setProductAmount] = useState(1)
-    const productData = useLoaderData() as ProductData;
+
+    const productDoc = useAsyncValue() as DocumentSnapshot;
+    const productData = productDoc.data() as ProductData;
 
     const handleGoBack = () => {
         navigate(-1);
