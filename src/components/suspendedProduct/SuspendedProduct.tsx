@@ -1,11 +1,7 @@
 import { Suspense } from "react";
 import { Await, useLoaderData } from "react-router-dom"
 import Product from "../../pages/product/Product";
-import { DocumentSnapshot, DocumentData } from "firebase/firestore";
-
-interface DeferredRouteLoaderData{
-    productDoc: Promise<DocumentSnapshot <DocumentData, DocumentData>>
-}
+import { type DeferredRouteLoaderData } from "../../utils/firebase/types";
 
 const SuspendedProduct = () => {
     const data = useLoaderData() as DeferredRouteLoaderData;
@@ -13,7 +9,7 @@ const SuspendedProduct = () => {
     return (
         <>
             <Suspense fallback={<main>Loading...</main>} >
-                <Await resolve={data.productDoc} >
+                <Await resolve={data.productDoc} errorElement={<main>Error</main>}>
                     <Product /> 
                 </Await>
             </Suspense>

@@ -1,6 +1,5 @@
-import { doc, getDoc } from "firebase/firestore";
-import { firestore } from "../firebase/firebase";
 import { LoaderFunction, defer } from "react-router-dom";
+import getProductDoc from "../firebase/getProductDoc";
 
 export type ProductData = {
     includes: { item: string; quantity: number }[];
@@ -15,7 +14,8 @@ export type ProductData = {
 }
 
 export const productLoader: LoaderFunction = async ({ params }) => {
-    const productDoc = getDoc(doc(firestore, `/products/${params.product}`));
-    
-    return defer({ productDoc: productDoc }) 
+    if (params.product) {
+        const productDoc = getProductDoc(params.product);
+        return defer({ productDoc: productDoc }) 
+    }
 };

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate, useParams, Link, useAsyncValue } from "react-router-dom";
+import { useNavigate, useParams, Link, useAsyncValue, Navigate } from "react-router-dom";
 import { DocumentSnapshot } from "firebase/firestore";
 import About from "../../components/about/About";
 import MainNav from "../../components/mainNav/MainNav";
@@ -7,7 +7,7 @@ import "./Product.scss";
 import { type ProductData } from "../../utils/loaders/productLoader";
 
 const Product = () => {
-    const { product } = useParams<{
+    const { category, product } = useParams<{
         category: string;
         product: string;
     }>();
@@ -18,9 +18,9 @@ const Product = () => {
     const productDoc = useAsyncValue() as DocumentSnapshot;
     const productData = productDoc.data() as ProductData;
 
-    const handleGoBack = () => {
-        navigate(-1);
-    };
+    if (productData.category !== category) {
+        return <Navigate to="/not-found" />
+    }
 
     const handleIncreaseProductAmount = () => {
         setProductAmount(productAmount + 1);
@@ -79,7 +79,7 @@ const Product = () => {
     return (
         <main className="product">
             <section className="product__back">
-                <button onClick={handleGoBack}>Go Back</button>
+                <button onClick={() => {navigate(-1)}}>Go Back</button>
             </section>
             <section className="product__info">
                 <div className="product__imageWrapper">
