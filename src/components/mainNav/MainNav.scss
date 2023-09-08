@@ -5,7 +5,7 @@
     max-width: 1110px;
     margin: 0 auto;
 
-    &.home__nav {
+    &.home__nav, &.header__nav-dialog {
         padding: 0 24px;
 
         @media (min-width: 426px) {

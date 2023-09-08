@@ -66,7 +66,7 @@ const Header: FC = () => {
                             </button>
                         </div>
                     </header>
-                    <MainNav navClass="header__nav"/>
+                    <MainNav navClass="header__nav-dialog"/>
                 </dialog>
                 <Link to={"/"} className="header__logo">
                     <img src={logo} alt="audiophile loge" />
