@@ -29,7 +29,7 @@
     .product__info {
         margin-bottom: 88px;
 
-        @media (min-width: 426px) {
+        @media (min-width: 580px) {
             display: flex; 
             margin-bottom: 120px;;
         }
@@ -42,7 +42,7 @@
             max-width: 100%;
             margin-bottom: 32px;
 
-            @media (min-width: 426px) {
+            @media (min-width: 580px) {
                 margin: 0 69px 0 0;
             }
 
@@ -226,7 +226,7 @@
         }
         
         .product__box {
-            @media (min-width: 426px) {
+            @media (min-width: 630px) {
                 display: flex;
             }
 
@@ -291,7 +291,7 @@
     .product__pictures {
         margin-bottom: 120px;
 
-        @media (min-width: 426px) {
+        @media (min-width: 630px) {
             display: flex;
             justify-content: space-between;
         }
@@ -311,15 +311,14 @@
         }
 
         .product__side {
-            @media (min-width: 426px) {
+            @media (min-width: 630px) {
                 margin-right: 18px;
             }
 
             .product__sideImgWrapper {
                 margin-bottom: 20px;
-                max-width: 445px;
 
-                @media (min-width: 426px) {
+                @media (min-width: 630px) {
                     margin-bottom: 0;
 
                     &:first-of-type {
@@ -336,11 +335,7 @@
         }
 
         .product__mainImgWrapper {
-            max-width: 395px;
-
-            @media (min-width: 769px) {
-                max-width: 635px;
-            }
+            max-width: 635px;
         }
     } 
 
@@ -370,7 +365,7 @@
         }
 
         ul {
-            @media (min-width: 426px) {
+            @media (min-width: 630px) {
                 display: flex;
                 justify-content: space-between;
             }
@@ -428,7 +423,7 @@
                 &:not(:last-of-type) {
                     margin-bottom: 71px;
 
-                    @media (min-width: 426px) {
+                    @media (min-width: 630px) {
                         margin: 0 11px 0 0;
                     }
 
