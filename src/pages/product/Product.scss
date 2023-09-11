@@ -29,7 +29,7 @@
     .product__info {
         margin-bottom: 88px;
 
-        @media (min-width: 580px) {
+        @media (min-width: 630px) {
             display: flex; 
             margin-bottom: 120px;;
         }
@@ -41,9 +41,17 @@
         .product__imageWrapper {
             max-width: 100%;
             margin-bottom: 32px;
+            overflow: hidden;
+            border-radius: 8px;
 
             @media (min-width: 580px) {
-                margin: 0 69px 0 0;
+                max-width: 80%;
+                margin: 0 auto;
+            }
+
+            @media (min-width: 630px) {
+                margin: 45px 40px 0 0;
+                max-height: fit-content;
             }
 
             @media (min-width: 769px) {
@@ -53,6 +61,14 @@
             img {
                 width: 100%;
                 border-radius: 8px;
+                
+                @media (min-width: 580px) {
+                    transform: scale(1.4);
+                }
+
+                @media (min-width: 630px) {
+                    transform: unset;
+                }
             }
         }
 

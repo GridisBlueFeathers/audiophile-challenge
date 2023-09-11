@@ -89,7 +89,7 @@ const Product = () => {
                             srcSet={`/assets/product-${product}/desktop/image-product.jpg`}
                         />
                         <source
-                            media="(min-width: 580px)"
+                            media="(min-width: 630px)"
                             srcSet={`/assets/product-${product}/tablet/image-product.jpg`}
                         />
                         <img
