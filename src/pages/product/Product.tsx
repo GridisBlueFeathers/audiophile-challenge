@@ -85,7 +85,7 @@ const Product = () => {
                 <div className="product__imageWrapper">
                     <picture>
                         <source
-                            media="(min-width: 769px)"
+                            media="(min-width: 1024px)"
                             srcSet={`/assets/product-${product}/desktop/image-product.jpg`}
                         />
                         <source

@@ -36,6 +36,11 @@
 
         @media (min-width: 769px) {
             margin-bottom: 160px;
+            justify-content: space-around;
+        }
+
+        @media (min-width: 1024px) {
+            justify-content: unset;
         }
 
         .product__imageWrapper {
@@ -47,27 +52,46 @@
             @media (min-width: 580px) {
                 max-width: 80%;
                 margin: 0 auto;
+                max-height: 480px;
             }
 
             @media (min-width: 630px) {
                 margin: 45px 40px 0 0;
-                max-height: fit-content;
+            }
+
+            @media (min-width: 670px) {
+                margin: 0 40px 0 0;
+            }
+
+            @media (min-width: 720px) {
+                margin: 0 69px 0 0;
+
             }
 
             @media (min-width: 769px) {
+                max-width: 281px;
+            }
+
+            @media (min-width: 1024px) {
                 max-width: 540px;
+                max-height: 560px;
             }
 
             img {
                 width: 100%;
                 border-radius: 8px;
-                
+
                 @media (min-width: 580px) {
                     transform: scale(1.4);
                 }
 
                 @media (min-width: 630px) {
-                    transform: unset;
+                    transform: scale(1);
+                    height: 100%;
+                }
+
+                @media (min-width: 720px) {
+                    transform: scale(1);
                 }
             }
         }
@@ -78,9 +102,24 @@
                 max-width: 340px;
             }
 
+            @media (min-width: 630px) {
+                max-width: 292px;
+            }
+
+            @media (min-width: 670px) {
+                max-width: 340px;
+                padding: 45px 0;
+            }
+
             @media (min-width: 769px) {
-                padding-top: 79px;
+            }
+
+            @media (min-width: 880px) {
                 max-width: 445px;
+            }
+
+            @media (min-width: 1024px) {
+                padding-top: 79px;
             }
 
             .product__new {
@@ -155,7 +194,7 @@
             .product__cartControls {
                 display: flex;
                 align-items: center;
-            
+
                 .product__cartAmountChange {
                     border: none;
                     background-color: scssVariables.$darkestWhite;
@@ -194,7 +233,7 @@
                     line-height: normal;
                     display: block;
                 }
-                
+
                 .product__cartAdd {
                     border: none;
                     background-color: scssVariables.$brown;
@@ -211,7 +250,7 @@
                     @media (min-width: 769px) {
                         &:hover {
                             background-color: scssVariables.$lighterBrown;
-                            
+
                         }
 
                         &:active {
@@ -240,7 +279,7 @@
                 opacity: 0.5;
             }
         }
-        
+
         .product__box {
             @media (min-width: 630px) {
                 display: flex;
@@ -273,7 +312,7 @@
             }
 
         }
-        
+
         h3 {
             font-size: 24px;
             font-weight: 700;
@@ -311,14 +350,14 @@
             display: flex;
             justify-content: space-between;
         }
-        
+
         @media (min-width: 769px) {
             margin-bottom: 160px;
         }
 
         .product__sideImgWrapper, .product__mainImgWrapper{
             max-width: 100%;
-            
+
             img {
                 width: 100%;
                 border-radius: 8px;
@@ -374,7 +413,7 @@
             @media (min-width: 426px) {
                 @include scssVariables.headerThree();
             }
-            
+
             @media (min-width: 769px) {
                 margin-bottom: 64px;
             }
@@ -435,7 +474,7 @@
                         padding: 15px 29.5px 15px 31.5px;
                     }
                 }
-                
+
                 &:not(:last-of-type) {
                     margin-bottom: 71px;
 
