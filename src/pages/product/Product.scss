@@ -271,7 +271,7 @@
         .product__featuresItems {
             @media (min-width: 769px) {
                 max-width: 635px;
-                margin-right: 120px;
+                margin-right: 125px;
             }
 
             p {
@@ -287,10 +287,15 @@
 
             @media (min-width: 769px) {
                 display: block;
+                min-width: 200px;
             }
 
             h3 {
                 margin-right: 170px;
+
+                @media (min-width: 769px) {
+                    margin-right: 0;
+                }
             }
 
             li {
@@ -368,6 +373,9 @@
         .product__side {
             @media (min-width: 630px) {
                 margin-right: 18px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between
             }
 
             .product__sideImgWrapper {
@@ -375,16 +383,6 @@
 
                 @media (min-width: 630px) {
                     margin-bottom: 0;
-
-                    &:first-of-type {
-                        margin-bottom: 20px;
-                    }
-                }
-
-                @media (min-width: 769px) {
-                    &:first-of-type {
-                        margin-bottom: 32px;
-                    }
                 }
             }
         }
@@ -462,6 +460,14 @@
                         @include scssVariables.headerFive();
                         color: #000000;
                         margin-bottom: 32px;
+
+                        @media (min-width: 630px) {
+                            font-size: 22px;
+                        }
+
+                        @media (min-width: 769px) {
+                            font-size: 24px;
+                        }
                     }
 
                     .product__otherLinkButton {
