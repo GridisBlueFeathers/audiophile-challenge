@@ -1,4 +1,8 @@
+import { useDispatch } from "react-redux";
 import "./CartItem.scss";
+import { decrementProduct, incrementProduct } from "../cart/cartSlice";
+import { MouseEvent } from "react";
+
 export interface ItemProps {
     name: string;
     picture: string;
@@ -9,12 +13,23 @@ export interface ItemProps {
 
 interface CartItemProps {
     cartItem: ItemProps;
-    decreaseHandler(id: number): void;
-    increaseHandler(id: number): void;
 }
 
-const CartItem = ({cartItem, decreaseHandler, increaseHandler}: CartItemProps) => {
+const CartItem = ({cartItem}: CartItemProps) => {
     const {name, amount, picture, cost, id} = cartItem;
+    const dispatch = useDispatch()
+
+    const decreaseHandler = (e: MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+
+        dispatch(decrementProduct(cartItem))
+    }
+
+    const increaseHandler = (e: MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+
+        dispatch(incrementProduct(cartItem))
+    }
 
     return (
         <li id={`${id}`} className="cart__item">
@@ -28,9 +43,9 @@ const CartItem = ({cartItem, decreaseHandler, increaseHandler}: CartItemProps) =
                 </span>
             </div>
             <div className="cart__controls">
-                <button className="cart__amountControl" onClick={() => decreaseHandler(id)}>-</button>
+                <button className="cart__amountControl" onClick={decreaseHandler}>-</button>
                 <span className="cart__amount">{amount}</span>
-                <button className="cart__amountControl" onClick={() => increaseHandler(id)}>+</button>
+                <button className="cart__amountControl" onClick={increaseHandler}>+</button>
             </div>
         </li>
     );
