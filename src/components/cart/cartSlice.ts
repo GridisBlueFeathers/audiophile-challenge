@@ -6,29 +6,7 @@ type CartState = {
 }
 
 const initialState: CartState = {
-    products: [
-        {
-            id: 4,
-            name: "XX99 mk II",
-            cost: 2999,
-            picture: "/assets/cart/image-xx99-mark-two-headphones.jpg",
-            amount: 1,
-        },
-        {
-            id: 2,
-            name: "XX59",
-            cost: 899,
-            picture: "/assets/cart/image-xx59-headphones.jpg",
-            amount: 2,
-        },
-        {
-            id: 1,
-            name: "YX1",
-            cost: 599,
-            picture: "/assets/cart/image-yx1-earphones.jpg",
-            amount: 1,
-        },
-    ]
+    products: []
 }
 
 export const cartSlice = createSlice({
