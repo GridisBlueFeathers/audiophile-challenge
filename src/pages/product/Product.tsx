@@ -40,7 +40,7 @@ const Product = () => {
 
         dispatch(addProduct({
             id: productData.id,
-            name: productData.name,
+            name: productData.cartName,
             picture: `/assets/cart/image-${productDoc.id}.jpg`,
             amount: productAmount,
             cost: productData.price
@@ -117,7 +117,7 @@ const Product = () => {
                     {productData.new && (
                         <span className="product__new">new product</span>
                     )}
-                    <h2 className={`${productData.new ? "product__nameNew" : "product__name"}`}>{productData.name}</h2>
+                    <h2 className={`${productData.new ? "product__nameNew" : "product__name"}`}>{productData.name} <br/> {productData.category}</h2>
                     <p className="product__desc">{productData.description}</p>
                     <span className="product__price">
                         $ {productData.price.toLocaleString()}

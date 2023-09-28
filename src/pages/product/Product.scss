@@ -143,6 +143,7 @@
                 font-weight: 700;
                 margin-bottom: 24px;
                 letter-spacing: 1px;
+                text-transform: uppercase;
 
                 @media (min-width: 426px) {
                     line-height: 32px;
@@ -159,8 +160,6 @@
                 }
 
                 @media (min-width: 769px) {
-                    max-width: 177px;
-
                     &.product__nameNew {
                         margin-top: 16px;
                     }

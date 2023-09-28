@@ -6,6 +6,7 @@ export type ProductData = {
     others: { id: string; link: string; name: string }[];
     category: string;
     name: string;
+    cartName: string;
     new: boolean;
     description: string;
     price: number;
