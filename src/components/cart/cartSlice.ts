@@ -15,14 +15,14 @@ const initialState: CartState = {
             amount: 1,
         },
         {
-            id: 5,
+            id: 2,
             name: "XX59",
             cost: 899,
             picture: "/assets/cart/image-xx59-headphones.jpg",
             amount: 2,
         },
         {
-            id: 2,
+            id: 1,
             name: "YX1",
             cost: 599,
             picture: "/assets/cart/image-yx1-earphones.jpg",
@@ -36,6 +36,25 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         addProduct: (state, action: PayloadAction<ItemProps>) => {
+            console.log(state.products.filter(item => item.id === action.payload.id))
+            if (state.products.filter(item => item.id === action.payload.id).length) {
+                return {
+                    ...state,
+                    products: state.products.map(item => {
+                        if (item.id === action.payload.id) {
+                            return {
+                                ...action.payload,
+                                amount: item.amount + action.payload.amount
+                            };
+                        }
+
+                        return item;
+                    })
+                }
+            }
+
+            console.log("yo")
+
             return {
                 ...state,
                 products: [

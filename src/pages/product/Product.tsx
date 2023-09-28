@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { MouseEvent, useState } from "react";
 import { useNavigate, useParams, Link, useAsyncValue, Navigate } from "react-router-dom";
 import { DocumentSnapshot } from "firebase/firestore";
 import About from "../../components/about/About";
 import MainNav from "../../components/mainNav/MainNav";
 import "./Product.scss";
 import { type ProductData } from "../../utils/loaders/productLoader";
+import { useDispatch } from "react-redux";
+import { addProduct } from "../../components/cart/cartSlice";
 
 const Product = () => {
     const { category, product } = useParams<{
@@ -13,6 +15,7 @@ const Product = () => {
     }>();
 
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const [productAmount, setProductAmount] = useState(1)
 
     const productDoc = useAsyncValue() as DocumentSnapshot;
@@ -31,6 +34,18 @@ const Product = () => {
             setProductAmount(productAmount - 1);
         }
     };
+
+    const handleAddToCart = (e: MouseEvent<HTMLButtonElement>) => {
+        e.preventDefault();
+
+        dispatch(addProduct({
+            id: productData.id,
+            name: productData.name,
+            picture: `/assets/cart/image-${productDoc.id}.jpg`,
+            amount: productAmount,
+            cost: productData.price
+        }))
+    }
 
     const includesItems = productData.includes.map(
         (item: { item: string; quantity: number }) => {
@@ -113,7 +128,7 @@ const Product = () => {
                             {productAmount}
                         </span>
                         <button className="product__cartAmountChange" onClick={handleIncreaseProductAmount}>+</button>
-                        <button className="product__cartAdd">
+                        <button className="product__cartAdd" onClick={handleAddToCart}>
                             Add to cart
                         </button>
                     </div>

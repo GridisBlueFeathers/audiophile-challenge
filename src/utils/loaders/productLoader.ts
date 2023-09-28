@@ -11,6 +11,7 @@ export type ProductData = {
     price: number;
     featuresPOne: string;
     featuresPTwo: string;
+    id: number
 }
 
 export const productLoader: LoaderFunction = async ({ params }) => {
