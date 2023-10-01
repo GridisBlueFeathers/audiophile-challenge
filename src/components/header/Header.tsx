@@ -1,13 +1,14 @@
-import { FC } from "react";
 import logo from "/assets/shared/desktop/logo.svg";
 import cartIcon from "/assets/shared/desktop/icon-cart.svg";
 import burger from "/assets/shared/tablet/icon-hamburger.svg";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import MainNav from "../mainNav/MainNav";
 import "./Header.scss";
 import Cart from "../cart/Cart";
 
-const Header: FC = () => {
+const Header = () => {
+    const { category } = useParams();
+
     const burgerHandler = (): void => {
         const modal = document.getElementById(
             "header__mainNavWrapper"
@@ -47,7 +48,7 @@ const Header: FC = () => {
     };
 
     return (
-        <header>
+        <header className={category ? "" : "header header-home"}>
             <div className="container">
                 <button onClick={burgerHandler} className="header__burger" >
                     <img src={burger} alt="" />

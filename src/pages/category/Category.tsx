@@ -3,6 +3,7 @@ import MainNav from "../../components/mainNav/MainNav";
 import About from "../../components/about/About";
 import { DocumentSnapshot } from "firebase/firestore";
 import { CategoryData } from "../../utils/loaders/categoryLoader";
+import "./Category.scss"
 
 const Category = () => {
     const { category } = useParams();
@@ -11,16 +12,16 @@ const Category = () => {
     const categoryData = categoryDoc.data() as CategoryData;
 
     return (
-        <main>
+        <main className="category">
             <h2>{category}</h2>
-            <section className="category">
+            <section className="items">
                 <ul>
                     {
                         categoryData.items.map((item, index) => {
                             return (
                                 <li key={item.uri} className={`${(index % 2) ? "reversed" : ""}`}>
                                     <Link to={item.uri}>
-                                        <div className="category__imageWrapper">
+                                        <div className="items__imageWrapper">
                                             <picture>
                                                 <source
                                                     media="(min-width: 769px)" 
@@ -31,13 +32,13 @@ const Category = () => {
                                                     srcSet={`/assets/product-${item.uri}/tablet/image-category-page-preview.jpg`}
                                                 />
                                                 <img
-                                                    src={`/assets/product-${item.uri}/desktop/image-category-page-preview.jpg`}
+                                                    src={`/assets/product-${item.uri}/mobile/image-category-page-preview.jpg`}
                                                     alt={`${item.name} picture`}
                                                 />
                                             </picture>
                                         </div>
-                                        <div className="category__itemInfo">
-                                            <span className={`category__new${item.new ? "" : " invisible"}`}>New product</span>
+                                        <div className="items__itemInfo">
+                                            <span className={`items__new${item.new ? "" : " invisible"}`}>New product</span>
                                             <h2>
                                                 {item.name}
                                                 <br />
@@ -57,8 +58,8 @@ const Category = () => {
                     }
                 </ul>
             </section>
-            <MainNav navClass="product__nav"/>
-            <About sectionClass="product__about"/>
+            <MainNav navClass="home__nav"/>
+            <About sectionClass="home__about"/>
         </main>
     )
 };
