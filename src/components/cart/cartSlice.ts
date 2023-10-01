@@ -14,7 +14,6 @@ export const cartSlice = createSlice({
     initialState,
     reducers: {
         addProduct: (state, action: PayloadAction<ItemProps>) => {
-            console.log(state.products.filter(item => item.id === action.payload.id))
             if (state.products.filter(item => item.id === action.payload.id).length) {
                 return {
                     ...state,
@@ -30,8 +29,6 @@ export const cartSlice = createSlice({
                     })
                 }
             }
-
-            console.log("yo")
 
             return {
                 ...state,
