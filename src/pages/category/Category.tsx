@@ -19,12 +19,12 @@ const Category = () => {
                     {
                         categoryData.items.map((item, index) => {
                             return (
-                                <li key={item.uri} className={`${(index % 2) ? "reversed" : ""}`}>
-                                    <Link to={item.uri}>
+                                <li key={item.uri}>
+                                    <Link to={item.uri} className={`${(index % 2) ? "reversed" : ""}`}>
                                         <div className="items__imageWrapper">
                                             <picture>
                                                 <source
-                                                    media="(min-width: 769px)" 
+                                                    media="(min-width: 1024px)" 
                                                     srcSet={`/assets/product-${item.uri}/desktop/image-category-page-preview.jpg`}
                                                 />
                                                 <source

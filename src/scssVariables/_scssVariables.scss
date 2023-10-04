@@ -67,9 +67,9 @@ $darkestWhite: #F1F1F1;
     line-height: 25px;
 }
 
-@mixin button($backgroundColor, $hoverColor, $textColor, $borderColor, $margin) {
+@mixin button($backgroundColor, $hoverColor, $textColor, $borderColor, $margin, $padding: 15px 29px) {
     display: block;
-    padding: 15px 29px;
+    padding: $padding;
     background-color: $backgroundColor;
     max-width: 160px;
     box-sizing: border-box;
@@ -83,10 +83,13 @@ $darkestWhite: #F1F1F1;
     text-decoration: none;
     border: $borderColor 1px solid;
     margin: $margin;
+    -webkit-text-fill-color: rgba($color: $textColor, $alpha: 1.0);
+    cursor: pointer;
 
     &:hover {
         background-color: $hoverColor;
         border: $hoverColor 1px solid;
         color: white;
+        -webkit-text-fill-color: rgba($color: white, $alpha: 1.0);
     }
 }
