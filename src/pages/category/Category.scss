@@ -34,6 +34,10 @@
             margin-bottom: 120px;
         }
 
+        @media (min-width: 1024px) {
+            margin-bottom: 160px;
+        }
+
         ul {
             display: flex;
             flex-direction: column;

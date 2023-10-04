@@ -59,7 +59,7 @@ const Category = () => {
                 </ul>
             </section>
             <MainNav navClass="home__nav"/>
-            <About sectionClass="home__about"/>
+            <About sectionClass="category__about"/>
         </main>
     )
 };

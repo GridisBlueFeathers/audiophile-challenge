@@ -17,6 +17,21 @@
         }
     }
 
+    &.category__about {
+        margin: 120px 0;
+        padding: 0 24px;
+
+        @media (min-width:426px) {
+            padding: 0 40px;
+            margin: 96px 0;
+        }
+
+        @media (min-width: 769px) {
+            padding: 0 40px;
+            margin: 160px 0;
+        }
+    }
+
     &.product__about {
         margin-bottom: 120px;
     }
