@@ -1,5 +1,5 @@
 import { FC, MouseEvent } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import logo from "/assets/shared/desktop/logo.svg";
 import cartIcon from "/assets/shared/desktop/icon-cart.svg";
 import burger from "/assets/shared/tablet/icon-hamburger.svg";
@@ -10,6 +10,7 @@ import { RootState } from "../../utils/store/store";
 import { clearCart } from "./cartSlice";
 
 const Cart: FC = () => {
+    const params = useParams();
     const cart = useSelector((state: RootState) => state.products);
     const dispatch = useDispatch();
 
@@ -52,7 +53,7 @@ const Cart: FC = () => {
 
     return (
         <dialog id="cart">
-            <header className="header-dialog">
+            <header className={Object.keys(params).length ? "header-dialog" : "header-dialog header-home"}>
                 <div className="container-dialog header__modalClose">
                     <button className="header__burger" onClick={burgerHandler}>
                         <img src={burger} alt="burger menu icon" />

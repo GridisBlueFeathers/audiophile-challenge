@@ -7,7 +7,7 @@ import "./Header.scss";
 import Cart from "../cart/Cart";
 
 const Header = () => {
-    const { category } = useParams();
+    const params = useParams();
 
     const burgerHandler = (): void => {
         const modal = document.getElementById(
@@ -56,13 +56,13 @@ const Header = () => {
     };
 
     return (
-        <header className={category ? "" : "header header-home"}>
+        <header className={Object.keys(params).length ? "" : "header header-home"} >
             <div className="container">
                 <button onClick={burgerHandler} className="header__burger" >
                     <img src={burger} alt="" />
                 </button>
                 <dialog id="header__mainNavWrapper">
-                    <header className="header-dialog">
+                    <header className={Object.keys(params).length ? "" : "header-dialog header-home"}>
                         <div className="container-dialog">
                             <button className="header__burger" >
                                 <img src={burger} alt="burger menu icon" />
