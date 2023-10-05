@@ -96,7 +96,7 @@ const Cart: FC = () => {
                                 accumulator +
                                 currentItem.cost * currentItem.amount
                             );
-                        }, 0)}
+                        }, 0).toLocaleString()}
                     </h6>
                 </div>
                 <Link to={"/checkout"}>Checkout</Link>

@@ -10,6 +10,12 @@ main {
     padding-top: 90px;
 }
 
+.scrollPrevent {
+    overflow-y: scroll;
+    position: fixed;
+    width: 100%;
+}
+
 @media (min-width: 426px) {
     main {
         padding-top: 92px;

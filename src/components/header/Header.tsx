@@ -14,14 +14,18 @@ const Header = () => {
             "header__mainNavWrapper"
         ) as HTMLDialogElement;
 
-        const body = document.body as HTMLElement;
-        body.style.overflow = "hidden";
+        const htmlElement = document.documentElement;
+        const scrollTop = htmlElement.scrollTop;
+        htmlElement.style.top = `-${scrollTop}px`;
+        htmlElement.classList.add("scrollPrevent");
 
         modal.showModal();
         modal.addEventListener(
             "click",
             () => {
-                body.style.overflow = "scroll";
+                htmlElement.classList.remove("scrollPrevent");
+                htmlElement.scrollTop = scrollTop;
+                htmlElement.style.removeProperty("top");
                 modal.close();
             },
             { once: true }
@@ -31,8 +35,10 @@ const Header = () => {
     const cartHandler = (): void => {
         const modal = document.getElementById("cart") as HTMLDialogElement;
 
-        const body = document.body as HTMLElement;
-        body.style.overflow = "hidden";
+        const htmlElement = document.documentElement;
+        const scrollTop = htmlElement.scrollTop;
+        htmlElement.style.top = `-${scrollTop}px`;
+        htmlElement.classList.add("scrollPrevent");
 
         modal.showModal();
         modal.addEventListener(
@@ -40,7 +46,9 @@ const Header = () => {
             (e) => {
                 const target = e.target as HTMLElement
                 if(target === modal || target.classList.contains("header__modalClose")) {
-                    body.style.overflow = "unset";
+                    htmlElement.classList.remove("scrollPrevent");
+                    htmlElement.scrollTop = scrollTop;
+                    htmlElement.style.removeProperty("top");
                     modal.close();
                 }
             },
