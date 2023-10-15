@@ -1,4 +1,4 @@
-import { FC, MouseEvent } from "react";
+import { MouseEvent } from "react";
 import { Link, useParams } from "react-router-dom";
 import logo from "/assets/shared/desktop/logo.svg";
 import cartIcon from "/assets/shared/desktop/icon-cart.svg";
@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../utils/store/store";
 import { clearCart } from "./cartSlice";
 
-const Cart: FC = () => {
+const Cart = () => {
     const params = useParams();
     const cart = useSelector((state: RootState) => state.products);
     const dispatch = useDispatch();
@@ -64,16 +64,16 @@ const Cart: FC = () => {
                     <nav className="header__nav">
                         <ul>
                             <li>
-                                <Link to={"/"}>Home</Link>
+                                <Link to={"/"} className="header__modalClose" >Home</Link>
                             </li>
                             <li>
-                                <Link to={"/headphones"}>Headphones</Link>
+                                <Link to={"/headphones"} className="header__modalClose" >Headphones</Link>
                             </li>
                             <li>
-                                <Link to={"/speakers"}>Speakers</Link>
+                                <Link to={"/speakers"} className="header__modalClose" >Speakers</Link>
                             </li>
                             <li>
-                                <Link to={"/earphones"}>Earphones</Link>
+                                <Link to={"/earphones"} className="header__modalClose" >Earphones</Link>
                             </li>
                         </ul>
                     </nav>
@@ -100,7 +100,7 @@ const Cart: FC = () => {
                         }, 0).toLocaleString()}
                     </h6>
                 </div>
-                <Link to={"/checkout"}>Checkout</Link>
+                <Link to={"/checkout"} className="header__modalClose" >Checkout</Link>
             </section>
         </dialog>
     );
