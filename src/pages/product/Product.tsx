@@ -7,6 +7,7 @@ import "./Product.scss";
 import { type ProductData } from "../../utils/loaders/productLoader";
 import { useDispatch } from "react-redux";
 import { addProduct } from "../../components/cart/cartSlice";
+import GoBack from "../../components/goBack/GoBack";
 
 const Product = () => {
     const { category, product } = useParams<{
@@ -93,9 +94,7 @@ const Product = () => {
 
     return (
         <main className="product">
-            <section className="product__back">
-                <button onClick={() => {navigate(-1)}}>Go Back</button>
-            </section>
+            <GoBack />
             <section className="product__info">
                 <div className="product__imageWrapper">
                     <picture>

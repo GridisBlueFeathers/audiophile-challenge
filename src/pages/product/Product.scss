@@ -9,23 +9,6 @@
         padding: 92px 39px 0;
     }
 
-    .product__back {
-        margin: 16px 0 24px;
-
-        @media (min-width: 769px) {
-            margin: 79px 0 56px;
-        }
-
-        button {
-            @include scssVariables.bodyFont;
-            border: none;
-            background-color: unset;
-            -webkit-text-fill-color: rgba($color: #000000, $alpha: 0.5);
-            color: rgba($color: #000000, $alpha: 0.5);
-            padding: 0;
-        }
-    }
-
     .product__info {
         margin-bottom: 88px;
 
