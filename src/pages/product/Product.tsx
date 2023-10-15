@@ -1,5 +1,5 @@
 import { MouseEvent, useState } from "react";
-import { useNavigate, useParams, Link, useAsyncValue, Navigate } from "react-router-dom";
+import { useParams, Link, useAsyncValue, Navigate } from "react-router-dom";
 import { DocumentSnapshot } from "firebase/firestore";
 import About from "../../components/about/About";
 import MainNav from "../../components/mainNav/MainNav";
@@ -15,7 +15,6 @@ const Product = () => {
         product: string;
     }>();
 
-    const navigate = useNavigate();
     const dispatch = useDispatch();
     const [productAmount, setProductAmount] = useState(1)
 
