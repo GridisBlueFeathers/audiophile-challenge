@@ -1,0 +1,113 @@
+@use "./../../scssVariables/scssVariables";
+
+.checkoutWrapper {
+    background-color: #FAFAFA;
+
+    .checkout {
+        margin: 0 auto;
+        max-width: 1110px;
+        padding: 90px 24px 0;
+
+        .checkout__form {
+            background-color: #FFF;
+            border-radius: 8px;
+            padding: 24px 24px 31px 24px;
+
+            .form {
+                display: flex;
+                flex-direction: column;
+                gap: 32px;
+
+                h3 {
+                    font-size: 28px;
+                    font-weight: 700;
+                    line-height: normal;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                }
+
+                .form__sectionTitle {
+                    color: scssVariables.$brown;
+                    font-size: 13px;
+                    font-weight: 700;
+                    line-height: 25px;
+                    letter-spacing: 0.929px;
+                    text-transform: uppercase;
+                    display: block;
+                    margin-bottom: 16px;
+                }
+
+                .form__label {
+                    display: block;
+                    font-size: 12px;
+                    font-weight: 700;
+                    line-height: normal;
+                    letter-spacing: -0.214px;
+                    margin-bottom: 9px;
+                }
+
+                .form__input {
+                    box-sizing: border-box;
+                    max-width: 280px;
+                    width: 100%;
+                    padding: 18px 24px 19px;
+                    border: 1px solid #CFCFCF;
+                    border-radius: 8px;
+                    margin-bottom: 24px;
+                    font-family: "Manrope";
+                    font-size: 14px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    letter-spacing: -0.25px;
+                }
+
+                .form__radioWrapper {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 16px;
+
+                    .form__input-radio {
+                        display: none;
+
+                        &:checked + .form__label-radio:after {
+                            display: block;
+                        }
+
+                        &:checked + .form__label-radio {
+                            border: 1px solid scssVariables.$brown;
+                        }
+                    }
+
+                    .form__label-radio {
+                        display: flex;
+                        border: 1px solid #CFCFCF;
+                        border-radius: 8px;
+                        padding: 18px 24px 19px;
+
+                        &:before {
+                            box-sizing: border-box;
+                            width: 20px;
+                            height: 20px;
+                            content: "";
+                            border: 1px solid #CFCFCF;
+                            border-radius: 50%;
+                            margin-right: 16px;
+                        }
+
+                        &:after {
+                            content: "";
+                            width: 10px;
+                            height: 10px;
+                            background-color: scssVariables.$brown;
+                            position: absolute;
+                            display: none;
+                            border-radius: 50%;
+                            transform: translate(50%, 50%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
