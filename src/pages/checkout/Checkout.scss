@@ -9,14 +9,17 @@
         padding: 90px 24px 0;
 
         .checkout__form {
-            background-color: #FFF;
-            border-radius: 8px;
-            padding: 24px 24px 31px 24px;
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
 
-            .form {
+            .inputs {
                 display: flex;
                 flex-direction: column;
                 gap: 32px;
+                background-color: #FFF;
+                border-radius: 8px;
+                padding: 24px 24px 31px 24px;
 
                 h3 {
                     font-size: 28px;
@@ -48,18 +51,26 @@
 
                 .form__input {
                     box-sizing: border-box;
-                    max-width: 280px;
                     width: 100%;
                     padding: 18px 24px 19px;
                     border: 1px solid #CFCFCF;
                     border-radius: 8px;
-                    margin-bottom: 24px;
                     font-family: "Manrope";
                     font-size: 14px;
                     font-style: normal;
                     font-weight: 700;
                     line-height: normal;
                     letter-spacing: -0.25px;
+
+                    &:focus, &:focus-visible {
+                        outline-color: scssVariables.$brown;
+                        outline-width: 1px;
+                        border-color: scssVariables.$brown;
+                    }
+
+                    &:not(:last-of-type) {
+                        margin-bottom: 24px;
+                    }
                 }
 
                 .form__radioWrapper {
@@ -107,6 +118,138 @@
                         }
                     }
                 }
+
+                .form__cash {
+                    padding-bottom: 38px;
+
+                    .form__cashImgWrapper {
+                        float: left;
+                        height: 100%;
+                        margin: 10px;
+
+                        img {
+                            display: block;
+                        }
+                    }
+
+                    .form__cashDescription {
+                        font-size: 15px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: 25px;
+                        text-align: justify;
+                    }
+                }
+
+            }
+
+            .checkoutCart {
+                background-color: #FFF;
+                border-radius: 8px;
+                padding: 32px 24px;
+                margin-bottom: 97px;
+
+                h6 {
+                    @include scssVariables.headerSix;
+                    text-transform: uppercase;
+                    margin-bottom: 31px;
+                }
+                
+                ul {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 24px;
+                    margin-bottom: 32px;
+                    
+                    li {
+                        display: flex;
+                        justify-content: space-between;
+                        
+                        .checkoutCart__item {
+                            display: flex;
+                            gap: 16px;
+
+                            .checkoutCart__imgWrapper {
+                                max-width: 64px;
+                                
+                                img {
+                                    width: 100%;
+                                    display: block;
+                                    border-radius: 8px;
+                                }
+                            }
+
+                            .checkoutCart__info {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: center;
+
+                                .checkoutCart__name {
+                                    font-size: 15px;
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    line-height: 25px;
+                                    text-transform: uppercase;
+                                }
+
+                                .checkoutCart__cost {
+                                    font-size: 14px;
+                                    font-style: normal;
+                                    font-weight: 700;
+                                    line-height: 25px;
+                                    opacity: 0.5;
+                                }
+                            }
+                            
+                        }
+                        .checkoutCart__amount {
+                            text-align: right;
+                            font-size: 15px;
+                            font-style: normal;
+                            font-weight: 700;
+                            line-height: 25px;
+                            opacity: 0.5;
+                            padding-top: 7px;
+                        }
+                    }
+
+                }
+
+                .checkoutCart__priceItem {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 8px;
+
+                    &-grand {
+                        margin-bottom: 32px;
+                        padding-top: 16px
+                    }
+
+                    .checkoutCart__priceTitle {
+                        @include scssVariables.bodyFont;
+                        text-transform: uppercase;
+                        opacity: 0.5;
+                    }
+
+                    .checkoutCart__price {
+                        text-align: right;
+                        font-size: 18px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                        text-transform: uppercase;
+
+                        &-grand {
+                            color: scssVariables.$brown;
+                        }
+                    }
+                }
+            }
+
+            button {
+                @include scssVariables.button(scssVariables.$brown, scssVariables.$lighterBrown, #FFF, scssVariables.$brown, 0, 15px 74px 15px 80px);
+                max-width: 100%; 
+                width: 100%;
             }
         }
     }

@@ -12,9 +12,9 @@ const Checkout = () => {
         <div className="checkoutWrapper" >
             <main className="checkout" >
                 <GoBack />
-                <div className="checkout__form" >
-                    <form action="#" >
-                        <fieldset className="form" >
+                <div>
+                    <form action="#" className="checkout__form" >
+                        <fieldset className="inputs" >
                             <h3>
                                 Checkout
                             </h3>
@@ -74,7 +74,7 @@ const Checkout = () => {
                                     </label>
                                 </div>
                             </div>
-                                {isEMoney &&
+                                {isEMoney ?
                                     <div>
                                         <label htmlFor="eMoneyNumber" className="form__label"  >
                                             e-Money Number
@@ -84,10 +84,18 @@ const Checkout = () => {
                                             e-Money PIN
                                         </label>
                                         <input id="eMoneyPin" type="tel" className="form__input" />
+                                    </div> :
+                                    <div className="form__cash" >
+                                        <span className="form__cashImgWrapper" >
+                                            <img src="/assets/checkout/icon-cash-on-delivery.svg"/>
+                                        </span>
+                                        <p className="form__cashDescription" >
+                                            The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.
+                                        </p>
                                     </div>
                                 }
                         </fieldset>
-                        <fieldset className="checkoutCart">
+                        <fieldset className="checkoutCart" >
                             <h6>
                                 Summary
                             </h6>
@@ -95,18 +103,20 @@ const Checkout = () => {
                                 {cart.map(item => {
                                     return (
                                         <li key={item.id}>
-                                            <div className="checkoutCart__imgWrapper">
-                                                <img src={item.picture} />
+                                            <div className="checkoutCart__item" >
+                                                <div className="checkoutCart__imgWrapper" >
+                                                    <img src={item.picture} />
+                                                </div>
+                                                <div className="checkoutCart__info" >
+                                                    <span className="checkoutCart__name" >
+                                                        {item.name}
+                                                    </span>
+                                                    <span className="checkoutCart__cost" >
+                                                        $ {(item.cost * item.amount).toLocaleString()}
+                                                    </span>
+                                                </div>
                                             </div>
-                                            <div className="checkoutCart__info">
-                                                <span>
-                                                    {item.name}
-                                                </span>
-                                                <span>
-                                                    $ {(item.cost * item.amount).toLocaleString()}
-                                                </span>
-                                            </div>
-                                            <div className="checkoutCart__amount">
+                                            <div className="checkoutCart__amount" >
                                                 <span>
                                                     x{item.amount}
                                                 </span>
@@ -115,39 +125,39 @@ const Checkout = () => {
                                     )
                                 })}
                             </ul>
-                            <div>
-                                <span>
+                            <div className="checkoutCart__priceItem">
+                                <span className="checkoutCart__priceTitle">
                                     Total
                                 </span>
-                                <span>
+                                <span className="checkoutCart__price">
                                     $ {cart.reduce((accumulator, item) => {
                                         return accumulator + (item.cost * item.amount)
                                     }, 0).toLocaleString()}
                                 </span>
                             </div>
-                            <div>
-                                <span>
+                            <div className="checkoutCart__priceItem">
+                                <span className="checkoutCart__priceTitle">
                                     Shipping
                                 </span>
-                                <span>
+                                <span className="checkoutCart__price">
                                     $ 50
                                 </span>
                             </div>
-                            <div>
-                                <span>
+                            <div className="checkoutCart__priceItem">
+                                <span className="checkoutCart__priceTitle">
                                     VAT (Included)
                                 </span>
-                                <span>
+                                <span className="checkoutCart__price">
                                     $ {Math.round(cart.reduce((accumulator, item) => {
                                         return accumulator + (item.cost * item.amount)
                                     }, 0) * 0.2).toLocaleString()}
                                 </span>
                             </div>
-                            <div>
-                                <span>
+                            <div className="checkoutCart__priceItem checkoutCart__priceItem-grand">
+                                <span className="checkoutCart__priceTitle">
                                     Grand total
                                 </span>
-                                <span>
+                                <span className="checkoutCart__price checkoutCart__price-grand">
                                     $ {(cart.reduce((accumulator, item) => {
                                         return accumulator + (item.cost * item.amount)
                                     }, 0) + 50).toLocaleString()}
