@@ -40,36 +40,68 @@
                     margin-bottom: 16px;
                 }
 
-                .form__label {
-                    display: block;
-                    font-size: 12px;
-                    font-weight: 700;
-                    line-height: normal;
-                    letter-spacing: -0.214px;
-                    margin-bottom: 9px;
+                .form__tooltips {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .form__label {
+                        display: block;
+                        font-size: 12px;
+                        font-weight: 700;
+                        line-height: normal;
+                        letter-spacing: -0.214px;
+                        margin-bottom: 9px;
+
+                        &-wrong {
+                            color: scssVariables.$red;
+                        }
+                    }
+
+                    span {
+                        display: none;
+                        color: scssVariables.$red;
+                        text-align: right;
+                        font-size: 12px;
+                        font-style: normal;
+                        font-weight: 500;
+                        line-height: normal;
+                        letter-spacing: -0.214px;
+
+                        &-wrong {
+                            display: block;
+                        }
+                    }
+
                 }
 
                 .form__input {
                     box-sizing: border-box;
                     width: 100%;
-                    padding: 18px 24px 19px;
+                    padding: 16px 24px 17px;
                     border: 1px solid #CFCFCF;
                     border-radius: 8px;
                     font-family: "Manrope";
-                    font-size: 14px;
+                    font-size: 16px;
                     font-style: normal;
                     font-weight: 700;
                     line-height: normal;
                     letter-spacing: -0.25px;
+                    caret-color: scssVariables.$brown;
 
                     &:focus, &:focus-visible {
                         outline-color: scssVariables.$brown;
-                        outline-width: 1px;
+                        outline-width: 0;
                         border-color: scssVariables.$brown;
+                        appearance: auto;
+                        -webkit-appearance: none;
                     }
 
                     &:not(:last-of-type) {
                         margin-bottom: 24px;
+                    }
+
+                    &-wrong {
+                        border-color: scssVariables.$red;
                     }
                 }
 
@@ -96,6 +128,10 @@
                         border-radius: 8px;
                         padding: 18px 24px 19px;
 
+                        &:hover {
+                            border-color: scssVariables.$brown;
+                        }
+
                         &:before {
                             box-sizing: border-box;
                             width: 20px;
@@ -120,7 +156,7 @@
                 }
 
                 .form__cash {
-                    padding-bottom: 38px;
+                    padding-bottom: 36px;
 
                     .form__cashImgWrapper {
                         float: left;

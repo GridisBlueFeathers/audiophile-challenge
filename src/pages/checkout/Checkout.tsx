@@ -6,6 +6,17 @@ import "./Checkout.scss";
 
 const Checkout = () => {
     const [isEMoney, setIsEMoney] = useState(true)
+    const [isValid, setIsValid] = useState({
+        name: true,
+        email: true,
+        phoneNumber: true,
+        address: true,
+        zip: true,
+        city: true,
+        country: true,
+        eNumber: true,
+        ePin: true
+    })
     const cart = useSelector((state: RootState) => state.products);
 
     return (
@@ -22,47 +33,84 @@ const Checkout = () => {
                                 <span className="form__sectionTitle" >
                                     Billing details
                                 </span>
-                                <label htmlFor="name" className="form__label" >
-                                    Name
-                                </label>
-                                <input id="name" type="text" autoComplete="name" placeholder="Alexei Ward" className="form__input" />
-                                <label htmlFor="email" className="form__label"  >
-                                    Email Address
-                                </label>
+                                <div className="form__tooltips">
+                                    <label htmlFor="name" className={`form__label ${!isValid.name && "form__label-wrong"}`}>
+                                        Name
+                                    </label>
+                                    <span className="form__wrongFormat">
+                                        Wrong format
+                                    </span>
+                                </div>
+                                <input id="name" type="text" autoComplete="name" placeholder="Alexei Ward" className="form__input form__input-wrong" />
+                                <div className="form__tooltips">
+                                    <label htmlFor="email" className={`form__label ${!isValid.email && "form__label-wrong"}`}>
+                                        Email Address
+                                    </label>
+                                    <span className="form__wrongFormat">
+                                        Wrong format
+                                    </span>
+                                </div>
                                 <input id="email" type="email" autoComplete="email" placeholder="alexei@mail.com" className="form__input"  />
-                                <label htmlFor="tel" className="form__label"  >
-                                    Phone Number
-                                </label>
+                                <div className="form__tooltips">
+                                    <label htmlFor="tel" className={`form__label ${!isValid.phoneNumber && "form__label-wrong"}`}>
+                                        Phone Number
+                                    </label>
+                                    <span className="form__wrongFormat">
+                                        Wrong format
+                                    </span>
+                                </div>
                                 <input id="tel" type="tel" autoComplete="tel" placeholder="+1 202-555-0136" className="form__input"  />
                             </div>
                             <div>
                                 <span className="form__sectionTitle" >
                                     Shipping info
                                 </span>
-                                <label htmlFor="address" className="form__label"  >
-                                    Address
-                                </label>
+                                <div className="form__tooltips">
+                                    <label htmlFor="address" className={`form__label ${!isValid.address && "form__label-wrong"}`}>
+                                        Address
+                                    </label>
+                                    <span className="form__wrongFormat">
+                                        Wrong format
+                                    </span>
+                                </div>
                                 <input id="address" type="text" autoComplete="address" placeholder="1137 Williams Avenue" className="form__input"  />
-                                <label htmlFor="zip" className="form__label"  >
-                                    ZIP Code
-                                </label>
+                                <div className="form__tooltips">
+                                    <label htmlFor="zip" className={`form__label ${!isValid.zip && "form__label-wrong"}`}>
+                                        ZIP Code
+                                    </label>
+                                    <span className="form__wrongFormat">
+                                        Wrong format
+                                    </span>
+                                </div>
                                 <input id="zip" type="number" placeholder="10001" className="form__input"  />
-                                <label htmlFor="city" className="form__label"  >
-                                    City
-                                </label>
+                                <div className="form__tooltips">
+                                    <label htmlFor="city" className={`form__label ${!isValid.city && "form__label-wrong"}`}>
+                                        City
+                                    </label>
+                                    <span className="form__wrongFormat">
+                                        Wrong format
+                                    </span>
+                                </div>
                                 <input id="city" type="text" placeholder="New York" className="form__input"  />
-                                <label htmlFor="country" className="form__label"  >
-                                    Country
-                                </label>
+                                <div className="form__tooltips">
+                                    <label htmlFor="country" className={`form__label ${!isValid.country && "form__label-wrong"}`}>
+                                        Country
+                                    </label>
+                                    <span className="form__wrongFormat">
+                                        Wrong format
+                                    </span>
+                                </div>
                                 <input id="country" type="text" autoComplete="country" placeholder="United States" className="form__input"  />
                             </div>
                             <div>
                                 <span className="form__sectionTitle" >
                                     Payment details
                                 </span>
-                                <span className="form__label" >
-                                    Payment Method
-                                </span>
+                                <div className="form__tooltips">
+                                    <span className="form__label" >
+                                        Payment Method
+                                    </span>
+                                </div>
                                 <div className="form__radioWrapper">
                                     <input className="form__input-radio" id="eMoney" type="radio" name="paymentMethod" value={"e-Money"} checked={isEMoney} onChange={() => {setIsEMoney(true)}} />
                                     <label htmlFor="eMoney" className="form__label-radio" >
@@ -76,14 +124,21 @@ const Checkout = () => {
                             </div>
                                 {isEMoney ?
                                     <div>
-                                        <label htmlFor="eMoneyNumber" className="form__label"  >
-                                            e-Money Number
-                                        </label>
-                                        <input id="eMoneyNumber" type="number" className="form__input" />
-                                        <label htmlFor="eMoneyPin" className="form__label"  >
-                                            e-Money PIN
-                                        </label>
-                                        <input id="eMoneyPin" type="tel" className="form__input" />
+                                        <div className="form__tooltips">
+                                            <label htmlFor="eMoneyNumber" className={`form__label ${!isValid.eNumber && "form__label-wrong"}`}>
+                                                e-Money Number
+                                            </label>
+                                            <span className="form__wrongFormat">
+                                                Wrong format
+                                            </span>
+                                        </div>
+                                        <input id="eMoneyNumber" type="number" className="form__input" placeholder="238521993" />
+                                        <div className="form__tooltips">
+                                            <label htmlFor="eMoneyPin" className={`form__label ${!isValid.eNumber && "form__label-wrong"}`}>
+                                                e-Money PIN
+                                            </label>
+                                        </div>
+                                        <input id="eMoneyPin" type="number" className="form__input" placeholder="6891" />
                                     </div> :
                                     <div className="form__cash" >
                                         <span className="form__cashImgWrapper" >
