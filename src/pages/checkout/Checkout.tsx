@@ -6,7 +6,7 @@ import "./Checkout.scss";
 
 const Checkout = () => {
     const [isEMoney, setIsEMoney] = useState(true)
-    const [isValid, setIsValid] = useState({
+    const [isValid] = useState({
         name: true,
         email: true,
         phoneNumber: true,
