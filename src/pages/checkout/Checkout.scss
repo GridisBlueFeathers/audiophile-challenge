@@ -40,68 +40,82 @@
                     margin-bottom: 16px;
                 }
 
-                .form__tooltips {
-                    display: flex;
-                    justify-content: space-between;
-
-                    .form__label {
-                        display: block;
-                        font-size: 12px;
-                        font-weight: 700;
-                        line-height: normal;
-                        letter-spacing: -0.214px;
-                        margin-bottom: 9px;
-
-                        &-wrong {
-                            color: scssVariables.$red;
-                        }
-                    }
-
-                    span {
-                        display: none;
-                        color: scssVariables.$red;
-                        text-align: right;
-                        font-size: 12px;
-                        font-style: normal;
-                        font-weight: 500;
-                        line-height: normal;
-                        letter-spacing: -0.214px;
-
-                        &-wrong {
-                            display: block;
-                        }
-                    }
-
-                }
-
-                .form__input {
-                    box-sizing: border-box;
-                    width: 100%;
-                    padding: 16px 24px 17px;
-                    border: 1px solid #CFCFCF;
-                    border-radius: 8px;
-                    font-family: "Manrope";
-                    font-size: 16px;
-                    font-style: normal;
-                    font-weight: 700;
-                    line-height: normal;
-                    letter-spacing: -0.25px;
-                    caret-color: scssVariables.$brown;
-
-                    &:focus, &:focus-visible {
-                        outline-color: scssVariables.$brown;
-                        outline-width: 0;
-                        border-color: scssVariables.$brown;
-                        appearance: auto;
-                        -webkit-appearance: none;
-                    }
-
+                .form__field {
                     &:not(:last-of-type) {
                         margin-bottom: 24px;
                     }
 
-                    &-wrong {
-                        border-color: scssVariables.$red;
+                    .form__tooltips {
+                        display: flex;
+                        justify-content: space-between;
+
+                        .form__label {
+                            display: block;
+                            font-size: 12px;
+                            font-weight: 700;
+                            line-height: normal;
+                            letter-spacing: -0.214px;
+                            margin-bottom: 9px;
+                        }
+
+                        span {
+                            display: none;
+                            color: scssVariables.$red;
+                            text-align: right;
+                            font-size: 12px;
+                            font-style: normal;
+                            font-weight: 500;
+                            line-height: normal;
+                            letter-spacing: -0.214px;
+                        }
+
+                        &:has(~ .form__input:invalid) {
+                            color: scssVariables.$red;
+
+                             span {
+                                display: block;
+                            }
+                        }
+                    }
+
+                    .form__input {
+                        box-sizing: border-box;
+                        width: 100%;
+                        padding: 16px 24px 17px;
+                        border: 1px solid #CFCFCF;
+                        border-radius: 8px;
+                        font-family: "Manrope";
+                        font-size: 16px;
+                        font-style: normal;
+                        font-weight: 700;
+                        line-height: normal;
+                        letter-spacing: -0.25px;
+                        caret-color: scssVariables.$brown;
+
+                        &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+                            -webkit-appearance: none;
+                            margin: 0;
+                        }
+
+                        &[type=number] {
+                            -moz-appearance: textfield;
+                        }
+
+                        &:focus, &:focus-visible {
+                            outline-color: scssVariables.$brown;
+                            outline-width: 0;
+                            border-color: scssVariables.$brown;
+                            appearance: auto;
+                            -webkit-appearance: none;
+                        }
+
+                        &:not(:last-of-type) {
+                            margin-bottom: 24px;
+                        }
+
+                        &:invalid {
+                            border-color: scssVariables.$red;
+                        }
                     }
                 }
 
