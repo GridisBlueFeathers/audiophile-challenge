@@ -33,98 +33,100 @@ const Checkout = () => {
                                 <span className="form__sectionTitle" >
                                     Billing details
                                 </span>
-                                <div className="form__field">
-                                    <div className="form__tooltips">
-                                        <label htmlFor="name" className="form__label" >
-                                            Name
-                                        </label>
-                                        <span className="form__wrongFormat">
-                                            Wrong format
-                                        </span>
+                                <div className="form__fieldSet">
+                                    <div className="form__field">
+                                        <div className="form__tooltips">
+                                            <label htmlFor="name" className="form__label" >
+                                                Name
+                                            </label>
+                                            <span className="form__wrongFormat">
+                                                Wrong format
+                                            </span>
+                                        </div>
+                                        <input id="name" type="text" autoComplete="name" placeholder="Alexei Ward" className="form__input" pattern="^[\p{L} ,.'-]+$" />
                                     </div>
-                                    <input id="name" type="text" autoComplete="name" placeholder="Alexei Ward" className="form__input" pattern="^[\p{L} ,.'-]+$" />
-                                </div>
-                                <div className="form__field">
-                                    <div className="form__tooltips">
-                                        <label htmlFor="email" className="form__label" >
-                                            Email Address
-                                        </label>
-                                        <span className="form__wrongFormat">
-                                            Wrong format
-                                        </span>
+                                    <div className="form__field">
+                                        <div className="form__tooltips">
+                                            <label htmlFor="email" className="form__label" >
+                                                Email Address
+                                            </label>
+                                            <span className="form__wrongFormat">
+                                                Wrong format
+                                            </span>
+                                        </div>
+                                        <input id="email" type="email" autoComplete="email" placeholder="alexei@mail.com" className="form__input" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"/>
                                     </div>
-                                    <input id="email" type="email" autoComplete="email" placeholder="alexei@mail.com" className="form__input" pattern="^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$"/>
-                                </div>
-                                <div className="form__field">
-                                    <div className="form__tooltips">
-                                        <label htmlFor="tel" className="form__label" >
-                                            Phone Number
-                                        </label>
-                                        <span className="form__wrongFormat">
-                                            Wrong format
-                                        </span>
+                                    <div className="form__field">
+                                        <div className="form__tooltips">
+                                            <label htmlFor="tel" className="form__label" >
+                                                Phone Number
+                                            </label>
+                                            <span className="form__wrongFormat">
+                                                Wrong format
+                                            </span>
+                                        </div>
+                                        <input id="tel" type="tel" autoComplete="tel" placeholder="+1 202-555-0136" className="form__input" pattern="/^(\+[1-9]{1}[0-9]{2,14})?([0-9]{9,14})$/g" />
                                     </div>
-                                    <input id="tel" type="tel" autoComplete="tel" placeholder="+1 202-555-0136" className="form__input" pattern="/^(\+[1-9]{1}[0-9]{2,14})?([0-9]{9,14})$/g" />
                                 </div>
                             </div>
                             <div>
                                 <span className="form__sectionTitle" >
                                     Shipping info
                                 </span>
-                                <div className="form__field">
-                                    <div className="form__tooltips">
-                                        <label htmlFor="address" className="form__label" >
-                                            Address
-                                        </label>
-                                        <span className="form__wrongFormat">
-                                            Wrong format
-                                        </span>
+                                <div className="form__fieldSet">
+                                    <div className="form__field form__field-wide">
+                                        <div className="form__tooltips">
+                                            <label htmlFor="address" className="form__label" >
+                                                Your Address
+                                            </label>
+                                            <span className="form__wrongFormat">
+                                                Wrong format
+                                            </span>
+                                        </div>
+                                        <input id="address" type="text" autoComplete="address" placeholder="1137 Williams Avenue" className="form__input" />
                                     </div>
-                                    <input id="address" type="text" autoComplete="address" placeholder="1137 Williams Avenue" className="form__input" />
-                                </div>
-                                <div className="form__field">
-                                    <div className="form__tooltips">
-                                        <label htmlFor="zip" className="form__label" >
-                                            ZIP Code
-                                        </label>
-                                        <span className="form__wrongFormat">
-                                            Wrong format
-                                        </span>
+                                    <div className="form__field">
+                                        <div className="form__tooltips">
+                                            <label htmlFor="zip" className="form__label" >
+                                                ZIP Code
+                                            </label>
+                                            <span className="form__wrongFormat">
+                                                Wrong format
+                                            </span>
+                                        </div>
+                                        <input id="zip" type="number" placeholder="10001" className="form__input"  />
                                     </div>
-                                    <input id="zip" type="number" placeholder="10001" className="form__input"  />
-                                </div>
-                                <div className="form__field">
-                                    <div className="form__tooltips">
-                                        <label htmlFor="city" className="form__label">
-                                            City
-                                        </label>
-                                        <span className="form__wrongFormat">
-                                            Wrong format
-                                        </span>
+                                    <div className="form__field">
+                                        <div className="form__tooltips">
+                                            <label htmlFor="city" className="form__label">
+                                                City
+                                            </label>
+                                            <span className="form__wrongFormat">
+                                                Wrong format
+                                            </span>
+                                        </div>
+                                        <input id="city" type="text" placeholder="New York" className="form__input" />
                                     </div>
-                                    <input id="city" type="text" placeholder="New York" className="form__input" />
-                                </div>
-                                <div className="form__field">
-                                    <div className="form__tooltips">
-                                        <label htmlFor="country" className="form__label">
-                                            Country
-                                        </label>
-                                        <span className="form__wrongFormat">
-                                            Wrong format
-                                        </span>
+                                    <div className="form__field">
+                                        <div className="form__tooltips">
+                                            <label htmlFor="country" className="form__label">
+                                                Country
+                                            </label>
+                                            <span className="form__wrongFormat">
+                                                Wrong format
+                                            </span>
+                                        </div>
+                                        <input id="country" type="text" autoComplete="country" placeholder="United States" className="form__input" />
                                     </div>
-                                    <input id="country" type="text" autoComplete="country" placeholder="United States" className="form__input" />
                                 </div>
                             </div>
                             <div>
                                 <span className="form__sectionTitle" >
                                     Payment details
                                 </span>
-                                <div className="form__tooltips">
-                                    <span className="form__label" >
-                                        Payment Method
-                                    </span>
-                                </div>
+                                <span className="form__label-noField" >
+                                    Payment Method
+                                </span>
                                 <div className="form__radioWrapper">
                                     <input className="form__input-radio" id="eMoney" type="radio" name="paymentMethod" value={"e-Money"} checked={isEMoney} onChange={() => {setIsEMoney(true)}} />
                                     <label htmlFor="eMoney" className="form__label-radio" >
@@ -137,22 +139,26 @@ const Checkout = () => {
                                 </div>
                             </div>
                                 {isEMoney ?
-                                    <div>
-                                        <div className="form__tooltips">
-                                            <label htmlFor="eMoneyNumber" className={`form__label ${!isValid.eNumber && "form__label-wrong"}`}>
-                                                e-Money Number
-                                            </label>
-                                            <span className="form__wrongFormat">
-                                                Wrong format
-                                            </span>
+                                    <div className="form__fieldSet">
+                                        <div className="form__field">
+                                            <div className="form__tooltips">
+                                                <label htmlFor="eMoneyNumber" className={`form__label ${!isValid.eNumber && "form__label-wrong"}`}>
+                                                    e-Money Number
+                                                </label>
+                                                <span className="form__wrongFormat">
+                                                    Wrong format
+                                                </span>
+                                            </div>
+                                            <input id="eMoneyNumber" type="number" className="form__input" placeholder="238521993" />
                                         </div>
-                                        <input id="eMoneyNumber" type="number" className="form__input" placeholder="238521993" />
-                                        <div className="form__tooltips">
-                                            <label htmlFor="eMoneyPin" className={`form__label ${!isValid.eNumber && "form__label-wrong"}`}>
-                                                e-Money PIN
-                                            </label>
+                                        <div className="form__field">
+                                            <div className="form__tooltips">
+                                                <label htmlFor="eMoneyPin" className={`form__label ${!isValid.eNumber && "form__label-wrong"}`}>
+                                                    e-Money PIN
+                                                </label>
+                                            </div>
+                                            <input id="eMoneyPin" type="number" className="form__input" placeholder="6891" />
                                         </div>
-                                        <input id="eMoneyPin" type="number" className="form__input" placeholder="6891" />
                                     </div> :
                                     <div className="form__cash" >
                                         <span className="form__cashImgWrapper" >
