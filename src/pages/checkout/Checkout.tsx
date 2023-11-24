@@ -29,7 +29,7 @@ const Checkout = () => {
                             <h3>
                                 Checkout
                             </h3>
-                            <div>
+                            <div className="form__section form__section-billing">
                                 <span className="form__sectionTitle" >
                                     Billing details
                                 </span>
@@ -69,7 +69,7 @@ const Checkout = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div>
+                            <div className="form__section form__section-shipping">
                                 <span className="form__sectionTitle" >
                                     Shipping info
                                 </span>
@@ -120,53 +120,59 @@ const Checkout = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div>
+                            <div className="form__section form__section-payment">
                                 <span className="form__sectionTitle" >
                                     Payment details
                                 </span>
-                                <span className="form__label-noField" >
-                                    Payment Method
-                                </span>
-                                <div className="form__radioWrapper">
-                                    <input className="form__input-radio" id="eMoney" type="radio" name="paymentMethod" value={"e-Money"} checked={isEMoney} onChange={() => {setIsEMoney(true)}} />
-                                    <label htmlFor="eMoney" className="form__label-radio" >
-                                        e-Money
-                                    </label>
-                                    <input className="form__input-radio" id="cash" type="radio" name="paymentMethod" value={"cash"} onChange={() => {setIsEMoney(false)}}/>
-                                    <label htmlFor="cash" className="form__label-radio" >
-                                        Cash on Delivery
-                                    </label>
+                                <div className="form__radioField">
+                                    <span className="form__label-noField" >
+                                        Payment Method
+                                    </span>
+                                    <div className="form__radioWrapper">
+                                        <input className="form__input-radio" id="eMoney" type="radio" name="paymentMethod" value={"e-Money"} checked={isEMoney} onChange={() => {setIsEMoney(true)}} />
+                                        <label htmlFor="eMoney" className="form__label-radio" >
+                                            e-Money
+                                        </label>
+                                        <input className="form__input-radio" id="cash" type="radio" name="paymentMethod" value={"cash"} onChange={() => {setIsEMoney(false)}}/>
+                                        <label htmlFor="cash" className="form__label-radio" >
+                                            Cash on Delivery
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                                 {isEMoney ?
-                                    <div className="form__fieldSet">
-                                        <div className="form__field">
-                                            <div className="form__tooltips">
-                                                <label htmlFor="eMoneyNumber" className={`form__label ${!isValid.eNumber && "form__label-wrong"}`}>
-                                                    e-Money Number
-                                                </label>
-                                                <span className="form__wrongFormat">
-                                                    Wrong format
-                                                </span>
+                                    <div className="form__section">
+                                        <div className="form__fieldSet">
+                                            <div className="form__field">
+                                                <div className="form__tooltips">
+                                                    <label htmlFor="eMoneyNumber" className={`form__label ${!isValid.eNumber && "form__label-wrong"}`}>
+                                                        e-Money Number
+                                                    </label>
+                                                    <span className="form__wrongFormat">
+                                                        Wrong format
+                                                    </span>
+                                                </div>
+                                                <input id="eMoneyNumber" type="number" className="form__input" placeholder="238521993" />
                                             </div>
-                                            <input id="eMoneyNumber" type="number" className="form__input" placeholder="238521993" />
-                                        </div>
-                                        <div className="form__field">
-                                            <div className="form__tooltips">
-                                                <label htmlFor="eMoneyPin" className={`form__label ${!isValid.eNumber && "form__label-wrong"}`}>
-                                                    e-Money PIN
-                                                </label>
+                                            <div className="form__field">
+                                                <div className="form__tooltips">
+                                                    <label htmlFor="eMoneyPin" className={`form__label ${!isValid.eNumber && "form__label-wrong"}`}>
+                                                        e-Money PIN
+                                                    </label>
+                                                </div>
+                                                <input id="eMoneyPin" type="number" className="form__input" placeholder="6891" />
                                             </div>
-                                            <input id="eMoneyPin" type="number" className="form__input" placeholder="6891" />
                                         </div>
                                     </div> :
-                                    <div className="form__cash" >
-                                        <span className="form__cashImgWrapper" >
-                                            <img src="/assets/checkout/icon-cash-on-delivery.svg"/>
-                                        </span>
-                                        <p className="form__cashDescription" >
-                                            The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.
-                                        </p>
+                                    <div className="form__section">
+                                        <div className="form__cash" >
+                                            <span className="form__cashImgWrapper" >
+                                                <img src="/assets/checkout/icon-cash-on-delivery.svg"/>
+                                            </span>
+                                            <p className="form__cashDescription" >
+                                                The ‘Cash on Delivery’ option enables you to pay in cash when our delivery courier arrives at your residence. Just make sure your address is correct so that your order will not be cancelled.
+                                            </p>
+                                        </div>
                                     </div>
                                 }
                         </fieldset>

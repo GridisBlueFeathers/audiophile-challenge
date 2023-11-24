@@ -27,6 +27,7 @@
 
                 @media (min-width: 768px) {
                     padding: 30px 28px; 
+                    gap: 0;
                 }
 
                 h3 {
@@ -35,108 +36,126 @@
                     line-height: normal;
                     letter-spacing: 1px;
                     text-transform: uppercase;
-                }
-
-                .form__sectionTitle {
-                    color: scssVariables.$brown;
-                    font-size: 13px;
-                    font-weight: 700;
-                    line-height: 25px;
-                    letter-spacing: 0.929px;
-                    text-transform: uppercase;
-                    display: block;
-                    margin-bottom: 16px;
-                }
-
-                .form__fieldSet {
-                    display: flex;
-                    flex-direction: column;
-                    gap: 24px;
 
                     @media (min-width: 768px) {
-                        flex-direction: row;
-                        flex-wrap: wrap;
-                        gap: 24px 14px;
+                        margin-bottom: 41px;
+                    }
+                }
+
+                .form__section {
+                    @media (min-width: 768px) {
+                        &-billing {
+                            margin-bottom: 53px;
+                        }
+                        &-shipping {
+                            margin-bottom: 61px;
+                        }
+                        &-payment {
+                            margin-bottom: 24px;
+                        }
                     }
 
-                    .form__field {
-                        max-width: 309px;
-                        width: 100%;
 
-                        &-wide {
-                            max-width: 100%;
+                    .form__sectionTitle {
+                        color: scssVariables.$brown;
+                        font-size: 13px;
+                        font-weight: 700;
+                        line-height: 25px;
+                        letter-spacing: 0.929px;
+                        text-transform: uppercase;
+                        display: block;
+                        margin-bottom: 16px;
+                    }
+
+                    .form__fieldSet {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 24px;
+
+                        @media (min-width: 768px) {
+                            flex-direction: row;
+                            flex-wrap: wrap;
+                            gap: 24px 14px;
                         }
 
-                        .form__tooltips {
-                            display: flex;
-                            justify-content: space-between;
+                        .form__field {
+                            max-width: 309px;
+                            width: 100%;
 
-                            .form__label{
-                                display: block;
-                                font-size: 12px;
-                                font-weight: 700;
-                                line-height: normal;
-                                letter-spacing: -0.214px;
-                                margin-bottom: 9px;
+                            &-wide {
+                                max-width: 100%;
                             }
 
-                            span {
-                                display: none;
-                                color: scssVariables.$red;
-                                text-align: right;
-                                font-size: 12px;
-                                font-style: normal;
-                                font-weight: 500;
-                                line-height: normal;
-                                letter-spacing: -0.214px;
-                            }
+                            .form__tooltips {
+                                display: flex;
+                                justify-content: space-between;
 
-                            &:has(~ .form__input:invalid) {
-                                color: scssVariables.$red;
-
-                                 span {
+                                .form__label{
                                     display: block;
+                                    font-size: 12px;
+                                    font-weight: 700;
+                                    line-height: normal;
+                                    letter-spacing: -0.214px;
+                                    margin-bottom: 9px;
+                                }
+
+                                span {
+                                    display: none;
+                                    color: scssVariables.$red;
+                                    text-align: right;
+                                    font-size: 12px;
+                                    font-style: normal;
+                                    font-weight: 500;
+                                    line-height: normal;
+                                    letter-spacing: -0.214px;
+                                }
+
+                                &:has(~ .form__input:invalid) {
+                                    color: scssVariables.$red;
+
+                                     span {
+                                        display: block;
+                                    }
+                                }
+                            }
+
+                            .form__input {
+                                box-sizing: border-box;
+                                width: 100%;
+                                padding: 16px 24px 17px;
+                                border: 1px solid #CFCFCF;
+                                border-radius: 8px;
+                                font-family: "Manrope";
+                                font-size: 16px;
+                                font-style: normal;
+                                line-height: normal;
+                                letter-spacing: -0.25px;
+                                caret-color: scssVariables.$brown;
+
+                                &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
+                                    -webkit-appearance: none;
+                                    margin: 0;
+                                }
+
+                                &:focus, &:focus-visible {
+                                    outline-color: scssVariables.$brown;
+                                    outline-width: 0;
+                                    border-color: scssVariables.$brown;
+                                    appearance: auto;
+                                    -webkit-appearance: none;
+                                }
+
+                                &:not(:last-of-type) {
+                                    margin-bottom: 24px;
+                                }
+
+                                &:invalid {
+                                    border-color: scssVariables.$red;
                                 }
                             }
                         }
-
-                        .form__input {
-                            box-sizing: border-box;
-                            width: 100%;
-                            padding: 16px 24px 17px;
-                            border: 1px solid #CFCFCF;
-                            border-radius: 8px;
-                            font-family: "Manrope";
-                            font-size: 16px;
-                            font-style: normal;
-                            line-height: normal;
-                            letter-spacing: -0.25px;
-                            caret-color: scssVariables.$brown;
-
-                            &::-webkit-inner-spin-button, &::-webkit-outer-spin-button {
-                                -webkit-appearance: none;
-                                margin: 0;
-                            }
-
-                            &:focus, &:focus-visible {
-                                outline-color: scssVariables.$brown;
-                                outline-width: 0;
-                                border-color: scssVariables.$brown;
-                                appearance: auto;
-                                -webkit-appearance: none;
-                            }
-
-                            &:not(:last-of-type) {
-                                margin-bottom: 24px;
-                            }
-
-                            &:invalid {
-                                border-color: scssVariables.$red;
-                            }
-                        }
                     }
                 }
-
 
                 .form__label-noField {
                     display: block;
@@ -147,58 +166,69 @@
                     margin-bottom: 9px;
                 }
 
-                .form__radioWrapper {
+                .form__radioField {
                     display: flex;
-                    flex-direction: column;
-                    gap: 16px;
+                    justify-content: space-between;
 
-                    .form__input-radio {
-                        display: none;
-
-                        &:checked + .form__label-radio:after {
-                            display: block;
-                        }
-
-                        &:checked + .form__label-radio {
-                            border: 1px solid scssVariables.$brown;
-                        }
-                    }
-
-                    .form__label-radio {
+                    .form__radioWrapper {
                         display: flex;
-                        border: 1px solid #CFCFCF;
-                        border-radius: 8px;
-                        padding: 18px 24px 19px;
+                        flex-direction: column;
+                        gap: 16px;
+                        max-width: 309px;
+                        width: 100%;
 
-                        &:hover {
-                            border-color: scssVariables.$brown;
-                        }
-
-                        &:before {
-                            box-sizing: border-box;
-                            width: 20px;
-                            height: 20px;
-                            content: "";
-                            border: 1px solid #CFCFCF;
-                            border-radius: 50%;
-                            margin-right: 16px;
-                        }
-
-                        &:after {
-                            content: "";
-                            width: 10px;
-                            height: 10px;
-                            background-color: scssVariables.$brown;
-                            position: absolute;
+                        .form__input-radio {
                             display: none;
-                            border-radius: 50%;
-                            transform: translate(50%, 50%);
+
+                            &:checked + .form__label-radio:after {
+                                display: block;
+                            }
+
+                            &:checked + .form__label-radio {
+                                border: 1px solid scssVariables.$brown;
+                            }
+                        }
+
+                        .form__label-radio {
+                            display: flex;
+                            border: 1px solid #CFCFCF;
+                            border-radius: 8px;
+                            padding: 18px 24px 19px;
+
+                            &:hover {
+                                border-color: scssVariables.$brown;
+                            }
+
+                            &:before {
+                                box-sizing: border-box;
+                                width: 20px;
+                                height: 20px;
+                                content: "";
+                                border: 1px solid #CFCFCF;
+                                border-radius: 50%;
+                                margin-right: 16px;
+                            }
+
+                            &:after {
+                                content: "";
+                                width: 10px;
+                                height: 10px;
+                                background-color: scssVariables.$brown;
+                                position: absolute;
+                                display: none;
+                                border-radius: 50%;
+                                transform: translate(50%, 50%);
+                            }
                         }
                     }
                 }
 
                 .form__cash {
                     padding-bottom: 36px;
+
+                    @media (min-width: 768px) {
+                        padding-bottom: 6px;
+                    }
 
                     .form__cashImgWrapper {
                         float: left;
