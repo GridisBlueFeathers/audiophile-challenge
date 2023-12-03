@@ -17,6 +17,11 @@
             flex-direction: column;
             gap: 32px;
 
+            @media (min-width: 1024px) {
+                flex-direction: row;
+                gap: 30px;
+            }
+
             .inputs {
                 display: flex;
                 flex-direction: column;
@@ -24,10 +29,15 @@
                 background-color: #FFF;
                 border-radius: 8px;
                 padding: 24px 24px 31px 24px;
+                box-sizing: border-box;
 
                 @media (min-width: 768px) {
                     padding: 30px 28px; 
                     gap: 0;
+                }
+
+                @media (min-width: 1024px) {
+                    max-width: 730px;
                 }
 
                 h3 {

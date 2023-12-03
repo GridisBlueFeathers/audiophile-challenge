@@ -9,8 +9,6 @@ import Cart from "../cart/Cart";
 const Header = () => {
     const location = useLocation();
 
-    console.log(location)
-
     const burgerHandler = (): void => {
         const modal = document.getElementById(
             "header__mainNavWrapper"
