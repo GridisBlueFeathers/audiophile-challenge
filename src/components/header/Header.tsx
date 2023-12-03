@@ -1,13 +1,15 @@
 import logo from "/assets/shared/desktop/logo.svg";
 import cartIcon from "/assets/shared/desktop/icon-cart.svg";
 import burger from "/assets/shared/tablet/icon-hamburger.svg";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import MainNav from "../mainNav/MainNav";
 import "./Header.scss";
 import Cart from "../cart/Cart";
 
 const Header = () => {
-    const params = useParams();
+    const location = useLocation();
+
+    console.log(location)
 
     const burgerHandler = (): void => {
         const modal = document.getElementById(
@@ -56,13 +58,13 @@ const Header = () => {
     };
 
     return (
-        <header className={Object.keys(params).length ? "" : "header header-home"} >
+        <header className={location.pathname === "/" ? "header header-home" : ""} >
             <div className="container">
                 <button onClick={burgerHandler} className="header__burger" >
                     <img src={burger} alt="" />
                 </button>
                 <dialog id="header__mainNavWrapper">
-                    <header className={Object.keys(params).length ? "" : "header-dialog header-home"}>
+                    <header className={location.pathname === "/" ? "header-dialog" : "header-dialog header-home"}>
                         <div className="container-dialog">
                             <button className="header__burger" >
                                 <img src={burger} alt="burger menu icon" />
