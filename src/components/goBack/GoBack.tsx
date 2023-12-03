@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./GoBack.scss"
 
-const GoBack = ({modifier = ""} : {modifier: string}) => {
+const GoBack = ({modifier = ""} : {modifier?: string}) => {
     const navigate = useNavigate()
 
     return (
