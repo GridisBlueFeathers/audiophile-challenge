@@ -3,6 +3,12 @@
 .back {
     margin: 16px 0 24px;
 
+    &-checkout {
+        @media (min-width: 768px) {
+            margin: 48px 0 24px;
+        }
+    }
+
     @media (min-width: 769px) {
         margin: 79px 0 56px;
     }

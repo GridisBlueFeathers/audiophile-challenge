@@ -9,7 +9,7 @@
         padding: 90px 24px 0;
 
         @media (min-width: 768px) {
-            padding: 90px 40px 0;
+            padding: 92px 40px 0;
         }
 
         .checkout__form {
@@ -168,7 +168,12 @@
 
                 .form__radioField {
                     display: flex;
-                    justify-content: space-between;
+                    flex-direction: column;
+
+                    @media (min-width: 768px) {
+                        flex-direction: row;
+                        justify-content: space-between;
+                    }
 
                     .form__radioWrapper {
                         display: flex;
@@ -256,6 +261,10 @@
                 border-radius: 8px;
                 padding: 32px 24px;
                 margin-bottom: 97px;
+
+                @media (min-width: 768px) {
+                    padding: 32px 33px;
+                }
 
                 h6 {
                     @include scssVariables.headerSix;
@@ -358,6 +367,11 @@
                 @include scssVariables.button(scssVariables.$brown, scssVariables.$lighterBrown, #FFF, scssVariables.$brown, 0, 15px 74px 15px 80px);
                 max-width: 100%; 
                 width: 100%;
+
+                @media (min-width: 768px) {
+                    line-height: normal;
+
+                }
             }
         }
     }

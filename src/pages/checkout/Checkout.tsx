@@ -22,8 +22,8 @@ const Checkout = () => {
     return (
         <div className="checkoutWrapper" >
             <main className="checkout" >
-                <GoBack />
-                <div>
+                <GoBack modifier="checkout"/>
+                <section>
                     <form action="#" className="checkout__form" >
                         <fieldset className="inputs" >
                             <h3>
@@ -249,7 +249,7 @@ const Checkout = () => {
                             </button>
                         </fieldset>
                     </form>
-                </div>
+                </section>
             </main>
         </div>
     )
