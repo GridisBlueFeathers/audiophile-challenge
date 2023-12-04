@@ -20,6 +20,7 @@
             @media (min-width: 1024px) {
                 flex-direction: row;
                 gap: 30px;
+                padding-bottom: 141px;
             }
 
             .inputs {
@@ -38,6 +39,7 @@
 
                 @media (min-width: 1024px) {
                     max-width: 730px;
+                    padding: 54px 48px 48px; 
                 }
 
                 h3 {
@@ -48,6 +50,11 @@
                     text-transform: uppercase;
 
                     @media (min-width: 768px) {
+                        margin-bottom: 41px;
+                    }
+
+                    @media (min-width: 1024px) {
+                        @include scssVariables.headerThree;
                         margin-bottom: 41px;
                     }
                 }
@@ -271,8 +278,16 @@
                 border-radius: 8px;
                 padding: 32px 24px;
                 margin-bottom: 97px;
+                box-sizing: border-box;
 
                 @media (min-width: 768px) {
+                    padding: 32px 33px;
+                }
+
+                @media (min-width: 1024px) {
+                    max-width: 350px;
+                    width: 100%;
+                    height: 100%;
                     padding: 32px 33px;
                 }
 
