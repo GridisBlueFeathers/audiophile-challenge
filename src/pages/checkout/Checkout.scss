@@ -204,8 +204,11 @@
                     line-height: normal;
                     letter-spacing: -0.214px;
                     margin-bottom: 9px;
-                    flex-basis: 237px;
-                    flex-grow: 1;
+
+                    @media (min-width: 580px) {
+                        flex-basis: 237px;
+                        flex-grow: 1;
+                    }
                 }
 
                 .form__radioField {
@@ -222,10 +225,13 @@
                         display: flex;
                         flex-direction: column;
                         gap: 16px;
-                        max-width: 329px;
                         width: 100%;
-                        flex-basis: 237px;
-                        flex-grow: 1;
+
+                        @media (min-width: 580px) {
+                            max-width: 329px;
+                            flex-basis: 237px;
+                            flex-grow: 1;
+                        }
 
                         .form__input-radio {
                             display: none;
