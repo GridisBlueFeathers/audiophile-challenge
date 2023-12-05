@@ -142,7 +142,7 @@ const Checkout = () => {
                             </div>
                                 {isEMoney ?
                                     <div className="form__section">
-                                        <div className="form__fieldSet">
+                                        <div className="form__fieldSet form__fieldSet-eMoney">
                                             <div className="form__field">
                                                 <div className="form__tooltips">
                                                     <label htmlFor="eMoneyNumber" className={`form__label ${!isValid.eNumber && "form__label-wrong"}`}>

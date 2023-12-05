@@ -17,6 +17,12 @@
             flex-direction: column;
             gap: 32px;
 
+            @media (min-width: 880px) {
+                flex-direction: row;
+                gap: 15px;
+                padding-bottom: 141px;
+            }
+
             @media (min-width: 1024px) {
                 flex-direction: row;
                 gap: 30px;
@@ -89,7 +95,6 @@
                         flex-direction: column;
                         gap: 24px;
 
-
                         @media (min-width: 580px) {
                             flex-direction: row;
                             flex-wrap: wrap;
@@ -104,7 +109,13 @@
                         }
 
                         @media (min-width: 768px) {
-                            gap: 24px 14px;
+                            gap: 24px 16px;
+                        }
+
+                        @media (min-width: 880px) {
+                            &::after {
+                                display: none;
+                            }
                         }
 
                         .form__field {
@@ -117,7 +128,13 @@
                             }
                             
                             @media (min-width: 768px) {
-                                max-width: 309px;
+                                max-width: 360px;
+                                min-width: 238px;
+                            }
+
+                            @media (min-width: 880px) {
+                                max-width: 100%;
+                                width: 100%;
                             }
 
                             &-wide {
@@ -209,6 +226,16 @@
                         flex-basis: 237px;
                         flex-grow: 1;
                     }
+
+                    @media (min-width: 768px) {
+                        max-width: 360px;
+                        min-width: 238px;
+                    }
+
+                    @media (min-width: 880px) {
+                        flex-basis: unset;
+                        flex-grow: unset;
+                    }
                 }
 
                 .form__radioField {
@@ -221,6 +248,10 @@
                         gap: 10px;
                     }
 
+                    @media (min-width: 880px) {
+                        flex-direction: column;
+                    }
+
                     .form__radioWrapper {
                         display: flex;
                         flex-direction: column;
@@ -231,6 +262,17 @@
                             max-width: 329px;
                             flex-basis: 237px;
                             flex-grow: 1;
+                        }
+
+                        @media (min-width: 768px) {
+                            max-width: 360px;
+                            min-width: 238px;
+                        }
+
+                        @media (min-width: 880px) {
+                            max-width: 100%;
+                            flex-basis: unset;
+                            flex-grow: unset;
                         }
 
                         .form__input-radio {
@@ -282,6 +324,14 @@
                 .form__cash {
                     padding-bottom: 36px;
 
+                    @media (min-width: 425px) {
+                        padding-bottom: 62px;
+                    }
+
+                    @media (min-width: 580px) {
+                        padding-bottom: 0;
+                    }
+
                     @media (min-width: 768px) {
                         padding-bottom: 6px;
                     }
@@ -302,6 +352,10 @@
                         font-weight: 500;
                         line-height: 25px;
                         text-align: justify;
+
+                        @media (min-width: 580px) {
+                            text-align: right;
+                        }
                     }
                 }
 
