@@ -89,18 +89,41 @@
                         flex-direction: column;
                         gap: 24px;
 
-                        @media (min-width: 768px) {
+
+                        @media (min-width: 580px) {
                             flex-direction: row;
                             flex-wrap: wrap;
+                            gap: 24px 10px;
+                            justify-content: space-between;
+
+                            &::after {
+                                content: "";
+                                flex-grow: 1;
+                                flex-basis: 237px;
+                            }
+                        }
+
+                        @media (min-width: 768px) {
                             gap: 24px 14px;
                         }
 
                         .form__field {
-                            max-width: 309px;
-                            width: 100%;
+                            box-sizing: border-box;
+
+                            @media (min-width: 580px) {
+                                max-width: 329px;
+                                flex-grow: 1;
+                                flex-basis: 237px;
+                            }
+                            
+                            @media (min-width: 768px) {
+                                max-width: 309px;
+                            }
 
                             &-wide {
                                 max-width: 100%;
+                                width: 100%;
+                                flex-basis: unset;
                             }
 
                             .form__tooltips {
@@ -181,23 +204,28 @@
                     line-height: normal;
                     letter-spacing: -0.214px;
                     margin-bottom: 9px;
+                    flex-basis: 237px;
+                    flex-grow: 1;
                 }
 
                 .form__radioField {
                     display: flex;
                     flex-direction: column;
 
-                    @media (min-width: 768px) {
+                    @media (min-width: 580px) {
                         flex-direction: row;
                         justify-content: space-between;
+                        gap: 10px;
                     }
 
                     .form__radioWrapper {
                         display: flex;
                         flex-direction: column;
                         gap: 16px;
-                        max-width: 309px;
+                        max-width: 329px;
                         width: 100%;
+                        flex-basis: 237px;
+                        flex-grow: 1;
 
                         .form__input-radio {
                             display: none;
